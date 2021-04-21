@@ -46,3 +46,21 @@ https://URL_GATEWAY/calc
 Essa informação também fica disponível nas lambdas 
 ![image](https://user-images.githubusercontent.com/276077/115634404-f4005000-a2df-11eb-9cf4-b57d2b336edc.png)
 
+
+## USando o POSTMAN para testar a API
+
+- calc
+
+![image](https://user-images.githubusercontent.com/276077/115634822-c071f580-a2e0-11eb-94a6-c7a8bc7bf58b.png)
+
+
+- soma
+
+![image](https://user-images.githubusercontent.com/276077/115634892-e4353b80-a2e0-11eb-84bc-0683f80b8eea.png)
+
+
+- subtracao
+
+![image](https://user-images.githubusercontent.com/276077/115634940-0038dd00-a2e1-11eb-92b5-dc04ce523baf.png)
+
+
