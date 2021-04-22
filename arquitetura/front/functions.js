@@ -79,7 +79,7 @@ function exe(){
 	http.setRequestHeader("contentType", "application/x-www-form-urlencoded")
 
 
-	//http.send(params)
+	http.send(params)
 	objNum.value = '';
 	objOperacao.value = '';
 	obj.value = result;
