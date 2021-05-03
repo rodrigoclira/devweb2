@@ -1,5 +1,7 @@
 # Projeto usando a arquitetura Microserviços (Flask + Docker)
 
+![image](https://user-images.githubusercontent.com/276077/116923013-77009f00-ac2c-11eb-859b-735835360d09.png)
+
 
 ## Pré-Requisitos: 
 | [Docker](https://docs.docker.com/engine/install)
