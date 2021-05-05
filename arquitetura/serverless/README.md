@@ -9,7 +9,7 @@ Neste projeto será criado uma API que realiza operações matemáticas simples 
 
 Passos para execução:
 
-1. Criar uma função lambda usando a opção "Usar um esquema". Pesquise e selecione o esquema: "hello-world-python". Ao selecionar o equema, clique em "Configurar".
+1. Crie uma função lambda usando a opção "Usar um esquema". Pesquise e selecione o esquema: "hello-world-python". Ao selecionar o equema, clique em "Configurar".
 ![image](https://user-images.githubusercontent.com/276077/115634586-4a6d8e80-a2e0-11eb-826e-b9dc4da2f103.png)
 
 2. Dê um nome a função baseando-se nos exemplos disponíveis na pasta "lambdas" do repositório. Exemplo: soma 
@@ -24,7 +24,7 @@ Passos para execução:
 	- Tipo: API HTTP
 	- Segurança: Abrir
 	- Em configurações adicionais:
-		- Nome da API: HTTP-API
+		- Nome da API: API-HTTP
 		
 6. Repita os passos 1-3 para adicionar as outras funções lambdas.
 
