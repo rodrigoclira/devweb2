@@ -26,7 +26,7 @@ Passos para execução:
 	- Em configurações adicionais:
 		- Nome da API: API-HTTP
 		
-6. Repita os passos 1-3 para adicionar as outras funções lambdas.
+6. Repita os passos 1-3 para adicionar as outras funções lambdas. Os nomes delas serão: subtracao e calc.
 
 7. Para adicionar o gatilho das novas funções, vá até o console do API Gateway e selecione o gateway criado ("API HTTP").
 
@@ -34,7 +34,7 @@ Passos para execução:
 
 9. Clique em "Create" e adicione novas rotas, sendo elas os nomes das funções lambdas já criadas. Ex.: /calc, /subtracao
 
-10. Agora no campo de "Integrações", no painel esquerdo. Clique em "Gerenciar Integrações". No campo Anexar essa integração a uma rota, escolha uma das rotas criadas no passo anterior. No campo "Destino da Integração", escolha "Função Lambda" e em detalhes, selecione o lambda correspondente.
+10. Agora no campo de "Integrações", no painel esquerdo. Clique em "Gerenciar Integrações" e em "Create". No campo Anexar essa integração a uma rota, escolha uma das rotas criadas no passo anterior. No campo "Destino da Integração", escolha "Função Lambda" e em detalhes, selecione o lambda correspondente.
 
 
 Agora que tudo foi criado, você já pode usar o seu projeto criado na arquitetura serverless. 
