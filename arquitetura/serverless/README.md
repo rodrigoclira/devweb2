@@ -34,17 +34,20 @@ Passos para execução:
 
 9. Clique em "Create" e adicione novas rotas, sendo elas os nomes das funções lambdas já criadas. Ex.: /calc, /subtracao
 
-10. Agora no campo de "Integrações", no painel esquerdo. Clique em "Gerenciar Integrações" e em "Create". No campo Anexar essa integração a uma rota, escolha uma das rotas criadas no passo anterior. No campo "Destino da Integração", escolha "Função Lambda" e em detalhes, selecione o lambda correspondente.
+10. Agora no campo de "Integrações", no painel esquerdo. Clique em "Gerenciar Integrações" e em "Create". No campo Anexar essa integração a uma rota, escolha uma das rotas criadas no passo anterior. No campo "Destino da Integração", escolha "Função Lambda" e em detalhes, selecione o lambda correspondente. Faça esse procedimento para todas as funções lambdas criadas no passo 6.
 
 
 Agora que tudo foi criado, você já pode usar o seu projeto criado na arquitetura serverless. 
 
-Pegue a url do gateway e coloque a rota que desejas acessar. Por exemplo: 
+Pegue a url do gateway* e coloque a rota que desejas acessar. Por exemplo: 
 
 https://URL_GATEWAY/calc
 
 Essa informação também fica disponível nas lambdas 
 ![image](https://user-images.githubusercontent.com/276077/115634404-f4005000-a2df-11eb-9cf4-b57d2b336edc.png)
+
+* A URL do gateway pode ser obtida na página inicial do serviço "API GATEWAY" da Amazon. 
+![image](https://user-images.githubusercontent.com/276077/117976655-67f1af00-b306-11eb-8491-08e7c765b72f.png)
 
 
 ## USando o POSTMAN para testar a API
