@@ -69,4 +69,4 @@ Essa informação também fica disponível nas lambdas
 
 | Sugestão de conteúdo
 
-(Serverless Design with AWS Lambda)[https://amazon.qwiklabs.com/quests/17]
+[Serverless Design with AWS Lambda](https://amazon.qwiklabs.com/quests/17)
