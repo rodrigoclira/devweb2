@@ -67,3 +67,6 @@ Essa informação também fica disponível nas lambdas
 ![image](https://user-images.githubusercontent.com/276077/115634940-0038dd00-a2e1-11eb-92b5-dc04ce523baf.png)
 
 
+| Sugestão de conteúdo
+
+(Serverless Design with AWS Lambda)[https://amazon.qwiklabs.com/quests/17]
