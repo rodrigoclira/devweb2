@@ -1,5 +1,7 @@
 # Projeto com arquitetura Serverless (AWS Lambda + AWS API Gateway)
 
+![image](https://user-images.githubusercontent.com/276077/118579345-48beab80-b764-11eb-83db-3f7a33eb4265.png)
+
 Pré-requisitos:
 - Ter acesso a uma conta da AWS com os serviços: Lambda e API Gateway
 
