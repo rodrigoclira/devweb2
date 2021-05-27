@@ -11,7 +11,7 @@ Neste projeto será criado uma API que realiza operações matemáticas simples 
 
 Passos para execução:
 
-1. Crie uma função lambda usando a opção "Usar um esquema". Pesquise e selecione o esquema: "hello-world-python". Ao selecionar o equema, clique em "Configurar".
+1. Acesse ao serviço Lambda da AWS e crie uma função lambda usando a opção "Usar um esquema". Pesquise e selecione o esquema: "hello-world-python". Ao selecionar o equema, clique em "Configurar".
 ![image](https://user-images.githubusercontent.com/276077/115634586-4a6d8e80-a2e0-11eb-826e-b9dc4da2f103.png)
 
 2. Dê um nome a função baseando-se nos exemplos disponíveis na pasta "lambdas" do repositório. Exemplo: soma 
@@ -30,7 +30,7 @@ Passos para execução:
 		
 6. Repita os passos 1-3 para adicionar as outras funções lambdas. Os nomes delas serão: subtracao e calc.
 
-7. Para adicionar o gatilho das novas funções, vá até o console do API Gateway e selecione o gateway criado ("API HTTP").
+7. Para adicionar o gatilho das novas funções, vá até o console do API Gateway e selecione o gateway criado ("API HTTP"). Para ir até o console do API Gateway é necessário acessar o serviço "API Gateway" da AWS. 
 
 8. No painel esquerdo, clique em "Rotas". Deverá ser exibida o nome da primeira função lambda criada. Ex.: /soma
 
