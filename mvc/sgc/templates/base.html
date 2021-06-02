@@ -47,7 +47,7 @@
 			</nav>
 
 			{% if not user.is_authenticated %}
-				<a class="btn btn-outline-primary" href="{% url 'login' %}">Acessar</a>
+				<a class="btn btn-outline-primary" href="#">Acessar</a>
 			{% else %}
 				<a class="btn btn-outline-primary" href="#"> Minha Conta {{ user.username }} </a>
 			{% endif %}
