@@ -1,0 +1,86 @@
+<!-- templates/projeto/detail.html -->
+{% extends 'base.html' %}
+
+{% block title %}Projeto{% endblock %}
+
+{% block content %}
+
+<div class="py-3 text-left">
+	<h1>{{ projeto.title }}</h1>
+</div>
+
+<div class="row">
+	<!-- Right column -->
+	<div class="col-md-5 order-md-2">
+			<h4 class="mb-3 text-center">Descrição</h4>
+				{% csrf_token %}
+				<div class="form-row ">
+					<div class="form-group">
+                       <p class="text-justify">{{ projeto.descricao }}</p>
+					</div>
+				</div>
+	</div>
+	
+	<!-- Left column -->
+	<div class="col-md-7 order-md-1">
+		<h4 class="mb-3">{{projeto.titulo}}</h4>
+        <hr class="my-4">
+
+        <div class="form-row">
+			<div class="form-group col-md-11">
+				<label for="div-coordenador">Nome do Coordenador</label>
+                <div id="div-coordenador form-control">{{projeto.coordenador.nome}}</div>
+			</div>				
+		</div>
+
+        <hr class="my-4">
+
+		<div class="form-row">
+			<div class="form-group col-md-11">
+				<label for="div-email">E-mail</label>
+                <div id="div-email form-control">{{projeto.coordenador.email}}</div>
+			</div>
+        </div>				
+
+        <hr class="my-4">
+
+        <div class="form-row">
+
+			<div class="form-group col-md-11">
+				<label for="div-lattes">Lattes</label>
+                <div id="div-lattes form-control">
+                    <a href="{{projeto.coordenador.lattes}}" target="_blank">{{projeto.coordenador.lattes}}</a>
+                </div>
+            </div>				
+		</div>
+        
+        <hr class="my-4">
+
+		<div class="form-row">
+			<div class="form-group col-md-11">
+					<label for="inputTipo">Colaboradores</label>
+                    <ul class="list-group list-group-flush">
+
+                    {% for colaborador in colaboradores %}
+                        <li class="list-group-item"><a href="#" target="_blank" >{{colaborador.colaborador.nome}}</a></li>
+                    {% endfor %}
+                    </ul>
+			</div>
+		</div>
+
+		<h4/>
+			
+		
+			
+			<!---https://stackoverflow.com/questions/43349767/how-to-add-upload-choose-multiple-files-from-one-input-tag -->
+			<!--
+			<div class="form-row">
+				<div class="form-group col-md-8">
+						<input type="file" id="customFileLang" >									
+				</div>
+			</div>
+			<button type="Enviar" class="btn btn-primary">Submeter</button>
+			-->
+		
+	</div>
+{% endblock %}
