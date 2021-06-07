@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+
+		"python.pythonPath": "${workspaceFolder}/venv/bin/python"
+
+
+	}
+}
