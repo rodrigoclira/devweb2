@@ -93,8 +93,8 @@ else:
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'django',
             'USER': 'rodrigo',
-            'PASSWORD': 'postgres',
-            'HOST': 'database2.coikiqaiifwn.us-east-1.rds.amazonaws.com',
+            'PASSWORD': '',
+            'HOST': '',
             'PORT': '5432',
         }        
     }
@@ -105,6 +105,7 @@ if COMMENTS:
     mongo_port = 27017
     mongo_database = 'comments'
     mongoengine.connect(mongo_database, host=mongo_host, port=mongo_port)
+
     #DATABASES['mongodb'] = {
     #    'ENGINE': 'django_mongodb_engine',
     #    'NAME': 'comments',
