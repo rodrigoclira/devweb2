@@ -1,5 +1,22 @@
 from django.db import models
+from django.db.models.fields import DateTimeField, IntegerField
 from core.models import Professor
+import mongoengine 
+from datetime import datetime
+
+class Comentario(mongoengine.Document):
+    projeto = mongoengine.IntField(required=True)
+    #user_id    = mongoengine.IntField(required=True)
+    texto = mongoengine.StringField(max_length=1024)
+    criado_em  = mongoengine.DateTimeField(help_text='criado em')
+    modificado_em = mongoengine.DateTimeField(help_text='modificado em', default = datetime.now)
+    curtidas   = mongoengine.IntField(required=True, default = 0)
+
+    def save(self, *args, **kwargs):
+        if not self.criado_em:
+            self.criado_em = datetime.now()
+        self.modificado_em = datetime.now()
+        return super(Comentario, self).save(*args, **kwargs)
 
 # Create your models here.
 class Tipo(models.Model):

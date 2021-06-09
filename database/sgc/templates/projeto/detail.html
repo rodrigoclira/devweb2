@@ -1,7 +1,12 @@
 <!-- templates/projeto/detail.html -->
 {% extends 'base.html' %}
+{% load static %} 
 
 {% block title %}Projeto{% endblock %}
+
+{% block head %}	
+	<link rel="stylesheet" href="{% static "projeto/comentario.css" %}">	
+{% endblock %}
 
 {% block content %}
 
@@ -25,6 +30,8 @@
 	<div class="col-md-7 order-md-1">
 		<h4 class="mb-3">{{projeto.titulo}}</h4>
         <hr class="my-4">
+
+	 	<input type="hidden" id="projetoId" value="{{projeto.pk}}">
 
         <div class="form-row">
 			<div class="form-group col-md-11">
@@ -67,20 +74,15 @@
                     </ul>
 			</div>
 		</div>
+		<h4/>	
 
-		<h4/>
-			
-		
-			
-			<!---https://stackoverflow.com/questions/43349767/how-to-add-upload-choose-multiple-files-from-one-input-tag -->
-			<!--
-			<div class="form-row">
-				<div class="form-group col-md-8">
-						<input type="file" id="customFileLang" >									
-				</div>
-			</div>
-			<button type="Enviar" class="btn btn-primary">Submeter</button>
-			-->
-		
+	
+		{% include "projeto/comentario.html"  with comentarios=comentarios%}
 	</div>
+{% endblock %}
+
+{% block scripts %}
+
+	<script src="{% static 'projeto/comentario.js' %}"></script>
+
 {% endblock %}

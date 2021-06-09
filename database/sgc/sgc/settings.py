@@ -1,5 +1,5 @@
 import os
-
+import mongoengine
 
 """
 Django settings for sgc project.
@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-f7o3wfiz*7co-h$ci2c8-+g(%e^t_zm+5c5^tqxljb^!qmvq^&
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-PROD_ENV = True
+PROD_ENV = False
+COMMENTS = True
 
 ALLOWED_HOSTS = []
 
@@ -90,13 +91,29 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': '',
-            'USER': '',
-            'PASSWORD': '',
-            'HOST': '',
+            'NAME': 'django',
+            'USER': 'rodrigo',
+            'PASSWORD': 'postgres',
+            'HOST': 'database2.coikiqaiifwn.us-east-1.rds.amazonaws.com',
             'PORT': '5432',
-        }
+        }        
     }
+
+
+if COMMENTS:
+    mongo_host = '127.0.0.1' 
+    mongo_port = 27017
+    mongo_database = 'comments'
+    mongoengine.connect(mongo_database, host=mongo_host, port=mongo_port)
+    #DATABASES['mongodb'] = {
+    #    'ENGINE': 'django_mongodb_engine',
+    #    'NAME': 'comments',
+    #    'USER': 'root',
+    #    'PASSWORD': 'root',
+    #    'HOST': 'localhost',
+    #}
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
