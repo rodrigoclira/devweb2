@@ -17,7 +17,7 @@
         {% if projetos %}
         <ul class="list-group list-group-flush">
             {% for projeto in projetos %}
-                <li class="list-group-item"><a href="/projeto/{{ projeto.pk }}">{{ projeto.titulo }} </a></li>
+                <li class="list-group-item"><a href="{% url 'projeto:exibir' projeto.pk %}">{{ projeto.titulo }} </a></li>
             {% endfor %}
         <ul>
     </div>
