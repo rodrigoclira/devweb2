@@ -1,0 +1,27 @@
+<!-- templates/registration/login.html -->
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+    <h2>Login</h2>
+    {% if forms.errors %}
+        <p>Seu nome e senha não estão corretas.</p>
+    {% else %}
+        <p> Use o form abaixo para Login. Se você não tem uma conta <a href="{% url 'core:registrar' %}">registre aqui</a></p>
+    {% endif %}
+
+    <div class='login-form'>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="hidden" name="next" value="{{ next }}"/>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <li class="google">
+        <a href="{% url "social:begin" "google-oauth2" %}">Login com o Google </a>
+    </li>
+{% endblock %}

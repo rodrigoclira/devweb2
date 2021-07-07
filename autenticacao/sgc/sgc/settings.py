@@ -178,3 +178,10 @@ STATICFILES_DIRS = [
 
 LOGIN_REDIRECT_URL = 'projeto:listar'
 LOGOUT_URL = 'logout'
+LOGIN_URL = 'login'
+
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'core.authentication.EmailAuthBackend',
+]

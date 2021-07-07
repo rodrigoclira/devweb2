@@ -29,8 +29,8 @@ SECRET_KEY = 'django-insecure-f7o3wfiz*7co-h$ci2c8-+g(%e^t_zm+5c5^tqxljb^!qmvq^&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 PROD_ENV = False
-COMMENTS = True
-ALLOWED_HOSTS = []
+COMMENTS = False
+ALLOWED_HOSTS = ['mysite.com', '127.0.0.1']
 
 
 if PROD_ENV:
@@ -55,6 +55,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
+    'django_extensions',
     'core',
     'projeto',
 ]
@@ -175,3 +177,18 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+LOGIN_REDIRECT_URL = 'projeto:listar'
+LOGOUT_URL = 'logout'
+LOGIN_URL = 'login'
+
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'core.authentication.EmailAuthBackend',
+    'social_core.backends.google.GoogleOAuth2'
+]
+
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '179227412138-qj5mir02b8ea8iuv24k5js6864dqgir1.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'g5jwJpOl5VYdbkQdqDeL3xPV'
