@@ -1,4 +1,8 @@
+# Exemplo de projeto usando OAUTH2 (django-social)
 
-https://cs.lmu.edu/~ray/notes/regex/
+Para rodar o prorgama: 
 
-https://regexr.com/
+```
+python manage.py runserver_plus --cert-file cert.crt
+```
+
