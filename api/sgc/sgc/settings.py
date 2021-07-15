@@ -206,16 +206,11 @@ REST_FRAMEWORK = {
     ),
 }
 
-#https://medium.com/code-rocket-blog/autentica%C3%A7%C3%A3o-com-jwt-no-django-rest-framework-45626936c276
-#JWT_AUTH = {
-#    'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=10),
-#    'JWT_AUTH_HEADER_PREFIX': 'JWT',
-
-#}
-
 #https://www.jetbrains.com/pycharm/guide/tutorials/django-aws/rest-api-jwt/
+#https://django-rest-framework-simplejwt.readthedocs.io/en/latest/settings.html
+
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=5),
+    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=2),
     'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=1),
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': True,
@@ -236,8 +231,4 @@ SIMPLE_JWT = {
     'TOKEN_TYPE_CLAIM': 'token_type',
 
     'JTI_CLAIM': 'jti',
-
-    'SLIDING_TOKEN_REFRESH_EXP_CLAIM': 'refresh_exp',
-    'SLIDING_TOKEN_LIFETIME': datetime.timedelta(minutes=5),
-    'SLIDING_TOKEN_REFRESH_LIFETIME': datetime.timedelta(days=1),
 }
