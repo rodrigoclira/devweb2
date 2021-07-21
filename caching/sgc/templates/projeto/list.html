@@ -1,0 +1,35 @@
+<!-- templates/projeto/list.html -->
+{% extends 'base.html' %}
+
+{% block title %}Listar Projetos{% endblock %}
+
+{% block content %}
+
+<div class="py-3 text-left">
+	<h1>Projetos</h1>
+</div>
+
+<div class="row">
+
+    <!-- Right column -->
+    <div class="col-md-5 order-md-2">
+
+        {% if projetos %}
+        <ul class="list-group list-group-flush">
+            {% for projeto in projetos %}
+                <li class="list-group-item"><a href="{% url 'projeto:exibir' projeto.pk %}">{{ projeto.titulo }} </a></li>
+            {% endfor %}
+        <ul>
+    </div>
+
+    <!-- Left column -->
+	<div class="col-md-3 order-md-1">
+    </div>
+
+</div>
+
+{% endif %}
+
+
+
+{% endblock %}

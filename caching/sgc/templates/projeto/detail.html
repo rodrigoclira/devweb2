@@ -1,0 +1,109 @@
+<!-- templates/projeto/detail.html -->
+{% extends 'base.html' %}
+{% load static %} 
+{% load cache %} 
+
+{% block title %}Projeto{% endblock %}
+
+{% block head %}	
+	<link rel="stylesheet" href="{% static "projeto/comentario.css" %}">	
+{% endblock %}
+
+{% block content %}
+
+
+<div class="py-3 text-left">
+	<h1>{{ projeto.title }}</h1>
+</div>
+
+<div class="row">
+	<!-- Right column -->
+	{% cache 60 content module %}
+
+	<div class="col-md-5 order-md-2">
+			<h4 class="mb-3 text-center">Descrição</h4>
+				{% csrf_token %}
+			<div class="form-row ">
+				<div class="form-group">
+					<p class="text-justify">{{ projeto.descricao }}</p>
+				</div>
+			</div>
+
+			<div class="form-group col-md-11">
+					<label for="inputTipo">Tags</label>
+					<div class="form-group">
+						{% for tag in tags %}
+							<a href="{% url 'projeto:listar_tag' tag.tag %}" target="_blank" >{{ tag.tag|upper }}</a>
+						{% endfor %}
+					</div>
+
+			</div>
+	</div>
+	
+	<!-- Left column -->
+	<div class="col-md-7 order-md-1">
+		<h4 class="mb-3">{{projeto.titulo}}</h4>
+        <hr class="my-4">
+
+	 	<input type="hidden" id="projetoId" value="{{projeto.pk}}">
+
+        <div class="form-row">
+			<div class="form-group col-md-11">
+				<label for="div-coordenador">Nome do Coordenador</label>
+                <div id="div-coordenador form-control">{{projeto.coordenador.nome}}</div>
+			</div>				
+		</div>
+
+        <hr class="my-4">
+
+		<div class="form-row">
+			<div class="form-group col-md-11">
+				<label for="div-email">E-mail</label>
+                <div id="div-email form-control">{{projeto.coordenador.email}}</div>
+			</div>
+        </div>				
+
+        <hr class="my-4">
+
+        <div class="form-row">
+
+			<div class="form-group col-md-11">
+				<label for="div-lattes">Lattes</label>
+                <div id="div-lattes form-control">
+                    <a href="{{projeto.coordenador.lattes}}" target="_blank">{{projeto.coordenador.lattes}}</a>
+                </div>
+            </div>				
+		</div>
+        
+        <hr class="my-4">
+
+		<div class="form-row">
+			<div class="form-group col-md-11">
+					<label for="inputTipo">Colaboradores</label>
+                    <ul class="list-group list-group-flush">
+
+                    {% for colaborador in colaboradores %}
+                        <li class="list-group-item"><a href="#" target="_blank" >{{colaborador.colaborador.nome}}</a></li>
+                    {% endfor %}
+                    </ul>
+			</div>
+		</div>
+
+        <hr class="my-4">
+
+
+		<h4/>	
+
+		{% if comentario_settings %}
+			{% include "projeto/comentario.html"  with comentarios=comentarios%}
+		{% endif %}
+
+		{% endcache %}
+	</div>
+{% endblock %}
+
+{% block scripts %}
+
+	<script src="{% static 'projeto/comentario.js' %}"></script>
+
+{% endblock %}
