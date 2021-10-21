@@ -56,3 +56,8 @@ sudo docker-compose down
 
 ![image](https://user-images.githubusercontent.com/276077/116920668-4f5c0780-ac29-11eb-8905-dadc80b5fe62.png)
 
+## Outros projetos usando Microserviços
+
+- https://github.com/rodrigoclira/micro-livraria
+- https://github.com/rodrigoclira/microservice-WEB2
+
