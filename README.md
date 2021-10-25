@@ -1,29 +1,37 @@
-# Projetos de exemplos da disciplina de Desenvolvimento de Sistemas Web 2 do IFPE Campus Paulista
+# Desenvolvimento de Sistemas Web 2 do IFPE Campus Paulista
 
-Lista de projetos de exemplos:
+Exemplos de projetos usando os conceitos apresentados na disciplina de **Desenvolvimento de Sistemas Web 2** do IFPE Campus Paulista.
 
-1. Arquitetura    
-    - [Monolítico](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/monolitico)
-    - [Microserviços](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/microservicos)
-    - [Serverless](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/serverless)
 
-2. [MVC](https://github.com/rodrigoclira/devweb2/tree/main/mvc)
+> **Aviso**: Este repositório está em evolução. 
+> Os códigos podem mudar ou desaparecer sem nenhum aviso
+> 
 
-3. [Banco de Dados](https://github.com/rodrigoclira/devweb2/tree/main/database)
+## Tabela de Conteúdo
 
-4. [Mapeamento URL](https://github.com/rodrigoclira/devweb2/tree/main/mapeamento-url)
-
-6. Autenticação
-    - [Autorização e Autenticação](https://github.com/rodrigoclira/devweb2/tree/main/autenticacao)
-    - [Autenticação usando oauth2](https://github.com/rodrigoclira/devweb2/tree/main/autenticacao-social)
-
-7. [API](https://github.com/rodrigoclira/devweb2/tree/main/api)
-
-8. [Caching](https://github.com/rodrigoclira/devweb2/tree/main/caching)
-
-9. [Arquiteturas Modernas]()
-
-11. [CI e CD]()
+Assunto| Projeto
+---:|:---:
+**Arquitetura**|   
+1 | [Monolítico](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/monolitico)
+2 | [Microserviços](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/microservicos)
+3 | [Serverless](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/serverless)
+**Model-View-Controller**|
+1 | [Django MVC](https://github.com/rodrigoclira/devweb2/tree/main/mvc)
+**Banco de Dados**|
+1 | [Django + MogoDB + ORM](https://github.com/rodrigoclira/devweb2/tree/main/database) 
+**Mapeamento URL**|
+1 | [Django URLS](https://github.com/rodrigoclira/devweb2/tree/main/mapeamento-url)
+**Autenticação**|
+1 | [HTTP Simple Authentication](https://github.com/rodrigoclira/devweb2/tree/main/autenticacao)
+2 | [Autenticação usando oauth2](https://github.com/rodrigoclira/devweb2/tree/main/autenticacao-social)
+**API**|
+1 | [Django Rest Framework](https://github.com/rodrigoclira/devweb2/tree/main/api)
+**Caching**|
+1 | [Caching com Redis](https://github.com/rodrigoclira/devweb2/tree/main/caching)
+**Arquiteturas Modernas**|
+1 | [Arquiteturas Modernas]() 
+**Implantação**
+1 | [CI e CD]()|
 
 
 
