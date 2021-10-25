@@ -1,4 +1,4 @@
-# Projeto de exemplo da arquitetura MVC
+# Arquitetura MVC
 
 Este projeto tem como objetivo destacar a utilização da arquitetura MVC. Ele representa uma aplicação no qual os professores da instituição poderão listar os
 seus projetos institucionais. Ao longo do curso, a aplicação irá evoluindo para apresentar outros conceitos abordados na disciplina. 
