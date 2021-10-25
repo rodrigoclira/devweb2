@@ -31,3 +31,7 @@ Por fim, acesse a página inicial no navegador:
 
 http://127.0.0.1:8000/projeto/
 
+
+## AWS
+
+Replique o projeto utilizando uma instância do RDS e do DocumentDB na AWS.
