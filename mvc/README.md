@@ -8,6 +8,7 @@ seus projetos institucionais. Ao longo do curso, a aplicação irá evoluindo pa
 | Instalar dependências informadas no arquivo 'requirements.txt' 
 
 
+## Comandos
 Para executar projeto django utilize os comandos abaixo na pasta principal do projeto. 
 
 Se for a primeira vez que esteja executando 
