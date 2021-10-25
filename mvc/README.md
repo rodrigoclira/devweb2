@@ -23,3 +23,6 @@ $ python manage.py runserver
 Por fim, acesse a página inicial no navegador: 
 
 http://127.0.0.1:8000/projeto/
+
+## AWS
+Utilize uma máquina EC2 para iniciar o seu projeto num ambiente de nuvem.
