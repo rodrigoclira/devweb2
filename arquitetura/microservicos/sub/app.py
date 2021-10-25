@@ -3,7 +3,7 @@ from flask import request
 app = Flask(__name__)
 
 @app.route("/sub", methods=["GET"])
-def soma():
+def sub():
     res = {}
     op1 = request.args.get('op1')
     op2 = request.args.get('op2')
