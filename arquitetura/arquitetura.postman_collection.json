@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "6deaa973-5f03-44f3-95a4-5994aea7de59",
-		"name": "Serverless-Example",
+		"name": "API Request",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -10,7 +10,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": null
+				"url": "http://127.0.0.1/calc"
 			},
 			"response": []
 		},
@@ -19,7 +19,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": null
+				"url": "http://127.0.0.1/soma?op1=10&op2=20"
 			},
 			"response": []
 		},
@@ -28,7 +28,16 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": null
+				"url": "http://127.0.0.1/sub?op1=21&op2=6"
+			},
+			"response": []
+		},
+		{
+			"name": "ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1/ping"
 			},
 			"response": []
 		}
