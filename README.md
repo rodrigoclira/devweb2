@@ -1,5 +1,6 @@
 # Projetos de exemplos da disciplina de Desenvolvimento de Sistemas Web 2 do IFPE Campus Paulista
 
+Lista de projetos de exemplos:
 
 1. Arquitetura    
     - [Monolítico](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/monolitico)
@@ -23,3 +24,10 @@
 9. [Arquiteturas Modernas]()
 
 11. [CI e CD]()
+
+
+
+<br>
+Sugestões de leitura:
+
+| [Criando ambientes virtuais para projetos Python com Virtualenv](https://www.treinaweb.com.br/blog/criando-ambientes-virtuais-para-projetos-python-com-o-virtualenv/)
