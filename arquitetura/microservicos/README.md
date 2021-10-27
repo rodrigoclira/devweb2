@@ -58,18 +58,19 @@ sudo docker-compose down
 
 ## Atividade
 
-Adicione uma novo microserviço a arquitetura atual do exemplo. Ele será responsável pelo novo *endpoint* da api que realiza uma multiplicação (**/mult**). Ele receberá dois valores **op1**, **op2** e retornará o resultado da multiplicação. Você pode se basear nas aplicação da pasta *soma* ou *sub* para criar a nova aplicação. 
+Adicione uma novo microserviço a arquitetura atual do exemplo. Ele será responsável pelo novo *endpoint* da api que realiza uma multiplicação (**/mult**). Ele receberá dois valores **op1**, **op2** e retornará o resultado da multiplicação. Você precisa criar umaa nova aplicação coma uma outra framework (não utilizar flask).
 
-Devido a sua alta demanda de acesso, o microserviço precisa ser replicada com 3 containers. A distribuição será feita através da política Round Robin com diferentes pesos e funções. Um container deve ser configurado como **backup**  e os outros dois com o peso 3 e 1, respectivamente. Para mais informações sobre distribuição de peso, acesse: https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/ (*Seção Server Weights*).
+Devido a sua alta demanda de acesso, o microserviço precisa ser replicada com 3 containers. A distribuição será feita através da política de balanceamento de carga *Round Robin* com diferentes pesos e funções. Um container deve ser configurado como **backup** e os outros dois com o peso 3 e 1, respectivamente. Para mais informações sobre distribuição de peso, acesse: https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/ (*Seção Server Weights*).
 
 Reponda as seguintes perguntas abaixo após desenvolver as modificações necessárias para que esses novos requisitos sejam alcançados. 
 
-- Como é feita a distribuição das requisições para o endpoint **/mult** ? 
+1. Como é feita a distribuição das requisições para o endpoint **/mult** ? Discorra o que acontece. (use Postman, Isomnia, thunder client...)
 
-- O que acontece quando um container param de responder as requisições ? E quando o segundo container para de responder? 
-[Use o *docker stop nome_container* para parar containers](https://medium.com/xp-inc/principais-comandos-docker-f9b02e6944cd)
-> O container de backup não deve ser parado. 
+2. O que acontece quando os containers da aplicação **mult** param de funcionar? 
+Para simular esse cenário [use o *docker stop nome_container* para parar containers](https://medium.com/xp-inc/principais-comandos-docker-f9b02e6944cd). Pare cada um dos containers que estão recebendo requisição da aplicação **mult** por vez e analise o que está acontecendo. 
+> O container de **backup** não deve ser parado. 
 
+Ao terminar os experimentos, lembre-se de executar ```docker-compose down```
 
 ## Indicação de projetos usando Microserviços
 
