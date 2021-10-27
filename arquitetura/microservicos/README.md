@@ -56,7 +56,21 @@ sudo docker-compose down
 
 ![image](https://user-images.githubusercontent.com/276077/116920668-4f5c0780-ac29-11eb-8905-dadc80b5fe62.png)
 
-## Outros projetos usando Microserviços
+## Atividade
+
+Adicione uma novo microserviço a arquitetura atual do exemplo. Ele será responsável pelo novo *endpoint* da api que realiza uma multiplicação (**/mult**). Ele receberá dois valores **op1**, **op2** e retornará o resultado da multiplicação. Você pode se basear nas aplicação da pasta *soma* ou *sub* para criar a nova aplicação. 
+
+Devido a sua alta demanda de acesso, o microserviço precisa ser replicada com 3 containers. A distribuição será feita através da política Round Robin com diferentes pesos e funções. Um container deve ser configurado como **backup**  e os outros dois com o peso 3 e 1, respectivamente. Para mais informações sobre distribuição de peso, acesse: https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/ (*Seção Server Weights*).
+
+Reponda as seguintes perguntas abaixo após desenvolver as modificações necessárias para que esses novos requisitos sejam alcançados. 
+
+- Como é feita a distribuição das requisições para o endpoint **/mult** ? 
+
+- O que acontece quando os dois containers (que não sáo backup) param de responder as requisições ? 
+[Use o docker stop para parar containers](https://medium.com/xp-inc/principais-comandos-docker-f9b02e6944cd)
+
+
+## Indicação de projetos usando Microserviços
 
 - https://github.com/rodrigoclira/micro-livraria
 - https://github.com/rodrigoclira/microservice-WEB2
