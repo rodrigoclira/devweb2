@@ -1,4 +1,4 @@
-# Projeto usando a arquitetura Microserviços (Flask + Docker)
+# Projeto usando a arquitetura Microsserviços (Flask + Docker)
 
 ![image](https://user-images.githubusercontent.com/276077/116923013-77009f00-ac2c-11eb-859b-735835360d09.png)
 
@@ -58,9 +58,9 @@ sudo docker-compose down
 
 ## Atividade
 
-Adicione uma novo microserviço a arquitetura atual do exemplo. Ele será responsável pelo novo *endpoint* da api que realiza uma multiplicação (**/mult**). Ele receberá dois valores **op1**, **op2** e retornará o resultado da multiplicação. Você precisa criar umaa nova aplicação coma uma outra framework (não utilizar flask).
+Adicione uma novo microsserviço a arquitetura atual do exemplo. Ele será responsável pelo novo *endpoint* da api que realiza uma multiplicação (**/mult**). Ele receberá dois valores **op1**, **op2** e retornará o resultado da multiplicação. Você precisa criar umaa nova aplicação coma uma outra framework (não utilizar flask).
 
-Devido a sua alta demanda de acesso, o microserviço precisa ser replicada com 3 containers. A distribuição será feita através da política de balanceamento de carga *Round Robin* com diferentes pesos e funções. Um container deve ser configurado como **backup** e os outros dois com o peso 3 e 1, respectivamente. Para mais informações sobre distribuição de peso, acesse: https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/ (*Seção Server Weights*).
+Devido a sua alta demanda de acesso, o microsserviço precisa ser replicada com 3 containers. A distribuição será feita através da política de balanceamento de carga *Round Robin* com diferentes pesos e funções. Um container deve ser configurado como **backup** e os outros dois com o peso 3 e 1, respectivamente. Para mais informações sobre distribuição de peso, acesse: https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/ (*Seção Server Weights*).
 
 Reponda as seguintes perguntas abaixo após desenvolver as modificações necessárias para que esses novos requisitos sejam alcançados. 
 
@@ -72,7 +72,7 @@ Para simular esse cenário [use o *docker stop nome_container* para parar contai
 
 Ao terminar os experimentos, lembre-se de executar ```docker-compose down```
 
-## Indicação de projetos usando Microserviços
+## Indicação de projetos usando Microsserviços
 
 - https://github.com/rodrigoclira/micro-livraria
 - https://github.com/rodrigoclira/microservice-WEB2
