@@ -66,8 +66,9 @@ Reponda as seguintes perguntas abaixo após desenvolver as modificações necess
 
 - Como é feita a distribuição das requisições para o endpoint **/mult** ? 
 
-- O que acontece quando os dois containers (que não sáo backup) param de responder as requisições ? 
-[Use o docker stop para parar containers](https://medium.com/xp-inc/principais-comandos-docker-f9b02e6944cd)
+- O que acontece quando um container param de responder as requisições ? E quando o segundo container para de responder? 
+[Use o *docker stop nome_container* para parar containers](https://medium.com/xp-inc/principais-comandos-docker-f9b02e6944cd)
+> O container de backup não deve ser parado. 
 
 
 ## Indicação de projetos usando Microserviços
