@@ -1,4 +1,4 @@
-# Projeto usando a arquitetura Microsserviços (Flask + Docker)
+# Projeto usando a arquitetura Híbrida (Serverless + Microsserviços)
 
 ![image](https://user-images.githubusercontent.com/276077/116923013-77009f00-ac2c-11eb-859b-735835360d09.png)
 
@@ -6,12 +6,20 @@
 ## Pré-Requisitos: 
 | [Docker](https://docs.docker.com/engine/install)
 
+| Criação de um Lambda Function na AWS
 
 O passo a passo segue o que é apresentado tutorial apresentado em: [Building a Python scalable Flask application using docker-compose and Nginx load balancer
 ](https://www.linkedin.com/pulse/building-python-scalable-flask-application-using-nginx-itay-melamed/)
 
-Algumas alterações foram realizadas para que o projeto ficasse com as mesmas funcionalidades das apresentadas nos projetos de arquitetura serverless e monolítica (API de soma, sub e calc). Para fins de discussão sobre a funcionalidade de *Load Balancing*, o projeto "app" apresentado no tutorial foi mantido.
+Algumas alterações foram realizadas para que o projeto ficasse com as mesmas funcionalidades das apresentadas nos projetos de arquitetura serverless e monolítica (API sub e calc). Para fins de discussão sobre a funcionalidade de *Load Balancing*, o projeto "app" apresentado no tutorial foi mantido.
 
+Diferentemente do exemplo apresentado em microsserviços, neste exemplo as chamadas para o endpoint */soma* são redirecionadas para um Lambda function na AWS. Para isso é importante editar o arquivo **nginx/nginx.conf** para adicionar a url da AWS no *location* da requisição. Mude o "COLOCAR_URL_LAMBDA" pela URL do seu lambda. 
+
+```
+   location /soma {
+        proxy_pass COLOCAR_URL_LAMBDA;              
+   }
+```
 
 Para executá-lo, basta baixar a pasta do projeto (microservicos) e executar o comando "docker-compose up" na pasta principal. 
 
@@ -34,6 +42,8 @@ sudo docker ps --format '{{.Names}}'
 Se tudo estiver ocorrido da forma esperada, o resultado será algo assim: 
 ![image](https://user-images.githubusercontent.com/276077/116919942-6817ed80-ac28-11eb-8fc5-b9ee7b335b2c.png)
 
+Agora a sua requisição está sendo redirecionada para a AWS. 
+
 Ainda é possível analisar cada um dos logs gerados pelas aplicações no container usando o comando "docker logs". 
 
 ```
@@ -54,29 +64,4 @@ Por fim, o comando 'docker-compose down' derruba todos os serviços.
 sudo docker-compose down
 ```
 
-![image](https://user-images.githubusercontent.com/276077/116920668-4f5c0780-ac29-11eb-8905-dadc80b5fe62.png)
 
-## Atividade
-
-Adicione uma novo microsserviço a arquitetura atual do exemplo. Ele será responsável pelo novo *endpoint* da api que realiza uma multiplicação (**/mult**). Ele receberá dois valores **op1**, **op2** e retornará o resultado da multiplicação. Você precisa criar umaa nova aplicação coma uma outra framework (não utilizar flask).
-
-Devido a sua alta demanda de acesso, o microsserviço precisa ser replicada com 3 containers. A distribuição será feita através da política de balanceamento de carga *Round Robin* com diferentes pesos e funções. Um container deve ser configurado como **backup** e os outros dois com o peso 3 e 1, respectivamente. Para mais informações sobre distribuição de peso, acesse: https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/ (*Seção Server Weights*).
-
-Reponda as seguintes perguntas abaixo após desenvolver as modificações necessárias para que esses novos requisitos sejam alcançados. 
-
-1. Como é feita a distribuição das requisições para o endpoint **/mult** ? Discorra o que acontece. (use Postman, Isomnia, thunder client...)
-
-2. O que acontece quando os containers da aplicação **mult** param de funcionar? 
-Para simular esse cenário [use o *docker stop nome_container* para parar containers](https://medium.com/xp-inc/principais-comandos-docker-f9b02e6944cd). Pare cada um dos containers que estão recebendo requisição da aplicação **mult** por vez e analise o que está acontecendo. 
-> O container de **backup** não deve ser parado. 
-
-Ao terminar os experimentos, lembre-se de executar ```docker-compose down```
-
-## Indicação de projetos usando Microsserviços
-
-- https://github.com/rodrigoclira/micro-livraria
-- https://github.com/rodrigoclira/microservice-WEB2
-
-## GRPC ou API Rest ? 
-
-https://cloud.google.com/blog/products/api-management/understanding-grpc-openapi-and-rest-and-when-to-use-them
