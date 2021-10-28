@@ -13,7 +13,7 @@ Assunto| Projeto | Atividade
 ---:|:---:|:---:
 **Arquitetura**|   |
 1 | [Monolítico](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/monolitico) | 
-2 | [Microserviços](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/microservicos) | Criação do microsserviço *mult*
+2 | [Microsserviços](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/microsservicos) | Criação do microsserviço *mult*
 3 | [Serverless](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/serverless) | Criação da função lambda *div* 
 **Model-View-Controller**|
 1 | [Django MVC](https://github.com/rodrigoclira/devweb2/tree/main/mvc) | 
