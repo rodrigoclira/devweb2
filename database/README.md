@@ -68,3 +68,5 @@ sudo systemctl daemon-reload
 ](https://imasters.com.br/banco-de-dados/sql-ou-nosql-eis-a-questao)
 
 [Como escolher entre SQL e NoSQL](https://pt.stackoverflow.com/questions/122452/como-escolher-entre-nosql-e-sql)
+
+[Banco de Dados NoSQL: Um manual prático e didático](https://blog.geekhunter.com.br/banco-de-dados-nosql-um-manual-pratico-e-didatico/)
