@@ -42,3 +42,18 @@ http://127.0.0.1:8000/projeto/
 ## AWS
 
 Replique o projeto utilizando uma instância do RDS e do DocumentDB na AWS.
+
+
+## FAQ
+
+### Erros Mongodb
+Mongo não inicia, erro com status 14 < https://stackoverflow.com/questions/64608581/mongodb-code-exited-status-14-failed-but-not-any-clear-errors > 
+
+![image](https://user-images.githubusercontent.com/276077/140451154-46459ade-85d0-4839-b24a-dca3c28df0d3.png)
+
+```
+chown -R mongod:mongod /var/lib/mongo/
+chown mongod:mongod /tmp/mongodb-27017.sock
+
+systemctl restart mongod
+```
