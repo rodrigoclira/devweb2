@@ -59,3 +59,12 @@ sudo chown mongod:mongod /tmp/mongodb-27017.sock
 
 sudo systemctl daemon-reload
 ```
+
+## Referências 
+[SQL vs NoSQL, qual usar?
+](https://www.treinaweb.com.br/blog/sql-vs-nosql-qual-usar#:~:text=O%20NoSQL%20%C3%A9%20mais%20indicado,flex%C3%ADvel%20no%20suporte%20de%20dados.)
+
+[SQL ou NoSQL: eis a questão!!
+](https://imasters.com.br/banco-de-dados/sql-ou-nosql-eis-a-questao)
+
+[Como escolher entre SQL e NoSQL](https://pt.stackoverflow.com/questions/122452/como-escolher-entre-nosql-e-sql)
