@@ -51,9 +51,11 @@ Mongo não inicia, erro com status 14 < https://stackoverflow.com/questions/6460
 
 ![image](https://user-images.githubusercontent.com/276077/140451154-46459ade-85d0-4839-b24a-dca3c28df0d3.png)
 
-```
-chown -R mongod:mongod /var/lib/mongo/
-chown mongod:mongod /tmp/mongodb-27017.sock
+Comandos necessários
 
-systemctl restart mongod
+```
+sudo chown -R mongod:mongod /var/lib/mongo/
+sudo chown mongod:mongod /tmp/mongodb-27017.sock
+
+sudo systemctl daemon-reload
 ```
