@@ -1,0 +1,333 @@
+- model: auth.user
+  fields:
+    password: pbkdf2_sha256$260000$Jz3Zohhshr9AsDIJ2o2876$tbX3xZzE6N5lf1dNrhq3+N2nMjdj72zDNgE4t+3yQa4=
+    last_login: 2021-06-02 02:31:07.313899+00:00
+    is_superuser: true
+    username: admin
+    first_name: ''
+    last_name: ''
+    email: ''
+    is_staff: true
+    is_active: true
+    date_joined: 2021-06-02 02:29:58.787847+00:00
+    groups: []
+    user_permissions: []
+- model: sessions.session
+  pk: qcsamwbkuhwo9g9eovev88msjed2bkg1
+  fields:
+    session_data: .eJxVjMsOwiAQAP-FsyFQXB4evfsNDewuUjWQlPZk_HdD0oNeZybzFnPctzLvndd5IXERWpx-WYr45DoEPWK9N4mtbuuS5EjkYbu8NeLX9Wj_BiX2MrYJvWX24DMHq5NJqAOcnUVgh06rFDNZyIoUkLERJhMGUJinzMaLzxfx8DhC:1loGex:W77iG50BirI5xwjN03fJNiH6alPFjP0Sa289ch-CjEw
+    expire_date: 2021-06-16 02:31:07.374658+00:00
+- model: core.professor
+  pk: 1
+  fields:
+    nome: Rodrigo Lira
+    email: rodrigo.lira@paulista.ifpe.edu.br
+    lattes: http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4408742J0
+- model: core.professor
+  pk: 2
+  fields:
+    nome: Mercio Andrade
+    email: mercio.andrade@paulista.ifpe.edu.br
+    lattes: https://www.escavador.com/sobre/6545421/mercio-antonio-oliveira-de-andrade
+- model: core.professor
+  pk: 3
+  fields:
+    nome: Flávio Oliveira
+    email: flavio.oliveira@paulista.ifpe.edu.br
+    lattes: http://lattes.cnpq.br/6828380394080049
+- model: projeto.tipo
+  pk: 1
+  fields:
+    nome: extensão
+- model: projeto.tipo
+  pk: 2
+  fields:
+    nome: pesquisa
+- model: projeto.tipo
+  pk: 3
+  fields:
+    nome: inovação
+- model: projeto.projeto
+  pk: 1
+  fields:
+    titulo: Sistema de Monitoramento da Qualidade de Água
+    descricao: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed
+      magna ac nibh ullamcorper dignissim tristique et tortor. Etiam tempus nibh et
+      arcu pretium tempus. Suspendisse sollicitudin varius mi, nec pellentesque eros
+      pharetra sit amet. Vivamus convallis iaculis egestas. Duis ornare purus eu dui
+      venenatis posuere accumsan facilisis lectus. Duis elementum vehicula eros, non
+      ultricies lacus ullamcorper sit amet. Aliquam malesuada nec lacus at egestas.
+      Proin dui ipsum, dictum a dignissim he
+    inicio: 2021-06-02
+    fim: 2022-11-30
+    aprovado: true
+    coordenador: 1
+- model: projeto.projeto
+  pk: 2
+  fields:
+    titulo: XAI - Uma abordagem diferente
+    descricao: Phasellus lectus arcu, scelerisque vitae dui vel, vestibulum bibendum
+      turpis. Donec nec iaculis orci. Integer id imperdiet ipsum. Class aptent taciti
+      sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed
+      aliquet non ligula ac aliquet. Maecenas id consequat sem. Nulla a quam commodo
+      felis ornare ultricies. Aliquam luctus eleifend mi ut convallis. Proin a ante
+      sollicitudin, volutpat turpis ac, consequat enim. Orci varius natoque penatibus
+      et magnis dis parturient montes, nasc
+    inicio: 2021-06-02
+    fim: 2022-06-04
+    aprovado: false
+    coordenador: 3
+- model: projeto.tipoprojeto
+  pk: 1
+  fields:
+    tipo: 2
+    projeto: 1
+- model: projeto.tipoprojeto
+  pk: 2
+  fields:
+    tipo: 2
+    projeto: 2
+- model: projeto.colaboradorprojeto
+  pk: 1
+  fields:
+    colaborador: 1
+    projeto: 2
+- model: projeto.colaboradorprojeto
+  pk: 2
+  fields:
+    colaborador: 2
+    projeto: 1
+- model: projeto.tag
+  pk: 1
+  fields:
+    tag: iot
+- model: projeto.tag
+  pk: 2
+  fields:
+    tag: ia
+- model: projeto.projetotag
+  pk: 1
+  fields:
+    projeto: 1
+    tag: 1
+- model: admin.logentry
+  pk: 1
+  fields:
+    action_time: 2021-06-02 02:40:45.486664+00:00
+    user:
+    - admin
+    content_type:
+    - core
+    - professor
+    object_id: '1'
+    object_repr: Professor object (1)
+    action_flag: 1
+    change_message: '[{"added": {}}]'
+- model: admin.logentry
+  pk: 2
+  fields:
+    action_time: 2021-06-02 02:42:07.836747+00:00
+    user:
+    - admin
+    content_type:
+    - core
+    - professor
+    object_id: '2'
+    object_repr: Professor object (2)
+    action_flag: 1
+    change_message: '[{"added": {}}]'
+- model: admin.logentry
+  pk: 3
+  fields:
+    action_time: 2021-06-02 02:43:49.047866+00:00
+    user:
+    - admin
+    content_type:
+    - projeto
+    - projeto
+    object_id: '1'
+    object_repr: Projeto object (1)
+    action_flag: 1
+    change_message: '[{"added": {}}]'
+- model: admin.logentry
+  pk: 4
+  fields:
+    action_time: 2021-06-02 02:44:59.140967+00:00
+    user:
+    - admin
+    content_type:
+    - projeto
+    - tag
+    object_id: '1'
+    object_repr: Tag object (1)
+    action_flag: 1
+    change_message: '[{"added": {}}]'
+- model: admin.logentry
+  pk: 5
+  fields:
+    action_time: 2021-06-02 02:46:29.297093+00:00
+    user:
+    - admin
+    content_type:
+    - projeto
+    - tipo
+    object_id: '1'
+    object_repr: extensão
+    action_flag: 1
+    change_message: '[{"added": {}}]'
+- model: admin.logentry
+  pk: 6
+  fields:
+    action_time: 2021-06-02 02:46:36.457929+00:00
+    user:
+    - admin
+    content_type:
+    - projeto
+    - tipo
+    object_id: '2'
+    object_repr: pesquisa
+    action_flag: 1
+    change_message: '[{"added": {}}]'
+- model: admin.logentry
+  pk: 7
+  fields:
+    action_time: 2021-06-02 02:46:43.284362+00:00
+    user:
+    - admin
+    content_type:
+    - projeto
+    - tipo
+    object_id: '3'
+    object_repr: inovação
+    action_flag: 1
+    change_message: '[{"added": {}}]'
+- model: admin.logentry
+  pk: 8
+  fields:
+    action_time: 2021-06-02 02:46:54.659756+00:00
+    user:
+    - admin
+    content_type:
+    - projeto
+    - tipoprojeto
+    object_id: '1'
+    object_repr: TipoProjeto object (1)
+    action_flag: 1
+    change_message: '[{"added": {}}]'
+- model: admin.logentry
+  pk: 9
+  fields:
+    action_time: 2021-06-02 02:50:07.076095+00:00
+    user:
+    - admin
+    content_type:
+    - projeto
+    - projetotag
+    object_id: '1'
+    object_repr: ProjetoTag object (1)
+    action_flag: 1
+    change_message: '[{"added": {}}]'
+- model: admin.logentry
+  pk: 10
+  fields:
+    action_time: 2021-06-02 02:51:46.711101+00:00
+    user:
+    - admin
+    content_type:
+    - core
+    - professor
+    object_id: '3'
+    object_repr: Flávio Oliveira
+    action_flag: 1
+    change_message: '[{"added": {}}]'
+- model: admin.logentry
+  pk: 11
+  fields:
+    action_time: 2021-06-02 02:51:53.493448+00:00
+    user:
+    - admin
+    content_type:
+    - core
+    - professor
+    object_id: '1'
+    object_repr: Rodrigo Lira
+    action_flag: 2
+    change_message: '[{"changed": {"fields": ["Nome"]}}]'
+- model: admin.logentry
+  pk: 12
+  fields:
+    action_time: 2021-06-02 02:53:27.767590+00:00
+    user:
+    - admin
+    content_type:
+    - projeto
+    - projeto
+    object_id: '2'
+    object_repr: XAI - Uma abordagem diferente
+    action_flag: 1
+    change_message: '[{"added": {}}]'
+- model: admin.logentry
+  pk: 13
+  fields:
+    action_time: 2021-06-02 02:53:39.510697+00:00
+    user:
+    - admin
+    content_type:
+    - projeto
+    - tag
+    object_id: '2'
+    object_repr: ia
+    action_flag: 1
+    change_message: '[{"added": {}}]'
+- model: admin.logentry
+  pk: 14
+  fields:
+    action_time: 2021-06-02 02:53:51.836952+00:00
+    user:
+    - admin
+    content_type:
+    - projeto
+    - tipoprojeto
+    object_id: '2'
+    object_repr: TipoProjeto object (2)
+    action_flag: 1
+    change_message: '[{"added": {}}]'
+- model: admin.logentry
+  pk: 15
+  fields:
+    action_time: 2021-06-02 02:54:08.848765+00:00
+    user:
+    - admin
+    content_type:
+    - projeto
+    - colaboradorprojeto
+    object_id: '1'
+    object_repr: ColaboradorProjeto object (1)
+    action_flag: 1
+    change_message: '[{"added": {}}]'
+- model: admin.logentry
+  pk: 16
+  fields:
+    action_time: 2021-06-02 02:54:16.182177+00:00
+    user:
+    - admin
+    content_type:
+    - projeto
+    - colaboradorprojeto
+    object_id: '2'
+    object_repr: ColaboradorProjeto object (2)
+    action_flag: 1
+    change_message: '[{"added": {}}]'
+- model: admin.logentry
+  pk: 17
+  fields:
+    action_time: 2021-06-02 03:25:44.604797+00:00
+    user:
+    - admin
+    content_type:
+    - projeto
+    - coordenadorprojeto
+    object_id: '1'
+    object_repr: CoordenadorProjeto object (1)
+    action_flag: 1
+    change_message: '[{"added": {}}]'
