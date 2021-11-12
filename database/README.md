@@ -7,16 +7,18 @@ Neste projeto o MongoDB é utilizado para persistir as informaçẽos dos coment
 
 ## Pré-requisitos
 
-> **Instalar bibliotecas** informadas no arquivo 'requirements.txt' 
+> 1. **Instalar bibliotecas** informadas no arquivo 'requirements.txt' 
 
 ```bash
 pip3 install -r requirements.txt
 ```
 
-> **Instalação do MongoDB**
+> 2. **Instalação do MongoDB**
 > 
 > Use o tutorial do site do MongoDB que seja compatível com o seu SO. 
-> Link direto para o [Amazon Linux](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-amazon/)
+> Link direto para o [Amazon Linux](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-amazon/). 
+> Após a instalação, confirme se o daemon foi iniciado. Caso contrário, inicie-o. 
+
 
 ## Comandos
 
