@@ -4,7 +4,9 @@
 
 
 ## Pré-Requisitos: 
-| [Docker](https://docs.docker.com/engine/install)
+| Instalação do [Docker](https://docs.docker.com/engine/install)
+
+| Instalação do [Docker Compose](https://docs.docker.com/compose/install/)
 
 
 O passo a passo segue o que é apresentado tutorial apresentado em: [Building a Python scalable Flask application using docker-compose and Nginx load balancer
