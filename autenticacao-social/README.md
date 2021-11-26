@@ -23,6 +23,6 @@ python manage.py runserver_plus --cert-file cert.crt
 
 Por fim, acesse a página inicial no navegador: 
 
-http://127.0.0.1:8000/projeto/
+https://mysite.com:8000/projeto/
 
 
