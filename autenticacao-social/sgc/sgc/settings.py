@@ -178,17 +178,18 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
+#Redirecionamentose caminhos para autenticação
 LOGIN_REDIRECT_URL = 'projeto:listar'
 LOGOUT_URL = 'logout'
 LOGIN_URL = 'login'
 
-
+#backends de autenticação
 AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
-    'core.authentication.EmailAuthBackend',
+    'django.contrib.auth.backends.ModelBackend', #backend de autenticação padrão do django
+    'core.authentication.EmailAuthBackend', #backend para autenticação por email
     'social_core.backends.google.GoogleOAuth2'
 ]
 
-
+#Dados obtidos do console do google
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '179227412138-qj5mir02b8ea8iuv24k5js6864dqgir1.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'g5jwJpOl5VYdbkQdqDeL3xPV'
