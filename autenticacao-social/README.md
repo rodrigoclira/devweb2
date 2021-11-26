@@ -116,11 +116,56 @@ e selecione 'ID do Cliente Ouath'
 
 ![image](https://user-images.githubusercontent.com/276077/143517602-d6f3f06c-e06f-401b-b33b-f3c2e2ba767f.png)
 
-15. Configure o nome da aplicação, o email de contato e o domínio autorizado. Caso esteja rodando em ambiente local, lembre-se de criar um domínio interno. O google irá redirecionar a requisição para esse domínio após a autenciação e ele precisa existir (mesmo que apenas na sua máquina). Se você estiver num ambiente de produção, utilize o seu domínio real. 
+15. Configure o nome da aplicação, o email de contato e o domínio autorizado. Caso esteja rodando em ambiente local, lembre-se de criar um domínio interno.
 
 ![image](https://user-images.githubusercontent.com/276077/143517917-4de3c45e-3727-4e7f-97e7-dd173abb2171.png)
-![image](https://user-images.githubusercontent.com/276077/143518109-ffce38b0-ac15-4acb-b4c7-4f9c7f431b6f.png)
+![image](https://user-images.githubusercontent.com/276077/143518367-a7187537-4934-41bb-b17c-2c21fe646321.png)
+
+
+16. Prossiga clicando em 'Salvar e Continuar' até a tela de Resumo
+
+![image](https://user-images.githubusercontent.com/276077/143518610-3972002d-1226-4558-903c-2412834395c0.png)
+
+
+17. Por fim clique em 'Voltar para o Painel' na tela de Resumo. 
+
+![image](https://user-images.githubusercontent.com/276077/143518761-aa0f8d01-927f-45cf-b257-a44d0d9eb621.png)
+
+18. Novamente clique em 'Criar Credenciais' e Escolha 'ID do Cliente Oauth'
+
+![image](https://user-images.githubusercontent.com/276077/143518927-b27c2412-cc7d-4e24-93cb-b4ad5ec19ffb.png)
+
+19. Escolha 'Aplicação da Web'
+
+![image](https://user-images.githubusercontent.com/276077/143518980-f65ad63d-4c71-4827-8602-e023e9cae0a0.png)
+
+20. Agora é importante ter atenção para a URI de redirecionamento. Ela será usada para indicar a sua aplicação que a autenticação foi realizada com sucesso e segue um padrão definido pelo python social auth. A uri para o 'mysite.com' é 'https://mysite.com:8000/social-auth/complete/google-oauth2/' e o 'https://mysite.com:8000/social-auth/', como exibido na página abaixo. 
+
+![image](https://user-images.githubusercontent.com/276077/143520584-698036ec-5b60-4d5a-a55d-364013fb782e.png)
+
+21. Use as informações indicadas na tela abaixo para configurar as variáveis *SOCIAL_AUTH_GOOGLE_OAUTH2_KEY* e o *SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET* no settings.py
+
+![image](https://user-images.githubusercontent.com/276077/143519479-310351cb-c2d4-4dae-87de-e61918ab8b21.png)
+
+
+![image](https://user-images.githubusercontent.com/276077/143519561-af366817-ed82-42d1-aa6f-9b022559cba9.png)
+
+
+22. Para finalizar a configuração na conta do google, ative o Google+ API seguindo os passos abaixo: 
+![image](https://user-images.githubusercontent.com/276077/143519982-f70c9c20-7f2a-4dc1-9c0c-d2c8a770919d.png)
+
+
+![image](https://user-images.githubusercontent.com/276077/143520050-92512198-bcee-4842-a6a3-f78ff00e22c5.png)
+
+![image](https://user-images.githubusercontent.com/276077/143520084-3e9bc759-2bfa-4eed-a8b2-29b03c99736c.png)
+
+23. Para adicionar o link do login social, escrevra o seguinte código html no seu template de login. 
+
+```html
+<li class="google">
+        <a href="{% url "social:begin" "google-oauth2" %}">Login com o Google </a>
+</li>
+```
 
 
 
-15. 
