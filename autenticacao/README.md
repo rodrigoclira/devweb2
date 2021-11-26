@@ -23,3 +23,8 @@ $ python manage.py runserver
 Por fim, acesse a página inicial no navegador: 
 
 http://127.0.0.1:8000/projeto/
+
+
+## Referências
+
+[Autenticação de usuário no Django](https://docs.djangoproject.com/pt-br/3.2/topics/auth/)

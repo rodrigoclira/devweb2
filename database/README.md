@@ -6,9 +6,19 @@ Neste projeto o MongoDB é utilizado para persistir as informaçẽos dos coment
 
 
 ## Pré-requisitos
-| Instalar dependências informadas no arquivo 'requirements.txt' 
 
-| Instalação do MongoDB
+> 1. **Instalar bibliotecas** informadas no arquivo 'requirements.txt' 
+
+```bash
+pip3 install -r requirements.txt
+```
+
+> 2. **Instalação do MongoDB**
+> 
+> Use o tutorial do site do MongoDB que seja compatível com o seu SO. 
+> Link direto para o [Amazon Linux](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-amazon/). 
+> Após a instalação, confirme se o daemon foi iniciado. Caso contrário, inicie-o. 
+
 
 ## Comandos
 
@@ -34,3 +44,31 @@ http://127.0.0.1:8000/projeto/
 ## AWS
 
 Replique o projeto utilizando uma instância do RDS e do DocumentDB na AWS.
+
+
+## FAQ
+
+### Erros Mongodb
+Mongo não inicia, erro com status 14 < https://stackoverflow.com/questions/64608581/mongodb-code-exited-status-14-failed-but-not-any-clear-errors > 
+
+![image](https://user-images.githubusercontent.com/276077/140451154-46459ade-85d0-4839-b24a-dca3c28df0d3.png)
+
+Comandos necessários
+
+```
+sudo chown -R mongod:mongod /var/lib/mongo/
+sudo chown mongod:mongod /tmp/mongodb-27017.sock
+
+sudo systemctl daemon-reload
+```
+
+## Referências 
+[SQL vs NoSQL, qual usar?
+](https://www.treinaweb.com.br/blog/sql-vs-nosql-qual-usar#:~:text=O%20NoSQL%20%C3%A9%20mais%20indicado,flex%C3%ADvel%20no%20suporte%20de%20dados.)
+
+[SQL ou NoSQL: eis a questão!!
+](https://imasters.com.br/banco-de-dados/sql-ou-nosql-eis-a-questao)
+
+[Como escolher entre SQL e NoSQL](https://pt.stackoverflow.com/questions/122452/como-escolher-entre-nosql-e-sql)
+
+[Banco de Dados NoSQL: Um manual prático e didático](https://blog.geekhunter.com.br/banco-de-dados-nosql-um-manual-pratico-e-didatico/)
