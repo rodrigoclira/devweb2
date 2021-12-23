@@ -1,4 +1,4 @@
-# Exemplo de projeto usando OAUTH2 (django-social)
+# Exemplo de projeto com Cache
 
 Para rodar o prorgama: 
 
