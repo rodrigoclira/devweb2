@@ -28,7 +28,7 @@ Assunto| Projeto | Atividade
 **API**|
 1 | [Django Rest Framework](https://github.com/rodrigoclira/devweb2/tree/main/api) |
 **Caching**|
-1 | [Caching com Redis](https://github.com/rodrigoclira/devweb2/tree/main/caching) |
+1 | [Caching com Memcached](https://github.com/rodrigoclira/devweb2/tree/main/caching) |
 **Arquiteturas Modernas**|
 1 | [Arquiteturas Modernas]() 
 **Implantação**
