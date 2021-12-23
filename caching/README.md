@@ -35,9 +35,9 @@ $ python manage.py makemigrations
 
 e em seguida inicie a aplicação:
 ```
-$ python manage.py runserver
+$ python manage.py runserver_plus --cert-file cert.crt
 ```
 
 Por fim, acesse a página inicial no navegador: 
 
-http://127.0.0.1:8000/projeto/
+https://127.0.0.1:8000/projeto/
