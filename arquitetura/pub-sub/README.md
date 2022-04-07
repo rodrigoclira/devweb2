@@ -1,6 +1,4 @@
-# Projeto usando a arquitetura Microsserviços (Flask + Docker)
-
-![image](https://user-images.githubusercontent.com/276077/116923013-77009f00-ac2c-11eb-859b-735835360d09.png)
+# Projeto usando padrão PUB-SUB (Flask + Docker + Apache Kafka)
 
 
 ## Pré-Requisitos: 
@@ -9,21 +7,28 @@
 | Instalação do [Docker Compose](https://docs.docker.com/compose/install/)
 
 
-O passo a passo segue o que é apresentado tutorial apresentado em: [Building a Python scalable Flask application using docker-compose and Nginx load balancer
-](https://www.linkedin.com/pulse/building-python-scalable-flask-application-using-nginx-itay-melamed/)
+Antes de começar, vamos entender alguns conceitos importantes sobre o Kafka:
 
-Algumas alterações foram realizadas para que o projeto ficasse com as mesmas funcionalidades das apresentadas nos projetos de arquitetura serverless e monolítica (API de soma, sub e calc). Para fins de discussão sobre a funcionalidade de *Load Balancing*, o projeto "app" apresentado no tutorial foi mantido.
+**Kafka cluster**: Um sistema distribuído de clusters kafka
 
+**Kafka broker**: O message broker responsável por mediar os dados entre os produtores e os consumidores. Eles são responsáveis por juntar as operações de I/O e persistir isso no cluster.
 
-Para executá-lo, basta baixar a pasta do projeto (microservicos) e executar o comando "docker-compose up" na pasta principal. 
+**ZooKeeper**: Gerencia todo controle do cluster. Ele age como um repositório de configuração, mantendo os metadados do cluster e também implementando os mecanismo do cluster. 
+
+**Kafka producer**: Aplicação cliente responsável por adicionar registros nos tópicos do Kafka.
+
+**Kafka consumer**: Aplicação que ler os tópicos. 
+
+O exemplo mostra um projeto que utiliza microsserviços e o apache kafka. O apache kafka funciona como um broker para transmitir mensagens publicadas no tópico 'imagem' pelo microsserviço 'upload' para os microsserviços 'rotate' e 'grayscale'. Ao serem notificados, esses microsserviços realizam operações em arquivos de imagem que estão salvos num volume compartilhado. 
+
+Para executá-lo, basta baixar a pasta do projeto (pub-sub) e executar o comando "docker-compose up" na pasta principal. 
 
 ```
-$ sudo docker-compose up --build -d --scale app=2
+$ sudo docker-compose up --build 
 ```
 
-![image](https://user-images.githubusercontent.com/276077/116919459-ab259100-ac27-11eb-8edb-5bd0f81f701e.png)
-
-O comando cria, inicia e anexa containers em um serviço. O parâmetro --build força o construção da imagem antes da criação do serviço, o parâmetro -d faz com que os containers sejam executados em backgroud, e por fim, o --scale informa a quantidade de containers de um determinado serviço, sobrescrevendo o valor informado no compose-file.
+![image](https://user-images.githubusercontent.com/276077/162104971-34cde74b-c4f7-4da5-a2da-d18176780838.png)
+O comando cria, inicia e anexa containers em um serviço. O parâmetro --build força o construção da imagem antes da criação do serviço.
 
 Mais informações do docker-compose no [link](https://docs.docker.com/compose/reference/down/)
 
@@ -39,16 +44,23 @@ Se tudo estiver ocorrido da forma esperada, o resultado será algo assim:
 Ainda é possível analisar cada um dos logs gerados pelas aplicações no container usando o comando "docker logs". 
 
 ```
-sudo docker logs nginx -f
+sudo docker logs pub-sub_rotate_1 -f
 ```
 
-Nesse caso analisando o serviço (container) nginx. 
 
-![image](https://user-images.githubusercontent.com/276077/116920240-c2b14980-ac28-11eb-9150-b20f653ccb70.png)
 
-Agora é só usar o postman para fazer as requisições. Exemplo de requisição para a funcionalidade de soma
+Acessando o KafDrop em ```localhost:9000```
 
-![image](https://user-images.githubusercontent.com/276077/116920423-fdb37d00-ac28-11eb-8ad3-1517aaedeb52.png)
+> “Kafdrop is a web UI for viewing Kafka topics and browsing consumer groups. The tool displays information such as brokers, topics, partitions, consumers, and lets you view messages.” — [Kafdrop on GitHub](https://github.com/obsidiandynamics/kafdrop)
+
+![image](https://user-images.githubusercontent.com/276077/162105063-717094f5-5f10-478d-ac4b-3c20fd7350b2.png)
+
+Visualizando os tópicos
+
+![image](https://user-images.githubusercontent.com/276077/162105269-32fce2fd-363e-4393-85c2-951fd4ac9639.png)
+
+
+
 
 Por fim, o comando 'docker-compose down' derruba todos os serviços. 
 
@@ -56,29 +68,39 @@ Por fim, o comando 'docker-compose down' derruba todos os serviços.
 sudo docker-compose down
 ```
 
-![image](https://user-images.githubusercontent.com/276077/116920668-4f5c0780-ac29-11eb-8905-dadc80b5fe62.png)
-
 ## Atividade
 
-Adicione uma novo microsserviço a arquitetura atual do exemplo. Ele será responsável pelo novo *endpoint* da api que realiza uma multiplicação (**/mult**). Ele receberá dois valores **op1**, **op2** e retornará o resultado da multiplicação. Você precisa criar umaa nova aplicação coma uma outra framework (não utilizar flask).
+Adicione uma novo ator (microsserviço) no projeto que será responsável por notificar através do telegram ou e-mail que a operação do 'rotate' ou 'grayscale' foi finalizada. Para isso será necessário alterar o projeto adicionando uma nova etapa de pubicação num novo tópico (por exemplo **/notificacao**) por parte do microsserviço 'rotate' e 'grayscale'. O novo microsserviço '**notifacador**' será responsável por checar (pooling) o tópico e fazer o envio de mensagem no telegram ou e-mail para um contato defindo (pode ser fixo ou variável**) quando a operação estiver finalizada. 
+** Se fizer variável, coloque um input de e-mail/telegram_id no HTML do microsserviço 'upload'. 
 
-Devido a sua alta demanda de acesso, o microsserviço precisa ser replicada com 3 contêineres. A distribuição será feita através da política de balanceamento de carga *Round Robin* com diferentes pesos e funções. Um contêiner deve ser configurado como **backup** e os outros dois com o peso 3 e 1, respectivamente. Para mais informações sobre distribuição de peso, acesse: https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/ (*Seção Server Weights*).
+As mensagens enviadas devem conter:
+  1. o nome do arquivo original
+  2. a indicação da operação realizada
 
-Reponda as seguintes perguntas abaixo após desenvolver as modificações necessárias para que esses novos requisitos sejam alcançados. 
+Por exemplo: 
+```
+O arquivo perfil.jpg foi rotacionado.
+```
+```
+O arquivo perfil.jpg foi transformado em preto e branco.
+```
 
-1. Como é feita a distribuição das requisições para o endpoint **/mult** ? Discorra o que acontece. (use Postman, Isomnia, thunder client...)
 
-2. O que acontece quando os containers da aplicação **mult** param de funcionar? 
-Para simular esse cenário [use o *docker stop nome_container* para parar containers](https://medium.com/xp-inc/principais-comandos-docker-f9b02e6944cd). Pare cada um dos containers que estão recebendo requisição da aplicação **mult** por vez e analise o que está acontecendo. 
-> O container de **backup** não deve ser parado. 
+
+Sugestões de como usar Telegram/Email: 
+
+  Telegram: 
+    https://usp-python.github.io/05-bot/
+    https://stackoverflow.com/questions/43291868/where-to-find-the-telegram-api-key
+  
+  E-mail:
+    https://realpython.com/python-send-email/
 
 Ao terminar os experimentos, lembre-se de executar ```docker-compose down```
 
-## Indicação de projetos usando Microsserviços
 
-- https://github.com/rodrigoclira/micro-livraria
-- https://github.com/rodrigoclira/microservice-WEB2
+## Artigos que foram base para o projeto
 
-## GRPC ou API Rest ? 
+- Exemplo de código com Kafka < https://betterprogramming.pub/a-simple-apache-kafka-cluster-with-docker-kafdrop-and-python-cf45ab99e2b9 >
 
-https://cloud.google.com/blog/products/api-management/understanding-grpc-openapi-and-rest-and-when-to-use-them
+- Exemplo de programa em Flask com upload de imagem < https://github.com/roytuts/flask/tree/master/python-flask-upload-display-image >
