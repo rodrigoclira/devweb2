@@ -43,14 +43,14 @@ try:
         elif not msg.error():
             data = json.loads(msg.value())
             filename = data['new_file']
-            loggin.warning(f"READING {filename}")
+            logging.warning(f"READING {filename}")
             create_grayscale(IN_FOLDER + filename)
-            loggin.warning (f"ENDING {filename}")
+            logging.warning (f"ENDING {filename}")
         elif msg.error().code() == KafkaError._PARTITION_EOF:
-            loggin.warning('End of partition reached {0}/{1}'
+            logging.warning('End of partition reached {0}/{1}'
                   .format(msg.topic(), msg.partition()))
         else:
-            loggin.error('Error occured: {0}'.format(msg.error().str()))
+            logging.error('Error occured: {0}'.format(msg.error().str()))
 
 except KeyboardInterrupt:
     pass

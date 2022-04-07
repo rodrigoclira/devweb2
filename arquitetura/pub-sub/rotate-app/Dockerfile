@@ -1,5 +1,5 @@
 # using a python small basic image
-FROM python:alpine
+FROM python:3.8.13-alpine3.15
 
 # creates a dir for our application
 WORKDIR /rotate-app
