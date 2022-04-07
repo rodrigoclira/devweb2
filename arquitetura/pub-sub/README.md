@@ -7,6 +7,18 @@
 | Instalação do [Docker Compose](https://docs.docker.com/compose/install/)
 
 
+Antes de começar, vamos entender alguns conceitos importantes sobre o Kafka:
+
+**Kafka cluster**: Um sistema distribuído de clusters kafka
+
+**Kafka broker**: O message broker responsável por mediar os dados entre os produtores e os consumidores. Eles são responsáveis por juntar as operações de I/O e persistir isso no cluster.
+
+**ZooKeeper**: Gerencia todo controle do cluster. Ele age como um repositório de configuração, mantendo os metadados do cluster e também implementando os mecanismo do cluster. 
+
+**Kafka producer**: Aplicação cliente responsável por adicionar registros nos tópicos do Kafka.
+
+**Kafka consumer**: Aplicação que ler os tópicos. 
+
 O exemplo mostra um projeto que utiliza microsserviços e o apache kafka. O apache kafka funciona como um broker para transmitir mensagens publicadas no tópico 'imagem' pelo microsserviço 'upload' para os microsserviços 'rotate' e 'grayscale'. Ao serem notificados, esses microsserviços realizam operações em arquivos de imagem que estão salvos num volume compartilhado. 
 
 Para executá-lo, basta baixar a pasta do projeto (pub-sub) e executar o comando "docker-compose up" na pasta principal. 
@@ -15,8 +27,7 @@ Para executá-lo, basta baixar a pasta do projeto (pub-sub) e executar o comando
 $ sudo docker-compose up --build 
 ```
 
-![image](https://user-images.githubusercontent.com/276077/116919459-ab259100-ac27-11eb-8edb-5bd0f81f701e.png)
-
+![image](https://user-images.githubusercontent.com/276077/162104971-34cde74b-c4f7-4da5-a2da-d18176780838.png)
 O comando cria, inicia e anexa containers em um serviço. O parâmetro --build força o construção da imagem antes da criação do serviço.
 
 Mais informações do docker-compose no [link](https://docs.docker.com/compose/reference/down/)
@@ -35,6 +46,20 @@ Ainda é possível analisar cada um dos logs gerados pelas aplicações no conta
 ```
 sudo docker logs pub-sub_rotate_1 -f
 ```
+
+
+
+Acessando o KafDrop em ```localhost:9000```
+
+> “Kafdrop is a web UI for viewing Kafka topics and browsing consumer groups. The tool displays information such as brokers, topics, partitions, consumers, and lets you view messages.” — [Kafdrop on GitHub](https://github.com/obsidiandynamics/kafdrop)
+
+![image](https://user-images.githubusercontent.com/276077/162105063-717094f5-5f10-478d-ac4b-3c20fd7350b2.png)
+
+Visualizando os tópicos
+
+![image](https://user-images.githubusercontent.com/276077/162105269-32fce2fd-363e-4393-85c2-951fd4ac9639.png)
+
+
 
 
 Por fim, o comando 'docker-compose down' derruba todos os serviços. 
