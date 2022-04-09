@@ -24,7 +24,7 @@ def create_grayscale(path_file):
 #sleep(30)
 ### Consumer
 c = Consumer({
-    'bootstrap.servers': 'pub-sub_kafka1_1:19091',
+    'bootstrap.servers': 'kafka1:19091,kafka2:19092,kafka3:19093',
     'group.id': 'grayscale-group',
     'client.id': 'client-1',
     'enable.auto.commit': True,

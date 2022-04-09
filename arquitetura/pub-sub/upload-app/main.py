@@ -75,7 +75,7 @@ def display_image(filename):
 	return redirect(url_for('static', filename='uploads/' + filename), code=301)
 
 def publish(topic, filename):
-    p = Producer({'bootstrap.servers': 'pub-sub_kafka1_1:19091'})
+    p = Producer({'bootstrap.servers': 'kafka1:19091,kafka2:19092,kafka3:19093'})
     p.produce(topic, key=str(uuid4()), value=get_json_str(time.time(), filename), on_delivery=delivery_report)
     p.flush()
 
