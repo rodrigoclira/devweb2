@@ -15,8 +15,8 @@ Assunto| Projeto | Atividade
 1 | [Monolítico](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/monolitico) | 
 2 | [Microsserviços](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/microsservicos) | [Criação do microsserviço '*mult*' e configuração do nginx](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/microsservicos#atividade)
 3 | [Serverless](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/serverless) | Criação da função lambda *div* 
-4 | [Publish/Subscribe](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/pub-sub) | [Microsserviço '_Notificador_' usando pub/sub](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/pub-sub#atividade)
 4 | [Híbrida (Serverless + Microsserviços)](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/hibrida) | 
+5 | [Publish/Subscribe](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/pub-sub) | [Microsserviço '_Notificador_' usando pub/sub](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/pub-sub#atividade)
 **Model-View-Controller**|
 1 | [Django MVC](https://github.com/rodrigoclira/devweb2/tree/main/mvc) | 
 **Banco de Dados**|
