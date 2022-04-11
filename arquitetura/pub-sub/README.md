@@ -1,4 +1,4 @@
-# Projeto usando padrão PUB-SUB (Flask + Docker + Apache Kafka)
+# Projeto usando padrão Publish/Subscribe (Flask + Docker + Apache Kafka)
 
 
 ## Pré-Requisitos: 
@@ -103,6 +103,7 @@ Ao terminar os experimentos, lembre-se de executar ```docker-compose down```
 
 - Exemplo de programa em Flask com upload de imagem < https://github.com/roytuts/flask/tree/master/python-flask-upload-display-image >
 
-## O que é o Kafka?
+## Material Complementar
 
+[Arquitetura Publish/Subscribe](https://engsoftmoderna.info/cap7.html#arquiteturas-publishsubscribe)
 [Entendo o Kafka](https://vepo.medium.com/entendendo-o-kafka-bf64169e421f)
