@@ -85,8 +85,6 @@ O arquivo perfil.jpg foi rotacionado.
 O arquivo perfil.jpg foi transformado em preto e branco.
 ```
 
-
-
 Sugestões de como usar Telegram/Email: 
 
   Telegram: 
@@ -104,3 +102,7 @@ Ao terminar os experimentos, lembre-se de executar ```docker-compose down```
 - Exemplo de código com Kafka < https://betterprogramming.pub/a-simple-apache-kafka-cluster-with-docker-kafdrop-and-python-cf45ab99e2b9 >
 
 - Exemplo de programa em Flask com upload de imagem < https://github.com/roytuts/flask/tree/master/python-flask-upload-display-image >
+
+## O que é o Kafka?
+
+[Entendo o Kafka](https://vepo.medium.com/entendendo-o-kafka-bf64169e421f)
