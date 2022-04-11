@@ -1,6 +1,9 @@
 # Projeto usando padrão Publish/Subscribe (Flask + Docker + Apache Kafka)
 
 
+![image](https://user-images.githubusercontent.com/276077/162766448-13e0ebe8-8325-4e32-a8d7-5deff7744c10.png)
+
+
 ## Pré-Requisitos: 
 | Instalação do [Docker](https://docs.docker.com/engine/install)
 
