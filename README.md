@@ -1,6 +1,6 @@
 # Desenvolvimento de Sistemas Web 2 do IFPE Campus Paulista
 
-Exemplos de projetos usando os conceitos apresentados na disciplina de **Desenvolvimento de Sistemas Web 2** do IFPE Campus Paulista.
+Exemplos de projetos usando os conceitos apresentados na disciplina de **Desenvolvimento de Sistemas Web 2** do curso de Análise e Desenvolvimento de Sisteams do IFPE _Campus_ Paulista.
 
 
 > **Aviso**: Este repositório está em evolução. 
