@@ -12,17 +12,17 @@
 
 Antes de começar, vamos entender alguns conceitos importantes sobre o Kafka:
 
-**Kafka cluster**: Um sistema distribuído de clusters kafka
+* **Kafka cluster**: Um sistema distribuído de clusters kafka
 
-**Kafka broker**: O message broker responsável por mediar os dados entre os produtores e os consumidores. Eles são responsáveis por juntar as operações de I/O e persistir isso no cluster.
+* **Kafka broker**: O message broker responsável por mediar os dados entre os produtores e os consumidores. Eles são responsáveis por juntar as operações de I/O e persistir isso no cluster.
 
-**ZooKeeper**: Gerencia todo controle do cluster. Ele age como um repositório de configuração, mantendo os metadados do cluster e também implementando os mecanismo do cluster. 
+* **ZooKeeper**: Gerencia todo controle do cluster. Ele age como um repositório de configuração, mantendo os metadados do cluster e também implementando os mecanismo do cluster. 
 
-**Kafka producer**: Aplicação cliente responsável por adicionar registros nos tópicos do Kafka.
+* **Kafka producer**: Aplicação cliente responsável por adicionar registros nos tópicos do Kafka.
 
-**Kafka consumer**: Aplicação que ler os tópicos. 
+* **Kafka consumer**: Aplicação que ler os tópicos. 
 
-O exemplo mostra um projeto que utiliza microsserviços e o apache kafka. O apache kafka funciona como um broker para transmitir mensagens publicadas no tópico 'imagem' pelo microsserviço 'upload' para os microsserviços 'rotate' e 'grayscale'. Ao serem notificados, esses microsserviços realizam operações em arquivos de imagem que estão salvos num volume compartilhado. 
+O exemplo exibe um projeto que utiliza microsserviços e o apache kafka. O apache kafka funciona como um intermediador para transmitir mensagens publicadas no tópico '_image_' pelo microsserviço 'upload' para os microsserviços 'rotate' e 'grayscale'. Ao serem notificados, esses microsserviços realizam operações em arquivos de imagem que estão salvos num volume compartilhado. 
 
 Para executá-lo, basta baixar a pasta do projeto (pub-sub) e executar o comando "docker-compose up" na pasta principal. 
 
