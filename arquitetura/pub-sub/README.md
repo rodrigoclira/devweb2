@@ -87,12 +87,12 @@ O arquivo perfil.jpg foi transformado em preto e branco.
 
 Sugestões de como usar Telegram/Email: 
 
-  Telegram: 
-    https://usp-python.github.io/05-bot/
-    https://stackoverflow.com/questions/43291868/where-to-find-the-telegram-api-key
+* Telegram: 
+   * https://usp-python.github.io/05-bot/
+   * https://stackoverflow.com/questions/43291868/where-to-find-the-telegram-api-key
   
-  E-mail:
-    https://realpython.com/python-send-email/
+* E-mail:
+   * https://realpython.com/python-send-email/
 
 Ao terminar os experimentos, lembre-se de executar ```docker-compose down```
 
