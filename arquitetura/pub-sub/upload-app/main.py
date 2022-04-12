@@ -62,7 +62,7 @@ def upload_image():
 			os.makedirs(app.config['UPLOAD_FOLDER'])
 		file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 		#print('upload_image filename: ' + filename)
-		flash('Image successfully uploaded and displayed below')
+		flash('Image successfully uploaded.')
 		publish(TOPIC, filename)
 		return render_template('upload.html', filename=filename)
 	else:
