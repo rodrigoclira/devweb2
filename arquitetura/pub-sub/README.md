@@ -1,4 +1,7 @@
-# Projeto usando padrão PUB-SUB (Flask + Docker + Apache Kafka)
+# Projeto usando padrão Publish/Subscribe (Flask + Docker + Apache Kafka)
+
+
+![image](https://user-images.githubusercontent.com/276077/162766448-13e0ebe8-8325-4e32-a8d7-5deff7744c10.png)
 
 
 ## Pré-Requisitos: 
@@ -9,17 +12,17 @@
 
 Antes de começar, vamos entender alguns conceitos importantes sobre o Kafka:
 
-**Kafka cluster**: Um sistema distribuído de clusters kafka
+* **Kafka cluster**: Um sistema distribuído de clusters kafka
 
-**Kafka broker**: O message broker responsável por mediar os dados entre os produtores e os consumidores. Eles são responsáveis por juntar as operações de I/O e persistir isso no cluster.
+* **Kafka broker**: O message broker responsável por mediar os dados entre os produtores e os consumidores. Eles são responsáveis por juntar as operações de I/O e persistir isso no cluster.
 
-**ZooKeeper**: Gerencia todo controle do cluster. Ele age como um repositório de configuração, mantendo os metadados do cluster e também implementando os mecanismo do cluster. 
+* **ZooKeeper**: Gerencia todo controle do cluster. Ele age como um repositório de configuração, mantendo os metadados do cluster e também implementando os mecanismo do cluster. 
 
-**Kafka producer**: Aplicação cliente responsável por adicionar registros nos tópicos do Kafka.
+* **Kafka producer**: Aplicação cliente responsável por adicionar registros nos tópicos do Kafka.
 
-**Kafka consumer**: Aplicação que ler os tópicos. 
+* **Kafka consumer**: Aplicação que ler os tópicos. 
 
-O exemplo mostra um projeto que utiliza microsserviços e o apache kafka. O apache kafka funciona como um broker para transmitir mensagens publicadas no tópico 'imagem' pelo microsserviço 'upload' para os microsserviços 'rotate' e 'grayscale'. Ao serem notificados, esses microsserviços realizam operações em arquivos de imagem que estão salvos num volume compartilhado. 
+O exemplo exibe um projeto que utiliza microsserviços e o apache kafka. O apache kafka funciona como um intermediador para transmitir mensagens publicadas no tópico '_image_' pelo microsserviço 'upload' para os microsserviços 'rotate' e 'grayscale'. Ao serem notificados, esses microsserviços realizam operações em arquivos de imagem que estão salvos num volume compartilhado. 
 
 Para executá-lo, basta baixar a pasta do projeto (pub-sub) e executar o comando "docker-compose up" na pasta principal. 
 
@@ -85,16 +88,14 @@ O arquivo perfil.jpg foi rotacionado.
 O arquivo perfil.jpg foi transformado em preto e branco.
 ```
 
-
-
 Sugestões de como usar Telegram/Email: 
 
-  Telegram: 
-    https://usp-python.github.io/05-bot/
-    https://stackoverflow.com/questions/43291868/where-to-find-the-telegram-api-key
+* Telegram: 
+   * https://usp-python.github.io/05-bot/
+   * https://stackoverflow.com/questions/43291868/where-to-find-the-telegram-api-key
   
-  E-mail:
-    https://realpython.com/python-send-email/
+* E-mail:
+   * https://realpython.com/python-send-email/
 
 Ao terminar os experimentos, lembre-se de executar ```docker-compose down```
 
@@ -104,3 +105,13 @@ Ao terminar os experimentos, lembre-se de executar ```docker-compose down```
 - Exemplo de código com Kafka < https://betterprogramming.pub/a-simple-apache-kafka-cluster-with-docker-kafdrop-and-python-cf45ab99e2b9 >
 
 - Exemplo de programa em Flask com upload de imagem < https://github.com/roytuts/flask/tree/master/python-flask-upload-display-image >
+
+## Material Complementar
+
+[Arquitetura Publish/Subscribe](https://engsoftmoderna.info/cap7.html#arquiteturas-publishsubscribe)
+
+[Entendo o Kafka](https://vepo.medium.com/entendendo-o-kafka-bf64169e421f)
+
+[Apache Kafka](https://medium.com/trainingcenter/apache-kafka-838882261e83)
+
+[Apache Kafka: Aprendendo na prática](https://medium.com/trainingcenter/apache-kafka-codifica%C3%A7%C3%A3o-na-pratica-9c6a4142a08f)
