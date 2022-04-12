@@ -110,3 +110,5 @@ Ao terminar os experimentos, lembre-se de executar ```docker-compose down```
 
 [Arquitetura Publish/Subscribe](https://engsoftmoderna.info/cap7.html#arquiteturas-publishsubscribe)
 [Entendo o Kafka](https://vepo.medium.com/entendendo-o-kafka-bf64169e421f)
+[Apache Kafka](https://medium.com/trainingcenter/apache-kafka-838882261e83)
+[Apache Kafka: Aprendendo na prática](https://medium.com/trainingcenter/apache-kafka-codifica%C3%A7%C3%A3o-na-pratica-9c6a4142a08f)
