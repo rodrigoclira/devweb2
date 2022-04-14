@@ -99,12 +99,14 @@ Sugestões de como usar Telegram/Email:
 
 Ao terminar os experimentos, lembre-se de executar ```docker-compose down```
 
-
 ## Artigos que foram base para o projeto
 
 - Exemplo de código com Kafka < https://betterprogramming.pub/a-simple-apache-kafka-cluster-with-docker-kafdrop-and-python-cf45ab99e2b9 >
 
 - Exemplo de programa em Flask com upload de imagem < https://github.com/roytuts/flask/tree/master/python-flask-upload-display-image >
+
+## Projetos Relacionados
+- [Pub Sub Store](https://github.com/rodrigoclira/pub-sub-store)
 
 ## Material Complementar
 
