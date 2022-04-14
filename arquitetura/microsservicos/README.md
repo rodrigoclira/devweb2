@@ -86,3 +86,6 @@ Ao terminar os experimentos, lembre-se de executar ```docker-compose down```
 - [GRPC ou API Rest ?](https://cloud.google.com/blog/products/api-management/understanding-grpc-openapi-and-rest-and-when-to-use-them)
 
 - [GRPC com Python](https://realpython.com/python-microservices-grpc)
+
+- [Vídeo 'Docker e Docker Compose na Prática'](https://www.youtube.com/watch?v=YlYTnRRDRyM)
+- 
