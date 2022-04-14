@@ -88,4 +88,5 @@ Ao terminar os experimentos, lembre-se de executar ```docker-compose down```
 - [GRPC com Python](https://realpython.com/python-microservices-grpc)
 
 - [Vídeo 'Docker e Docker Compose na Prática'](https://www.youtube.com/watch?v=YlYTnRRDRyM)
-- 
+
+- [Vídeo 'Como Rodar Docker na EC2'](https://www.youtube.com/watch?v=TU3P1fYcTyc)
