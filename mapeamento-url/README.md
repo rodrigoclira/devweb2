@@ -1,4 +1,4 @@
-# Mapeamento URL
+# Mapeamento (Roteamento) URL
 
 Este projeto tem como objetivo destacar a utilização das diferentes formas de realizar mapeamento de URL. Todos os exemplos estão apresentados nos arquivos 'urls.py' do projeto.
 
@@ -46,7 +46,15 @@ Por fim, acesse a página inicial no navegador:
 http://127.0.0.1:8000/projeto/
 
 
-## Exemplos de Regex 
+## Mepeamento de URL usando outras frameworks
+
+- [Spring boot (Request Mapping)](https://www.baeldung.com/spring-requestmapping)
+
+- [Node (Express)](https://expressjs.com/pt-br/guide/routing.html)
+
+- [Django (urls)](https://docs.djangoproject.com/en/4.0/topics/http/urls/)
+
+## Material Complementar
 
 https://cs.lmu.edu/~ray/notes/regex/
 
