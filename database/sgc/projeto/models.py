@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models.fields import DateTimeField, IntegerField
 from core.models import Professor
-import mongoengine 
+import mongoengine
 from datetime import datetime
 
 class Comentario(mongoengine.Document):
@@ -21,7 +21,7 @@ class Comentario(mongoengine.Document):
 # Create your models here.
 class Tipo(models.Model):
     nome = models.CharField(max_length=50)
-    
+
     def __str__(self):
         return f"{self.nome}"
 
@@ -40,16 +40,24 @@ class TipoProjeto(models.Model):
     tipo = models.ForeignKey(Tipo, on_delete=models.PROTECT)
     projeto = models.ForeignKey(Projeto, on_delete=models.PROTECT)
 
+    def __str__(self):
+        return f"{self.projeto} ({self.tipo})"
 
 class ColaboradorProjeto(models.Model):
     colaborador = models.ForeignKey(Professor, on_delete=models.PROTECT)
     projeto = models.ForeignKey(Projeto, on_delete=models.PROTECT)
 
+    def __str__(self):
+        return f"{self.projeto} | {self.colaborador}"
+
 class Tag(models.Model):
     tag = models.CharField(max_length=20)
     def __str__(self):
         return f"{self.tag}"
-        
+
 class ProjetoTag(models.Model):
     projeto = models.ForeignKey(Projeto, on_delete=models.PROTECT)
     tag = models.ForeignKey(Tag, on_delete=models.PROTECT)
+
+    def __str__(self):
+        return f"{self.projeto} | {self.tag}"
