@@ -35,7 +35,7 @@ def exibir(request, projeto_id):
     key_proj =  f"{projeto_id}_projeto"
     projeto = cache.get(key_proj)
     if not projeto:
-        projeto = get_object_or_404(Projeto, pk = projeto_id) 
+        projeto = get_object_or_404(Projeto, pk = projeto_id) #consultando no banco sqlite
         cache.set(key_proj, projeto, 45)
     else:
         print ("usou o cache")
