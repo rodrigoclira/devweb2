@@ -61,6 +61,17 @@ sudo chown mongod:mongod /tmp/mongodb-27017.sock
 
 sudo systemctl daemon-reload
 ```
+## Atividade
+
+Usando uma ORM com a framework escolhida, crie os models para representar o mini-mundo apresentado na imagem abaixo: 
+
+![mini-mundo](https://user-images.githubusercontent.com/276077/163811963-bc1325ed-5321-42ce-bc24-b04426f3279b.png)
+
+Considere as seguintes informações: 
+- Atributos iniciadas com _dt-_ representam tipos de data. 
+- O atributo com o nome _cod_ é do tipo numérico. 
+- E-mail é um _varchar_ com validação (quando existente na ORM). 
+- Todos os outros tipos são do tipo _varchar_. 
 
 ## Referências 
 [SQL vs NoSQL, qual usar?

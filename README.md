@@ -20,7 +20,7 @@ Assunto| Projeto | Atividade
 **Model-View-Controller**|
 1 | [Django MVC](https://github.com/rodrigoclira/devweb2/tree/main/mvc) | 
 **Banco de Dados**|
-1 | [Django + MogoDB + ORM](https://github.com/rodrigoclira/devweb2/tree/main/database) | 
+1 | [Django + MogoDB + ORM](https://github.com/rodrigoclira/devweb2/tree/main/database) |  [Criação de modelos usando ORM](https://github.com/rodrigoclira/devweb2/tree/main/database#atividade)
 **Mapeamento URL**|
 1 | [Django URLS](https://github.com/rodrigoclira/devweb2/tree/main/mapeamento-url) |
 **Autenticação**|
