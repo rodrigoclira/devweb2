@@ -9,7 +9,7 @@ def listar(request, tag_name = ""):
 
     if tag_name:
         print(tag_name)
-        projetosTags = ProjetoTag.objects.filter(tag__tag = tag_name)
+        projetosTags = ProjetoTag.objects.filter(tag__tag = tag_name.lower())
         projetos = [projetoTag.projeto for projetoTag in projetosTags]
     else:
         projetos = Projeto.objects.all()
