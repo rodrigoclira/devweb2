@@ -65,3 +65,6 @@ Sendo assim esses são os templates adicionados
 ![image](https://user-images.githubusercontent.com/276077/165425652-de36fbdf-37af-400d-a655-09173582e56d.png)
 
 Todos os arquivos da pasta registration seguem o padrão de nome que são indicados pela documentação Django, uma vez que são templates que já serão procurados pelo 'django.contrib.auth'
+
+
+https://simpleisbetterthancomplex.com/tutorial/2017/02/18/how-to-create-user-sign-up-view.html
