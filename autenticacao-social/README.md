@@ -70,7 +70,7 @@ python manage.py migrate
 path('social-auth/', include("social_django.urls"), name='social')
 ```
 
-5. O redicionamento das redes sociais não funcionam para localhost ou 127.0.0.1, por isso você precisa criar um domínio interno na sua máquina, como apresentado  [AQUI](#Comandos). O 'mysite.com' foi o domínio usado para o teste local, mas se você estiver implantando a aplicação, lembre de atualizar para o domínio real.
+5. O redicionamento das redes sociais não funcionam para localhost ou 127.0.0.1, por isso você precisa criar um domínio interno na sua máquina, como apresentado  [AQUI](#Configuração). O 'mysite.com' foi o domínio usado para o teste local, mas se você estiver implantando a aplicação, lembre de atualizar para o domínio real.
 
 6. Para que essa mudança seja aceita no django, edite a variável ALLOWED_HOSTS do *settings.py* para conter o 'mysite.com'. 
 
