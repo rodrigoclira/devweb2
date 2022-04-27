@@ -2,7 +2,6 @@ from django.shortcuts import render
 from .forms import UserRegistrationForm
 # Create your views here.
 
-
 def registrar(request):
     if request.method == 'POST':
         user_form = UserRegistrationForm(request.POST)
@@ -13,5 +12,5 @@ def registrar(request):
             return render(request, 'core/registro_realizado.html', {'novo_user': novo_user})
     else:
         user_form = UserRegistrationForm()
-    
+
     return render(request, 'core/registro.html',  {'user_form': user_form})

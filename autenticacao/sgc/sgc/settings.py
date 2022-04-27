@@ -1,6 +1,6 @@
 import os
 import mongoengine
-import requests 
+import requests
 
 """
 Django settings for sgc project.
@@ -61,10 +61,10 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware', # Cuida da sessão atual durante as requisições
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware', #Associa os usuários às requisições usando as sessões
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -109,12 +109,12 @@ else:
             'PASSWORD': '',
             'HOST': '',
             'PORT': '5432',
-        }        
+        }
     }
 
 
 if COMMENTS:
-    mongo_host = '127.0.0.1' 
+    mongo_host = '127.0.0.1'
     mongo_port = 27017
     mongo_database = 'comments'
     mongoengine.connect(mongo_database, host=mongo_host, port=mongo_port)
