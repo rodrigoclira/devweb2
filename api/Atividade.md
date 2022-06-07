@@ -2,9 +2,11 @@
 
 Realize [o desafio](https://cassiobotaro.dev/do_zero_a_implantacao/desafio/) definido no material "[Do Zero a Implantação](https://cassiobotaro.dev/do_zero_a_implantacao)". Para criar o desafio será necessário seguir o passo a passo descrito do tutorial que utiliza FAST API para desenvolver uma API com TDD. 
 
+A entrega da atividade será o repositório com todos os arquivos e commits (como indicado no tutorial). 
+
+> **Warning**
 A etapa 🚀 [Mandando um foguete pro espaço](https://cassiobotaro.dev/do_zero_a_implantacao/deploy/) não precisa ser realizada.
 
-A entrega da atividade será o repositório com todos os arquivos e commits (como indicado no tutorial). 
 
 ## Informações adicionais: 
 
@@ -17,8 +19,8 @@ pip freeze > dev-requirements.txt
 ```
 Dessa forma as bibliotecas instaladas no ambiente virtual são obtidas de forma automática. 
 
-### Erro na action criada na etapa de 'Integração contínua'
-> **Warning**
+### Correção de erro na action criada na etapa de 'Integração contínua'
+> **Note**
 >  A action '_actions/setup-python@v3_' usada no arquivo '_.github/workflows/main.yml_' foi modificado quebrando a etapa [Integração contínua](https://cassiobotaro.dev/do_zero_a_implantacao/integracao/). Para resolver o erro será necessário criar um arquivo vazio chamado 'requirements.txt' no repositório. 
 
 
