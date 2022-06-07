@@ -1,6 +1,6 @@
 # Atividade
 
-Realize [o desafio](https://cassiobotaro.dev/do_zero_a_implantacao/desafio/) definido no material "[Do Zero a Implantação](https://cassiobotaro.dev/do_zero_a_implantacao)". Para criar o desafio será necessário seguir o passo a passo descrito do tutorial que utiliza FAST API para desenvolver uma API com TDD. 
+Desenvolva [o desafio](https://cassiobotaro.dev/do_zero_a_implantacao/desafio/) definido no material "[Do Zero a Implantação](https://cassiobotaro.dev/do_zero_a_implantacao)". Para criar o desafio será necessário seguir o passo a passo descrito do tutorial que utiliza FAST API para desenvolver uma API com TDD. 
 
 A entrega da atividade será o repositório com todos os arquivos e commits (como indicado no tutorial). 
 
