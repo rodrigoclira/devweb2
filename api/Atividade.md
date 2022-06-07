@@ -5,7 +5,7 @@ Realize [o desafio](https://cassiobotaro.dev/do_zero_a_implantacao/desafio/) def
 A entrega da atividade será o repositório com todos os arquivos e commits (como indicado no tutorial). 
 
 > **Warning**
-A etapa 🚀 [Mandando um foguete pro espaço](https://cassiobotaro.dev/do_zero_a_implantacao/deploy/) não precisa ser realizada.
+> A etapa 🚀 [Mandando um foguete pro espaço](https://cassiobotaro.dev/do_zero_a_implantacao/deploy/) não precisa ser realizada.
 
 
 ## Informações adicionais: 
