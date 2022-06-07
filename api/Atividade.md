@@ -19,7 +19,7 @@ A entrega da atividade será o repositório com todos os arquivos e commits (com
 ```
 pip freeze > dev-requirements.txt
 ```
-Dessa forma as bibliotecas instaladas no ambiente virtual são obtidas de forma automática. 
+> Dessa forma as bibliotecas instaladas no ambiente virtual são obtidas de forma automática. 
 
 ### Correção de erro na action criada na etapa de 'Integração contínua'
 > **Note**
