@@ -1,0 +1,7 @@
+version: '3.7'
+services:
+   memcached:
+      build: memcached_docker
+      container_name: memcached
+      ports:
+          - 11211:11211
