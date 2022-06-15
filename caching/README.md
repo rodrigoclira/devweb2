@@ -14,14 +14,21 @@ Neste projeto o memcached é utilizado como banco de cache das informações do 
 > pip3 install -r requirements.txt
 > ```
 
-> 2. **Instalação do Memcached**
+> 2. **Inicializar o Memcached**
 > 
-> Use o tutorial do site do Memcached para instalar o banco. 
+> Você pode usar o tutorial do site do Memcached para instalar o banco. 
 > https://memcached.org/downloads
 > 
 > Após a instalação, inicie-o com o seguinte comando:
 > 
 > ```memcached -l 127.0.0.1:11211```
+
+> 3. **Usar o Memcached no container**
+> 
+> Ou inicializar o memcached no container que está na pasta 'docker' do projeto. 
+> para inicializar, execute ```sudo docker-compose up --build -d``` e para 
+> desligar, use o ```sudo docker-compose down``` na mesma pasta.
+
 
 
 ## Comandos
