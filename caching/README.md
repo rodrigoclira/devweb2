@@ -189,3 +189,8 @@ def listar(request, tag_name = ""):
         else:
             print ("usou o cache")
 ```
+
+### Teste de carga usando o JMeter 
+
+[How to Use JMeter for Performance & Load Testing](https://www.guru99.com/jmeter-performance-testing.html)
+
