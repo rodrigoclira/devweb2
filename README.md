@@ -34,7 +34,7 @@ Assunto| Projeto | Atividade
 1 | [Caching com Memcached](https://github.com/rodrigoclira/devweb2/tree/main/caching) |
 **Implantação**|
 1 | [CI e CD](https://github.com/rodrigoclira/devweb2/tree/main/ci-cd) |
-2 | [Do zero a implantação](https://cassiobotaro.dev/do_zero_a_implantacao/) |
+2 | [Demo CI](https://github.com/rodrigoclira/demo-ci) |
 
 <!-- **Arquiteturas Modernas**| -->
 <!-- 1 | [Arquiteturas Modernas]() -->
