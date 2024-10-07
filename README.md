@@ -11,6 +11,8 @@ Exemplos de projetos usando os conceitos apresentados na disciplina de **Desenvo
 
 Assunto| Projeto | Atividade
 ---:|:---:|:---:
+**Framework**|   |
+1 | [Django Poll App](https://github.com/rodrigoclira/devweb2/tree/main/framework) |  
 **Arquitetura**|   |
 1 | [Monolítico](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/monolitico) | 
 2 | [Microsserviços](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/microsservicos) | [Criação do microsserviço '*mult*' e configuração do nginx](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/microsservicos#atividade)
