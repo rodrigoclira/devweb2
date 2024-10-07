@@ -31,12 +31,13 @@ Assunto| Projeto | Atividade
 2 | [Django Rest Framework (Employee Manager)](https://github.com/rodrigoclira/employee-manager-app-v1) | 
 3 | [Django Rest Framework](https://github.com/rodrigoclira/devweb2/tree/main/api) | [Do Zero a Implantação](https://github.com/rodrigoclira/devweb2/blob/main/api/Atividade.md)
 **Caching**|
-1 | [Caching com Memcached](https://github.com/rodrigoclira/devweb2/tree/main/caching) |
-**Arquiteturas Modernas**|
-1 | [Arquiteturas Modernas]() 
-**Implantação**
-1 | [CI e CD](https://github.com/rodrigoclira/devweb2/tree/main/ci-cd) |
-2 | [Do zero a implantação](https://cassiobotaro.dev/do_zero_a_implantacao/) |
+1 | [Caching com Memcached](https://github.com/rodrigoclira/devweb2/tree/main/caching) | 
+**Implantação**|
+1 | [CI e CD](https://github.com/rodrigoclira/devweb2/tree/main/ci-cd) | [Employee Manager App V2](https://github.com/rodrigoclira/employee-manager-app-v2)
+2 | [Demo CI](https://github.com/rodrigoclira/demo-ci) |
+
+<!-- **Arquiteturas Modernas**| -->
+<!-- 1 | [Arquiteturas Modernas]() -->
 
 
 <br>
