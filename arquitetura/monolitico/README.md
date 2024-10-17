@@ -57,4 +57,8 @@ Rodando o servidor
 python manage.py runserver 0.0.0.0:8000
 ``` 
 
+Endpoints disponíveis
+- http://DNS_AWS:PORTA/api/calc
+- http://DNS_AWS:PORTA/api/soma
+- http://DNS_AWS:PORTA/api/sub
 
