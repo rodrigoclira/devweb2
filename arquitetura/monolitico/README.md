@@ -22,7 +22,7 @@ sudo apt-get install python3-venv unzip -y
 
 Download do repositório
 ```
-cd https://github.com/rodrigoclira/devweb2/archive/refs/heads/main.zip
+wget  https://github.com/rodrigoclira/devweb2/archive/refs/heads/main.zip
 ```
 
 Descompactar repositório
