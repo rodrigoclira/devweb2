@@ -13,11 +13,21 @@ def calc(request):
 @require_GET
 def soma(request):
     op1 = request.GET.get("op1", "")
-    op2 = request.GET.get("op2", "")
     if op1:
         print(f"{op1}")
+    else:
+        res = {}
+        res['resultado'] = "op1 não informado"
+        return JsonResponse(res)
+    
+    op2 = request.GET.get("op2", "")
     if op2:
         print(f"{op2}")
+    else:
+        res = {}
+        res['resultado'] = "op2 não informado"
+        return JsonResponse(res)
+        
     res = {}
     res['resultado'] = float(op1) + float(op2)
     return JsonResponse(res)
@@ -25,11 +35,21 @@ def soma(request):
 @require_GET
 def sub(request):
     op1 = request.GET.get("op1", "")
-    op2 = request.GET.get("op2", "")
     if op1:
         print(f"{op1}")
+    else:
+        res = {}
+        res['resultado'] = "op1 não informado"
+        return JsonResponse(res)
+            
+    op2 = request.GET.get("op2", "")
     if op2:
         print(f"{op2}")
+    else:
+        res = {}
+        res['resultado'] = "op2 não informado"
+        return JsonResponse(res)
+            
     res = {}
     res['resultado'] = float(op1) - float(op2)
     return JsonResponse(res)
