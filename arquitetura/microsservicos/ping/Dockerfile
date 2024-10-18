@@ -5,7 +5,7 @@ FROM python:alpine
 EXPOSE 5000
 
 # creates a dir for our application
-WORKDIR /app
+WORKDIR /ping
 
 # copy our requirements.txt file and install dependencies
 COPY requirements.txt .

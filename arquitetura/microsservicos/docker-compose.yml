@@ -1,8 +1,8 @@
 version: '3.7'
 services:
 
-    app:
-        build: app
+    ping:
+        build: ping
 
     calc:
         build: calc
@@ -17,9 +17,9 @@ services:
         container_name: nginx
         build: nginx
         ports:
-            - 80:80
+            - 8000:80
         depends_on:
-           - app
+           - ping
            - calc
            - soma
            - sub

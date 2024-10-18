@@ -7,6 +7,11 @@ def soma():
     res = {}
     op1 = request.args.get('op1')
     op2 = request.args.get('op2')
+
+    if not op1 or not op2:
+        res['resultado'] = "op1 ou op2 não informado"
+        return res, 400
+
     res['resultado'] = float(op1) + float(op2)
     return res, 200
 

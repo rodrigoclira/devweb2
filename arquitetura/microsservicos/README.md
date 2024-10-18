@@ -12,13 +12,13 @@
 O passo a passo segue o que é apresentado tutorial apresentado em: [Building a Python scalable Flask application using docker-compose and Nginx load balancer
 ](https://www.linkedin.com/pulse/building-python-scalable-flask-application-using-nginx-itay-melamed/)
 
-Algumas alterações foram realizadas para que o projeto ficasse com as mesmas funcionalidades das apresentadas nos projetos de arquitetura serverless e monolítica (API de soma, sub e calc). Para fins de discussão sobre a funcionalidade de *Load Balancing*, o projeto "app" apresentado no tutorial foi mantido.
+Algumas alterações foram realizadas para que o projeto ficasse com as mesmas funcionalidades das apresentadas nos projetos de arquitetura serverless e monolítica (API de soma, sub e calc). Para fins de discussão sobre a funcionalidade de *Load Balancing*, o projeto "ping" apresentado no tutorial foi mantido.
 
 
 Para executá-lo, basta baixar a pasta do projeto (microservicos) e executar o comando "docker-compose up" na pasta principal. 
 
 ```
-$ sudo docker-compose up --build -d --scale app=2
+$ sudo docker-compose up --build -d --scale ping=2
 ```
 
 ![image](https://user-images.githubusercontent.com/276077/116919459-ab259100-ac27-11eb-8edb-5bd0f81f701e.png)
