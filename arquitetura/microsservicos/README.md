@@ -18,7 +18,7 @@ Algumas alterações foram realizadas para que o projeto ficasse com as mesmas f
 Para executá-lo, basta baixar a pasta do projeto (microservicos) e executar o comando "docker-compose up" na pasta principal. 
 
 ```
-$ sudo docker-compose up --build -d --scale ping=2
+sudo docker-compose up --build -d --scale ping=2
 ```
 
 ![image](https://user-images.githubusercontent.com/276077/116919459-ab259100-ac27-11eb-8edb-5bd0f81f701e.png)
