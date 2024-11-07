@@ -18,7 +18,7 @@ Algumas alterações foram realizadas para que o projeto ficasse com as mesmas f
 Para executá-lo, basta baixar a pasta do projeto (microservicos) e executar o comando "docker-compose up" na pasta principal. 
 
 ```
-$ sudo docker-compose up --build -d --scale ping=2
+sudo docker-compose up --build -d --scale ping=2
 ```
 
 ![image](https://user-images.githubusercontent.com/276077/116919459-ab259100-ac27-11eb-8edb-5bd0f81f701e.png)
@@ -60,9 +60,9 @@ sudo docker-compose down
 
 ## Atividade
 
-Adicione uma novo microsserviço a arquitetura atual do exemplo. Ele será responsável pelo novo *endpoint* da api que realiza uma multiplicação (**/mult**). Ele receberá dois valores **op1**, **op2** e retornará o resultado da multiplicação. Você precisa criar umaa nova aplicação coma uma outra framework (não utilizar flask).
+Adicione um novo microsserviço a arquitetura atual do exemplo. Ele será responsável pelo novo *endpoint* da api que realiza uma multiplicação (**/mult**). Ele receberá dois valores, **op1**, **op2** e retornará o resultado da multiplicação. Você precisa criar umaa nova aplicação coma uma outra framework (não utilizar flask).
 
-Devido a sua alta demanda de acesso, o microsserviço precisa ser replicada com 3 contêineres. A distribuição será feita através da política de balanceamento de carga *Round Robin* com diferentes pesos e funções. Um contêiner deve ser configurado como **backup** e os outros dois com o peso 3 e 1, respectivamente. Para mais informações sobre distribuição de peso, acesse: https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/ (*Seção Server Weights*).
+Devido a sua alta demanda de acesso, o microsserviço precisa ser replicado em 3 contêineres. A distribuição será feita através da política de balanceamento de carga *Round Robin* com diferentes pesos e funções. Um contêiner deve ser configurado como **backup** e os outros dois com o peso 3 e 1, respectivamente. Para mais informações sobre distribuição de peso, acesse: https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/ (*Seção Server Weights*).
 
 Reponda as seguintes perguntas abaixo após desenvolver as modificações necessárias para que esses novos requisitos sejam alcançados. 
 

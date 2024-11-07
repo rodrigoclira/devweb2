@@ -11,48 +11,54 @@ Neste projeto será criado uma API que realiza operações matemáticas simples 
 
 Passos para execução:
 
-1. Acesse ao serviço Lambda da AWS e crie uma função lambda usando a opção "Usar um esquema". Pesquise e selecione o esquema: "hello-world-python". Ao selecionar o equema, clique em "Configurar".
-![image](https://user-images.githubusercontent.com/276077/115634586-4a6d8e80-a2e0-11eb-826e-b9dc4da2f103.png)
+## Criando as funções lambdas
+1. Acesse ao serviço Lambda da AWS e crie uma função lambda usando a opção "Usar um esquema". Pesquise e selecione o esquema: "hello world function". Dê um nome a função baseando-se nos exemplos disponíveis na pasta "lambdas" do repositório. Exemplo: soma 
+![image](https://github.com/user-attachments/assets/4ff4e945-c79d-4502-9146-c7892caaa147)
 
-2. Dê um nome a função baseando-se nos exemplos disponíveis na pasta "lambdas" do repositório. Exemplo: soma 
-![image](https://user-images.githubusercontent.com/276077/115634711-830d6800-a2e0-11eb-98b4-dcdc9d1499a0.png)
+4. Na tela de exibição da função criada, abra a aba "código" e substitua-o pelo código da função lambda do repositório. Se na etapa anterior foi criada a função "subtracacao", copie o conteúdo do arquivo "lambdas/subtracacao.py" .
+![image](https://github.com/user-attachments/assets/2b24fd8f-3222-46d4-9057-6ca826e84578)
 
-3. Na tela de exibição da função criada, abra a aba "código" e substitua o código atual pelo código da função lambda do repositório. Se na etapa anterior foi criada a função "soma", copie o conteúdo do arquivo "lambdas/soma.py" .
-![image](https://user-images.githubusercontent.com/276077/115634481-14c8a580-a2e0-11eb-89bb-eebe285239fb.png)
+Novo código
 
-4. Se for a primeira lambda criada, na parte superior, clique em "Adicionar um Gatilho". 
+![image](https://github.com/user-attachments/assets/088aa1c7-f6e0-4509-a73b-27d71bd13f4f)
 
-5. Escolha "API Gateway" e preencha as seguintes informações:
-	- Tipo: API HTTP
-	- Segurança: Abrir
-	- Em configurações adicionais:
-		- Nome da API: API-HTTP
-		
-6. Repita os passos 1-3 para adicionar as outras funções lambdas. Os nomes delas serão: subtracao e calc.
+3. Clique em "Implantar" ou "Deploy".
+   
+4. Repita os passos 1-2 para adicionar as outras funções lambdas. Os nomes delas serão: soma e calc.
 
-7. Para adicionar o gatilho das novas funções, vá até o console do API Gateway e selecione o gateway criado ("API HTTP"). Para ir até o console do API Gateway é necessário acessar o serviço "API Gateway" da AWS. 
+-----------------------------------------------------
+## Criando o Gateway (API-Gateway)
 
-8. No painel esquerdo, clique em "Rotas". Deverá ser exibida o nome da primeira função lambda criada. Ex.: /soma
+1. No serviço `API Gateway` da AWS, escolha o HTTP API, clicando em `Build`.
+![image](https://github.com/user-attachments/assets/f7f63e56-6c75-4606-b04d-d561401c2aaf)
 
-9. Clique em "Create" e adicione novas rotas, sendo elas os nomes das funções lambdas já criadas. Ex.: /calc, /subtracao
+2. Clique em `Add Integration` e escolha o função lambda. Indique o nome da API baseado na função lambda escolhida.
+Depois clique em `Próximo`. 
+![image](https://github.com/user-attachments/assets/e9c5f03f-d586-4e5f-89d9-ab49a6da4206)
 
-10. Agora no campo de "Integrações", no painel esquerdo. Clique em "Gerenciar Integrações" e em "Create". No campo Anexar essa integração a uma rota, escolha uma das rotas criadas no passo anterior. No campo "Destino da Integração", escolha "Função Lambda" e em detalhes, selecione o lambda correspondente. Faça esse procedimento para todas as funções lambdas criadas no passo 6.
+3. Configure a rota, usando apenas o método `GET`
 
+![image](https://github.com/user-attachments/assets/cf09e4ab-725d-4da0-b6ba-8424180cb3c9)
+
+4. Não modifique o estágio. Deixe o valor $default e auto-deploy. 
+![image](https://github.com/user-attachments/assets/e3c12454-6307-42f2-80e7-99edf0475fab)
+
+5. Clique em criar.
+![image](https://github.com/user-attachments/assets/cf3c72c5-98e9-47de-ab36-c005c3a84fb1)
+
+6. Em seguida clique em `Deploy`
+![image](https://github.com/user-attachments/assets/c4e2791e-eedd-40b4-8ef9-30bcbf8e204a)
+
+7. Adicione um estágio de implantação.
+![image](https://github.com/user-attachments/assets/fcc555cd-02e7-4ab1-9cee-5ff8ada7eb68)
 
 Agora que tudo foi criado, você já pode usar o seu projeto criado na arquitetura serverless. 
 
 Pegue a url do gateway* e coloque a rota que desejas acessar. Por exemplo: 
 
-https://URL_GATEWAY/calc
+https://URL_GATEWAY/stage/calc
 
-Essa informação também fica disponível nas lambdas 
-![image](https://user-images.githubusercontent.com/276077/115634404-f4005000-a2df-11eb-9cf4-b57d2b336edc.png)
-
-* A URL do gateway pode ser obtida na página inicial do serviço "API GATEWAY" da Amazon. 
-![image](https://user-images.githubusercontent.com/276077/117976655-67f1af00-b306-11eb-8491-08e7c765b72f.png)
-
-
-## USando o POSTMAN para testar a API
+## Usando o POSTMAN para testar a API
 
 - calc
 
@@ -69,6 +75,7 @@ Essa informação também fica disponível nas lambdas
 ![image](https://user-images.githubusercontent.com/276077/115634940-0038dd00-a2e1-11eb-92b5-dc04ce523baf.png)
 
 
-| Sugestão de conteúdo
 
-[Serverless Design with AWS Lambda](https://amazon.qwiklabs.com/quests/17)
+![image](https://github.com/user-attachments/assets/4ff4e945-c79d-4502-9146-c7892caaa147)
+
+![image](https://github.com/user-attachments/assets/2b24fd8f-3222-46d4-9057-6ca826e84578)

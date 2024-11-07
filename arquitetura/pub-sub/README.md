@@ -27,7 +27,7 @@ O exemplo exibe um projeto que utiliza microsserviços e o apache kafka. O apach
 Para executá-lo, basta baixar a pasta do projeto (pub-sub) e executar o comando "docker-compose up" na pasta principal. 
 
 ```
-$ sudo docker-compose up --build 
+sudo docker-compose up --build 
 ```
 
 ![image](https://user-images.githubusercontent.com/276077/162104971-34cde74b-c4f7-4da5-a2da-d18176780838.png)
@@ -47,7 +47,7 @@ Se tudo estiver ocorrido da forma esperada, o resultado será algo assim:
 Ainda é possível analisar cada um dos logs gerados pelas aplicações no container usando o comando "docker logs". 
 
 ```
-sudo docker logs pub-sub_rotate_1 -f
+sudo docker logs -f
 ```
 
 

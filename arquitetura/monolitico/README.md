@@ -55,7 +55,15 @@ python manage.py migrate
 Rodando o servidor
 ```
 python manage.py runserver 0.0.0.0:8000
-``` 
+```
+
+Caso a porta 8000 não esteja disponível, execute na porta 80 seguinto os comandos abaixos:
+```
+sudo su
+source venv/bin/activate
+python manage.py runserver 0.0.0.0:80
+
+```
 
 Endpoints disponíveis
 - http://DNS_AWS:PORTA/api/calc
