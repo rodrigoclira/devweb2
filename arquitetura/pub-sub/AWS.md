@@ -3,8 +3,9 @@
 Instalação de pacotes
 ```
 sudo apt-get update
-sudo apt-get install docker-compose unzip -y
+sudo apt-get install docker-compose unzip nginx -y
 ```
+
 
 Download do repositório
 ```
@@ -15,9 +16,12 @@ Descompactar repositório
 ```
 unzip main.zip
 ```
+
 Acessar pasta do repositório
 
 ```
 cd devweb2-main/arquitetura/pub-sub
 ```
+
+
 
