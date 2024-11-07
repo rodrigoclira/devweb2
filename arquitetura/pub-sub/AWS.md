@@ -23,5 +23,4 @@ Acessar pasta do repositório
 cd devweb2-main/arquitetura/pub-sub
 ```
 
-
-
+sudo cp server-config/pub_sub /etc/nginx/sites-enabled/ -v
