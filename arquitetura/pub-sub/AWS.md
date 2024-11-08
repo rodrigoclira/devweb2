@@ -1,5 +1,8 @@
 ## Executar na AWS
 
+![image](https://user-images.githubusercontent.com/276077/162766448-13e0ebe8-8325-4e32-a8d7-5deff7744c10.png)
+
+
 1. Instalação de pacotes
 ```
 sudo apt-get update
@@ -45,6 +48,8 @@ docker-compose up --build
 
 ![image](https://github.com/user-attachments/assets/0a98eb67-4195-48f8-bbd9-2440f06abe3a)
 
+Analise o log após enviar a imagem no `upload`. 
+Para visualizar os dados processados, copie-os para a pasta compartilhada na web.
 
 11. Copiando dados para visualizar em `http://PUBLIC-DNS/shared`
 ```
