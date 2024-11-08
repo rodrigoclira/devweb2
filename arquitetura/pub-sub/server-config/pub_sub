@@ -3,27 +3,27 @@ server {
     server_name app.com;
 
      location /upload {
-          proxy_pass http://0.0.0.0:5000;
+          proxy_pass http://127.0.0.1:5000;
      }
 
      location /zookeeper {
-          proxy_pass http://0.0.0.0:2181;
+          proxy_pass http://127.0.0.1:2181;
      }
 
      location /kafka1 {
-          proxy_pass http://0.0.0.0:9091;
+          proxy_pass http://127.0.0.1:9091;
      }
 
      location /kafka2 {
-          proxy_pass http://0.0.0.0:9092;
+          proxy_pass http://127.0.0.1:9092;
      }
 
      location /kafka3 {
-          proxy_pass http://0.0.0.0:9093;
+          proxy_pass http://127.0.0.1:9093;
      }
     
      location /kafdrop {
-          proxy_pass http://0.0.0.0:9000;
+          proxy_pass http://127.0.0.1:9000;
      }
 
 }
