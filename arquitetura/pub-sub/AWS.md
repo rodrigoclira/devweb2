@@ -37,4 +37,17 @@ sudo cp server-config/pub_sub /etc/nginx/sites-enabled/ -v
 sudo systemctl restart nginx
 ```
 
-Siga o passo a passo do README
+8. Inicialize a composição
+```
+docker-compose up --build
+```
+9. Acesse `http://PUBLIC-DNS/upload`
+
+![image](https://github.com/user-attachments/assets/0a98eb67-4195-48f8-bbd9-2440f06abe3a)
+
+
+11. Copiando dados para visualizar em `http://PUBLIC-DNS/shared`
+```
+sudo cp /home/ubuntu/devweb2-main/arquitetura/pub-sub/appdata/static/uploads/* 
+```
+
