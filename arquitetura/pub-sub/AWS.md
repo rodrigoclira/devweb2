@@ -1,5 +1,7 @@
 ## Executar na AWS
 
+* Utilize a instância do tipo `t2.medium`
+
 ![image](https://user-images.githubusercontent.com/276077/162766448-13e0ebe8-8325-4e32-a8d7-5deff7744c10.png)
 
 
@@ -48,7 +50,7 @@ sudo systemctl restart nginx
 
 9. Inicialize a composição
 ```
-docker-compose up --build
+sudo docker-compose up --build
 ```
 
 10. Acesse `http://PUBLIC-DNS/upload`
