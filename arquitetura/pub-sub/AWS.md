@@ -30,21 +30,28 @@ cd devweb2-main/arquitetura/pub-sub
 sudo rm /etc/nginx/sites-enabled/default
 ```
 
-6. Copiando a configuração do proxy para a pasta do nginx. O proxy é necessário uma vez que na rede do IFPE não é permitido acessar todas as portas do projeto
+6. Crie a pasta compartilhada
+```
+sudo mkdir -p /var/www/shared
+sudo chmod -R 755 /var/www/shared
+```
+
+7. Copiando a configuração do proxy para a pasta do nginx. O proxy é necessário uma vez que na rede do IFPE não é permitido acessar todas as portas do projeto
 ```
 sudo cp server-config/pub_sub /etc/nginx/sites-enabled/ -v
 ```
 
-7. Restartando o nginx
+8. Restartando o nginx
 ```
 sudo systemctl restart nginx
 ```
 
-8. Inicialize a composição
+9. Inicialize a composição
 ```
 docker-compose up --build
 ```
-9. Acesse `http://PUBLIC-DNS/upload`
+
+10. Acesse `http://PUBLIC-DNS/upload`
 
 ![image](https://github.com/user-attachments/assets/0a98eb67-4195-48f8-bbd9-2440f06abe3a)
 
