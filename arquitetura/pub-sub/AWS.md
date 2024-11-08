@@ -60,7 +60,7 @@ sudo docker-compose up --build
 Analise o log após enviar a imagem no `upload`. 
 Para visualizar os dados processados, copie-os para a pasta compartilhada na web.
 
-11. Copiando dados para visualizar em `http://PUBLIC-DNS/shared`
+11. Copiando dados para visualizar em `http://PUBLIC-DNS/shared/`
 ```
 sudo cp /home/ubuntu/devweb2-main/arquitetura/pub-sub/appdata/static/uploads/* /var/www/shared/ -R
 ```
