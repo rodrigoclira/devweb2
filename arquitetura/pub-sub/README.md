@@ -70,8 +70,13 @@ Por fim, o comando 'docker-compose down' derruba todos os serviços.
 ```
 sudo docker-compose down
 ```
+## Atividade novo consumidor
 
-## Atividade
+![image](https://github.com/user-attachments/assets/00f21461-7345-45e4-9d08-38763657465a)
+
+Usando o código indicado em [https://stackoverflow.com/a/16377244](https://stackoverflow.com/a/16377244), crie um novo consumidor que irá escrever um texto na imagem. Ao final, do upload, os três microsserviços serão notificados para que realizem suas respectivas operações.
+
+## Atividade novo(s) tópico(s)
 
 Adicione uma novo ator (microsserviço) no projeto que será responsável por notificar através do telegram ou e-mail que a operação do 'rotate' ou 'grayscale' foi finalizada. Para isso será necessário alterar o projeto adicionando uma nova etapa de pubicação num novo tópico (por exemplo **/notificacao**) por parte do microsserviço 'rotate' e 'grayscale'. O novo microsserviço '**notifacador**' será responsável por checar (pooling) o tópico e fazer o envio de mensagem no telegram ou e-mail para um contato defindo (pode ser fixo ou variável**) quando a operação estiver finalizada. 
 ** Se fizer variável, coloque um input de e-mail/telegram_id no HTML do microsserviço 'upload'. 
