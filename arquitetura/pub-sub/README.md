@@ -79,7 +79,7 @@ Baseando-se no código indicado em [https://gist.github.com/rodrigoclira/9e1be73
 
 ## Atividade novo(s) tópico(s)
 
-Adicione uma novo ator (microsserviço) no projeto que será responsável por notificar através do telegram ou e-mail que a operação do 'rotate' ou 'grayscale' foi finalizada. Para isso será necessário alterar o projeto adicionando uma nova etapa de pubicação num novo tópico (por exemplo **/notificacao**) por parte do microsserviço 'rotate' e 'grayscale'. O novo microsserviço '**notifacador**' será responsável por checar (pooling) o tópico e fazer o envio de mensagem no telegram ou e-mail para um contato defindo (pode ser fixo ou variável**) quando a operação estiver finalizada. 
+Adicione um novo ator (microsserviço) no projeto que será responsável por notificar através do telegram ou e-mail que a operação do 'rotate' ou 'grayscale' foi finalizada. Para isso será necessário alterar o projeto adicionando uma nova etapa de pubicação num novo tópico (por exemplo **/notificacao**) por parte do microsserviço 'rotate' e 'grayscale'. O novo microsserviço '**notifacador**' será responsável por checar (pooling) o tópico e fazer o envio de mensagem no telegram ou e-mail para um contato defindo (pode ser fixo ou variável**) quando a operação estiver finalizada. 
 
 ** Se fizer variável, coloque um input de e-mail/telegram_id no HTML do microsserviço 'upload'. 
 
