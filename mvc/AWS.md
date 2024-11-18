@@ -24,9 +24,14 @@ pip install -r requirements.txt
 
 5. Acesse a pasta `sgc` e execute o projeto Django
 
+
+![image](https://github.com/user-attachments/assets/6a694ec1-3e17-46ae-ab9d-be7786f9ddde)
+
 ```
 python manage.py runserver 0.0.0.0:8080
 ```
+
+
 6. Clique em `Preview` e escolha `Preview Running Application` e em seguida `Pop out into new Window`.
 
 ![image](https://github.com/user-attachments/assets/9e8781a7-918f-4df6-9171-995700fd241c)
@@ -38,5 +43,3 @@ python manage.py runserver 0.0.0.0:8080
 `https://URL-DO-CLOUD9/projeto`
 
 ![image](https://github.com/user-attachments/assets/4379f9a3-50a3-47b0-bb5a-ae484786f62e)
-
-11. 
