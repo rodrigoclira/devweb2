@@ -1,8 +1,8 @@
-# Passos para instalação na AWS 
+# Passos para instalação na AWS com o Cloud9
 
 1. Crie um ambiente com o Cloud9
 
-2. Abra o Cloud9 e copie os arquivos para a pasta principal, através da opção "File" -> "Upload Local File". 
+3. Abra o Cloud9 e copie os arquivos para a pasta principal, através da opção "File" -> "Upload Local File". 
 
 ![image](https://github.com/user-attachments/assets/d461d27f-fbb7-4b7b-be1a-8bbba5965e38)
 
@@ -21,3 +21,22 @@ source venv/bin/activate
 ```
 pip install -r requirements.txt 
 ```
+
+5. Acesse a pasta `sgc` e execute o projeto Django
+
+```
+python manage.py runserver 0.0.0.0:8080
+```
+6. Clique em `Preview` e escolha `Preview Running Application` e em seguida `Pop out into new Window`.
+
+![image](https://github.com/user-attachments/assets/9e8781a7-918f-4df6-9171-995700fd241c)
+
+![image](https://github.com/user-attachments/assets/0724f536-bb1c-4e45-af27-d00068256dff)
+
+8. Digite agora no navegador:
+
+`https://URL-DO-CLOUD9/projeto`
+
+![image](https://github.com/user-attachments/assets/4379f9a3-50a3-47b0-bb5a-ae484786f62e)
+
+11. 
