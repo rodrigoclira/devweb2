@@ -45,6 +45,8 @@ http://127.0.0.1:8000/projeto/
 
 Replique o projeto utilizando uma instância do RDS e do DocumentDB na AWS.
 
+![image](https://github.com/user-attachments/assets/1a043263-ee4d-4ab4-a811-c25823510096)
+
 
 ## FAQ
 
