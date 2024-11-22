@@ -69,7 +69,7 @@ use comments;
 
 3. Procure pelos documentos
 ```
-db.comments.find()
+db.comentario.find()
 ```
 
 ![image](https://github.com/user-attachments/assets/63832e5a-229f-46fd-8191-78ba155a25bf)
