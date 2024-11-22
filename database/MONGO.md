@@ -53,5 +53,23 @@ Você pode iniciar o processo mongod executando o seguinte comando:
 sudo systemctl start mongod
 ```
 
+## Acessando o Mongo
+
+1. Inicie o mongosh
+
+```
+mongosh
+```
+
+2. Mude para a coleção `comments`
+
+```
+use comments;
+```
+
+3. Procure pelos documentos
+
+![image](https://github.com/user-attachments/assets/63832e5a-229f-46fd-8191-78ba155a25bf)
+
 
 Baseado em: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
