@@ -6,7 +6,7 @@
 
 ![image](https://github.com/user-attachments/assets/d461d27f-fbb7-4b7b-be1a-8bbba5965e38)
 
-4. Instale a biblioteca `libpq-dev`
+4. Instale a biblioteca `libpq-dev` e o [MongoDB](MONGO.md)
 
 ```
 sudo apt install libpq-dev
