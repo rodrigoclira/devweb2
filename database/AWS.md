@@ -9,7 +9,7 @@
 4. Instale a biblioteca `libpq-dev` e o [MongoDB](MONGO.md)
 
 ```
-sudo apt install libpq-dev
+sudo apt install libpq-dev -y
 ```
 
 5. Em seguida, crie um ambiente virtual e ative-o:
