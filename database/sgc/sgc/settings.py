@@ -30,7 +30,7 @@ DEBUG = True
 PROD_ENV = False
 COMMENTS = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
