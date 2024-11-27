@@ -29,9 +29,8 @@ Assunto| Projeto | Atividade
 1 | [HTTP Simple Authentication](https://github.com/rodrigoclira/devweb2/tree/main/autenticacao) |
 2 | [Autenticação usando oauth2](https://github.com/rodrigoclira/devweb2/tree/main/autenticacao-social) | [Adicionando autenticação com Google e Facebook](https://github.com/rodrigoclira/crud-biblioteca/blob/main/README.md#atividade)
 **API**|
-1 | [Node (Employee Manager)](https://github.com/rodrigoclira/employee-manager-app-node-v1) | 
-2 | [Django Rest Framework (Employee Manager)](https://github.com/rodrigoclira/employee-manager-app-v1) | 
-3 | [Django Rest Framework](https://github.com/rodrigoclira/devweb2/tree/main/api) | [Do Zero a Implantação](https://github.com/rodrigoclira/devweb2/blob/main/api/Atividade.md)
+1 | [Node (Employee Manager)](https://github.com/rodrigoclira/employee-manager-app-node-v1) e [Django Rest Framework (Employee Manager)](https://github.com/rodrigoclira/employee-manager-app-v1) | 
+2 | [Django Rest Framework](https://github.com/rodrigoclira/devweb2/tree/main/api) | [Do Zero a Implantação](https://github.com/rodrigoclira/devweb2/blob/main/api/Atividade.md)
 **Caching**|
 1 | [Caching com Memcached](https://github.com/rodrigoclira/devweb2/tree/main/caching) | 
 **Implantação**|
