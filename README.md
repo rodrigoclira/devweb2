@@ -47,3 +47,5 @@ Assunto| Projeto | Atividade
 Sugestões de leitura:
 
 | [Criando ambientes virtuais para projetos Python com Virtualenv](https://www.treinaweb.com.br/blog/criando-ambientes-virtuais-para-projetos-python-com-o-virtualenv/)
+| [Utilizando o pyenv para gerenciar versões do interpretador de Python](https://blog.accurate.com.br/tutorial-pyenv/)
+
