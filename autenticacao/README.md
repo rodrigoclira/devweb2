@@ -19,8 +19,8 @@ e das duas classes de middleware a seguir:
 Middleware são classes com métodos uqe são executados globalmente durante a fase de requisição ou resposta.
 
 A _framework_ de autenticação também inclui os modelos a seguir:
- - **User**: um modelo de usuário com campos básicos; os principais campos desse modelo são: _username_, _password_, _email_,
-_first_name_, _last_name_ e _is_active_.
+ - **User**: um modelo de usuário com campos básicos. 
+Os principais campos desse modelo são: _username_, _password_, _email_,_first_name_, _last_name_ e _is_active_.
  - **Group**: um modelo de grupo para classificar os usuários.
  - **Permission**: _flags_ para usuários ou grupos poderem executar determinadas ações.
 
