@@ -24,7 +24,8 @@ _first_name_, _last_name_ e _is_active_.
  - **Group**: um modelo de grupo para classificar os usuários.
  - **Permission**: _flags_ para usuários ou grupos poderem executar determinadas ações.
 
-O framework inclui também os forms e views padrões de autenticação.
+O _framework_ inclui também os _forms_ e _views_ padrões de autenticação.
+A explicação do projeto está descrita em [Auth-Django.md](autenticacao/Auth-Django.md) e o passo a passo para execução no Cloud9 está em [AWS.md](autenticacao/AWS.md).
 
 ## Pré-requisitos
 | Instalar dependências informadas no arquivo '_requirements.txt_' 
@@ -46,6 +47,7 @@ $ python manage.py runserver
 Por fim, acesse a página inicial no navegador: 
 
 http://127.0.0.1:8000/projeto/
+
 
 
 ## Referências
