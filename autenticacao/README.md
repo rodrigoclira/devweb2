@@ -1,6 +1,6 @@
 # Autenticação
 
-Este projeto tem como objetivo discutir Autenticação utilizando a framework django.
+Este projeto tem como objetivo discutir Autenticação utilizando o _framework_ Django.
 
 # Usando o Framework Django
 
@@ -9,27 +9,25 @@ autenticações de usuários, sessões, permissões e grupos de usuários. O sis
 inclui views para ações comuns do usuário, como logout, alteração de senha.
 
 O framework de autenticação está em django.contrib.auth e é usado por outros pacotes do contrib
-de Django. Ao criar um projeto Django com o comando *startproject*, o fremework de autenticação
+de Django. Ao criar um projeto Django com o comando *startproject*, o _fremework_ de autenticação
 será incluído nas configurações *default* do projeto. Ele é composto da aplicação django.contrib.auth
 e das duas classes de middleware a seguir:
 
-  - AutennticationMiddleware: associa os usuários às requisições usando sessões
-  - SessionMiddleware: cuida da sessão atual durante as requisições
+  - _AuthenticationMiddleware_: associa os usuários às requisições usando sessões
+  - _SessionMiddleware_: cuida da sessão atual durante as requisições
 
 Middleware são classes com métodos uqe são executados globalmente durante a fase de requisição ou resposta.
 
-A framework de autenticação também inclui os modelos a seguir:
- - **User**: um modelo de usuário com campos básicos; os principais campos desse modelo são: username, password, email,
-first_name, last_name e is_active.
+A _framework_ de autenticação também inclui os modelos a seguir:
+ - **User**: um modelo de usuário com campos básicos; os principais campos desse modelo são: _username_, _password_, _email_,
+_first_name_, _last_name_ e _is_active_.
  - **Group**: um modelo de grupo para classificar os usuários.
- - **Permission**: flags para usuários ou grupos poderem executar determinadas ações.
+ - **Permission**: _flags_ para usuários ou grupos poderem executar determinadas ações.
 
-A framework inclui também os forms e views padrões de autenticação.
-
-
+O framework inclui também os forms e views padrões de autenticação.
 
 ## Pré-requisitos
-| Instalar dependências informadas no arquivo 'requirements.txt' 
+| Instalar dependências informadas no arquivo '_requirements.txt_' 
 
 ## Comandos
 
