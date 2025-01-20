@@ -28,7 +28,7 @@ Assunto| Projeto | Atividade
 **Mapeamento URL**|
 1 | [Django URLS](https://github.com/rodrigoclira/devweb2/tree/main/mapeamento-url) |
 **Autenticação**|
-1 | [HTTP Simple Authentication](https://github.com/rodrigoclira/devweb2/tree/main/autenticacao) |
+1 | [Django Simple Authentication](https://github.com/rodrigoclira/devweb2/tree/main/autenticacao) |
 2 | [Autenticação usando oauth2](https://github.com/rodrigoclira/devweb2/tree/main/autenticacao-social) | [Adicionando autenticação com Google e Facebook](https://github.com/rodrigoclira/crud-biblioteca/blob/main/README.md#atividade)
 **API**|
 1 | *Employee Manager* usando [(Node)](https://github.com/rodrigoclira/employee-manager-app-node-v1) e [(Django Rest Framework)](https://github.com/rodrigoclira/employee-manager-app-v1) | 
