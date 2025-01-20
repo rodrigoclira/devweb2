@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-f7o3wfiz*7co-h$ci2c8-+g(%e^t_zm+5c5^tqxljb^!qmvq^&
 DEBUG = True
 PROD_ENV = False
 COMMENTS = False
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 if PROD_ENV:
