@@ -25,7 +25,7 @@ _first_name_, _last_name_ e _is_active_.
  - **Permission**: _flags_ para usuários ou grupos poderem executar determinadas ações.
 
 O _framework_ inclui também os _forms_ e _views_ padrões de autenticação.
-A explicação do projeto está descrita em [Auth-Django.md](autenticacao/Auth-Django.md) e o passo a passo para execução no Cloud9 está em [AWS.md](autenticacao/AWS.md).
+A explicação do projeto está descrita em [Auth-Django.md](Auth-Django.md) e o passo a passo para execução no Cloud9 está em [AWS.md](AWS.md).
 
 ## Pré-requisitos
 | Instalar dependências informadas no arquivo '_requirements.txt_' 
