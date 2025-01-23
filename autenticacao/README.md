@@ -6,17 +6,17 @@ Este projeto tem como objetivo discutir Autenticação utilizando o _framework_ 
 
 Django inclui um framework de autenticação pronto, com capacidade para lidar com
 autenticações de usuários, sessões, permissões e grupos de usuários. O sistema de autenticação
-inclui views para ações comuns do usuário, como logout, alteração de senha.
+inclui _views_ para ações comuns do usuário, como _logout_, alteração de senha.
 
-O framework de autenticação está em django.contrib.auth e é usado por outros pacotes do contrib
+O _framework_ de autenticação está em `django.contrib.auth` e é usado por outros pacotes do contrib
 de Django. Ao criar um projeto Django com o comando *startproject*, o _fremework_ de autenticação
-será incluído nas configurações *default* do projeto. Ele é composto da aplicação django.contrib.auth
-e das duas classes de middleware a seguir:
+será incluído nas configurações *default* do projeto. Ele é composto da aplicação `django.contrib.auth`
+e das duas classes de _middleware_ a seguir:
 
   - _AuthenticationMiddleware_: associa os usuários às requisições usando sessões
   - _SessionMiddleware_: cuida da sessão atual durante as requisições
 
-Middleware são classes com métodos uqe são executados globalmente durante a fase de requisição ou resposta.
+_Middleware_ são classes com métodos uqe são executados globalmente durante a fase de requisição ou resposta.
 
 A _framework_ de autenticação também inclui os modelos a seguir:
  - **User**: um modelo de usuário com campos básicos. 
@@ -36,12 +36,12 @@ Para executar projeto django utilize os comandos abaixo na pasta principal do pr
 
 Se for a primeira vez que esteja executando 
 ```
-$ python manage.py makemigrations
+python manage.py makemigrations
 ```
 
 e em seguida inicie a aplicação:
 ```
-$ python manage.py runserver
+python manage.py runserver
 ```
 
 Por fim, acesse a página inicial no navegador: 
