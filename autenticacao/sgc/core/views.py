@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import UserRegistrationForm
 # Create your views here.
 
@@ -14,3 +14,6 @@ def registrar(request):
         user_form = UserRegistrationForm()
 
     return render(request, 'core/registro.html',  {'user_form': user_form})
+
+def redirecionar(request):
+    return redirect('projeto:listar')

@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django import forms
+from django.utils.translation import gettext_lazy as _
 
 class UserRegistrationForm(forms.ModelForm):
 
@@ -9,6 +10,12 @@ class UserRegistrationForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ("username", 'first_name', 'email')
+
+        labels = {
+            "username": "Usuário",
+            "first_name": "Nome",
+            "email": "E-mail",
+        }
 
     # 'clean_nomedocampo' pode ser usado para limpar ou validar o formulário.
     # ele é automaticamente chamado pelo método 'clean' do ModelForm
