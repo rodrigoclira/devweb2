@@ -44,18 +44,19 @@ Agora você pode optar por logar com a sua conta do Google.
 
 O [python social auth possui](https://github.com/python-social-auth/social-app-django) uma backend de autenticação para django. A instalação desse backend facilita a inclusão de autenticações usando redes sociais ([ver lista completa](https://python-social-auth.readthedocs.io/en/latest/intro.html#features)). Os passos listados abaixo já foram realizados para o projeto atual, mas podem ser reutilzidos para criação de novos projetos: 
 
-1. É necessário instalar o pacote para django
+1. Instalar os pacotes necessários.
 
 ```
-pip install social-auth-app-django
+pip install social-auth-app-django django-extensions Werkzeug pyOpenSSL
 ``` 
 
-2. em seguida adicionar o 'social_django' como um novo app do projeto na variável INSTALLED_APPS do settings.py. 
+2. em seguida adicionar o 'social_django' e 'django_extensions' como um novo app do projeto na variável INSTALLED_APPS do settings.py. 
 
 ```
 INSTALLED_APPS = [
 ...
 'social_django',
+'django_extensions',
 }
 ```
 
@@ -163,7 +164,7 @@ e selecione 'ID do Cliente Ouath'
 
 ```html
 <li class="google">
-        <a href="{% url "social:begin" "google-oauth2" %}">Login com o Google </a>
+        <a href="{% url 'social:begin' 'google-oauth2' %}">Login com o Google </a>
 </li>
 ```
 
