@@ -24,3 +24,5 @@ sqlparse==0.4.1
 typing-extensions==3.10.0.0
 urllib3==1.26.5
 Werkzeug==2.0.1
+djangorestframework==3.12.4
+djangorestframework-simplejwt==4.7.2
