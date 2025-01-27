@@ -47,7 +47,7 @@ O [python social auth possui](https://github.com/python-social-auth/social-app-d
 1. Instalar os pacotes necessários.
 
 ```
-pip install social-auth-app-django django-extensions Werkzeug pyOpenSSL
+pip install -r requirements.txt
 ``` 
 
 2. em seguida adicionar o 'social_django' e 'django_extensions' como um novo app do projeto na variável INSTALLED_APPS do settings.py. 
