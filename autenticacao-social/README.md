@@ -167,7 +167,7 @@ Para executar projeto django utilize os comandos abaixo na pasta principal do pr
 
 Se for a primeira vez que esteja executando 
 ```
-$ python manage.py makemigrations
+python manage.py makemigrations
 ```
 
 e em seguida inicie a aplicação usando o seguinte comando:
