@@ -10,35 +10,14 @@ Este projeto tem como objetivo destacar a utilização do oauth2 com Django. Nes
 
 Vários serviços de redes sociais não permitem utilizar o localhost como destino de redirecionamento, por isso iremos criar um domínio interno na máquina. Com uma configuração local, iremos informar ao computador que um determinado domínio está no nosso localhost. Para fazer isso no Linux ou MacOs, edite o arquivo */etc/hosts* e adicione: 
 
+> Não precisa realizar essa etapa se estiver instalando no EC2 ou Cloud9
+
 ```
 127.0.0.1 mysite.com
 ```
 No windows o arquivo a ser modificado é *C:\Windows\System32\Drivers\etc\hosts*. A partir de agora 'mysite.com' é um alias para o localhost. 
 
-## Execução do Projeto
 
-Para executar projeto django utilize os comandos abaixo na pasta principal do projeto. 
-
-Se for a primeira vez que esteja executando 
-```
-$ python manage.py makemigrations
-```
-
-e em seguida inicie a aplicação usando o seguinte comando:
-```
-python manage.py runserver_plus --cert-file cert.crt
-```
-
-
-Por fim, acesse a página inicial no navegador: 
-
-[https://mysite.com:8000/projeto/](https://mysite.com:8000/projeto/)
-
-> note que agora estamos usando https para que a autenticação usando oauth2 funcine. 
-
-Agora você pode optar por logar com a sua conta do Google. 
-
-![image](https://user-images.githubusercontent.com/276077/143514219-3e5ae815-edfb-4ca4-8a33-9a8e4ea0e5bc.png)
 
 ## Informações sobre a autenticação Oauth2. 
 
@@ -50,7 +29,7 @@ O [python social auth possui](https://github.com/python-social-auth/social-app-d
 pip install -r requirements.txt
 ``` 
 
-2. em seguida adicionar o 'social_django' e 'django_extensions' como um novo app do projeto na variável INSTALLED_APPS do settings.py. 
+2. Em seguida confirme se os apps o 'social_django' e 'django_extensions' estão indicados como no INSTALLED_APPS do settings.py. Caso não estejam, adicione-os. 
 
 ```
 INSTALLED_APPS = [
@@ -65,7 +44,7 @@ INSTALLED_APPS = [
 python manage.py migrate
 ```
 
-4. Agora é necessário adicionar as urls da autenticação social. Elas seguem um padrão que deve ser replicado. No seu urls.py principal, adicione o seguinte path: 
+4. Agora é necessário adicionar as urls da autenticação social. Elas seguem um padrão que deve ser replicado. Cheque se elas já foram adicionadas no seu urls.py principal (`sgc/urls.py`): 
 
 ```
 path('social-auth/', include("social_django.urls"), name='social')
@@ -79,9 +58,10 @@ path('social-auth/', include("social_django.urls"), name='social')
 ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 ```
 
-> A partir de agora vamos configurar o projeto para usar a autenticação com o email do google. Lembre-se que a biblioteca permite a autenticação com inúmeras redes sociais. 
+> A partir de agora vamos configurar o projeto para usar a autenticação com o email do google. Lembre-se que a biblioteca permite a autenticação com outras redes sociais, além da conta do Google. 
 
-7. Vamos adicionar o backend de autenticação do google na lista de backend disponíveis no projeto. O backend que deve ser adicionado é *social_core.backends.google.GoogleOAuth2* 
+7. Vamos adicionar o `backend` de autenticação do google na lista de `backend` disponíveis no projeto no arquivo `settings.py`.
+O `backend` que deve ser adicionado é *social_core.backends.google.GoogleOAuth2* 
 
 ```
 AUTHENTICATION_BACKENDS = [
@@ -90,30 +70,32 @@ AUTHENTICATION_BACKENDS = [
 ]
 ```
 
-9. Agora precisamos criar a aplicação no google para que possámos obter a chave de acesso a API, (*SOCIAL_AUTH_GOOGLE_OAUTH2_KEY*) e o (*SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET*) para configurar o módulo. 
+9. Agora precisamos criar a aplicação no google para que possámos obter a chave de acesso a API, (*SOCIAL_AUTH_GOOGLE_OAUTH2_KEY*) e o (*SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET*) que devem ser informados no `settings.py`. 
+
+![image](https://github.com/user-attachments/assets/0045c33e-4de2-4f59-913b-20481814af9f)
 
 10. Acesse o seu Google Developer Console [https://console.cloud.google.com/home/](https://console.cloud.google.com/home/). Na página crie um novo projeto, como indicado na imagem abaixo. 
 
 ![image](https://user-images.githubusercontent.com/276077/143516570-cb26d3e4-0d17-4a91-929d-5801c6ff9d9d.png)
 
-11. Em seguida dê um nome ao seu projeto na plataforma do google e aperte em 'criar'. 
+11. Em seguida dê um nome ao seu projeto na plataforma do google e aperte em `criar`. 
 
 ![image](https://user-images.githubusercontent.com/276077/143517017-9ead6ef3-93f3-4723-8b46-20bb36081d7c.png)
 
 
-12. Com o projeto criado, clique em 'APIs e Serviços / Credenciais' 
+12. Com o projeto criado, clique em `APIs e Serviços / Credenciais` 
 
 ![image](https://user-images.githubusercontent.com/276077/143517264-4d5d2b1e-29ca-4c32-88dc-c9a8e59e6fe3.png)
 
-e selecione 'ID do Cliente Ouath'
+e selecione `ID do Cliente Oauth`
 
 ![image](https://user-images.githubusercontent.com/276077/143517313-b2fd7101-c89c-4c71-b58b-c33841ac52e5.png)
 
-13. Clique em 'Configura Tela de Consentimento'
+13. Clique em `Configura Tela de Consentimento`
 
 ![image](https://user-images.githubusercontent.com/276077/143517473-56358427-cbb4-4fb1-8713-25a246788dc6.png)
 
-14. Escolha a opção 'Externo' para permitir que qualquer usuário com uma conta google acesso a aplicação. A opção 'Interno' é interessante quando você quer deixar a sua aplicação funcionando apenas para os usuários de uma determinada organização, como por exemplo *@paulista.ifpe.edu.br*. 
+14. Escolha a opção `Externo` para permitir que qualquer usuário com uma conta google acesso a aplicação. A opção 'Interno' é interessante quando você quer deixar a sua aplicação funcionando apenas para os usuários de uma determinada organização, como por exemplo *@paulista.ifpe.edu.br*. 
 
 ![image](https://user-images.githubusercontent.com/276077/143517602-d6f3f06c-e06f-401b-b33b-f3c2e2ba767f.png)
 
@@ -123,24 +105,24 @@ e selecione 'ID do Cliente Ouath'
 ![image](https://user-images.githubusercontent.com/276077/143518367-a7187537-4934-41bb-b17c-2c21fe646321.png)
 
 
-16. Prossiga clicando em 'Salvar e Continuar' até a tela de Resumo
+16. Prossiga clicando em `Salvar e Continuar` até a tela de Resumo
 
 ![image](https://user-images.githubusercontent.com/276077/143518610-3972002d-1226-4558-903c-2412834395c0.png)
 
 
-17. Por fim clique em 'Voltar para o Painel' na tela de Resumo. 
+17. Por fim clique em `Voltar para o Painel` na tela de Resumo. 
 
 ![image](https://user-images.githubusercontent.com/276077/143518761-aa0f8d01-927f-45cf-b257-a44d0d9eb621.png)
 
-18. Novamente clique em 'Criar Credenciais' e Escolha 'ID do Cliente Oauth'
+18. Novamente clique em `Criar Credenciais` e Escolha `ID do Cliente Oauth`
 
 ![image](https://user-images.githubusercontent.com/276077/143518927-b27c2412-cc7d-4e24-93cb-b4ad5ec19ffb.png)
 
-19. Escolha 'Aplicação da Web'
+19. Escolha `Aplicação da Web`
 
 ![image](https://user-images.githubusercontent.com/276077/143518980-f65ad63d-4c71-4827-8602-e023e9cae0a0.png)
 
-20. Agora é importante ter atenção para a URI de redirecionamento. Ela será usada para indicar a sua aplicação que a autenticação foi realizada com sucesso e segue um padrão definido pelo python social auth. A uri para o 'mysite.com' é 'https://mysite.com:8000/social-auth/complete/google-oauth2/' e o 'https://mysite.com:8000/social-auth/', como exibido na página abaixo. 
+20. Agora é importante ter atenção para a URI de redirecionamento. Ela será usada para indicar a sua aplicação que a autenticação foi realizada com sucesso e segue um padrão definido pelo python social auth. A uri para o 'mysite.com' é `https://mysite.com:8000/social-auth/complete/google-oauth2/` e o `https://mysite.com:8000/social-auth/`, como exibido na página abaixo. 
 
 ![image](https://user-images.githubusercontent.com/276077/143520584-698036ec-5b60-4d5a-a55d-364013fb782e.png)
 
@@ -168,5 +150,27 @@ e selecione 'ID do Cliente Ouath'
 </li>
 ```
 
+Por fim, acesse a página inicial no navegador: 
+
+[https://mysite.com:8000/projeto/](https://mysite.com:8000/projeto/)
+
+> note que agora estamos usando https para que a autenticação usando oauth2 funcine. 
+
+Agora você pode optar por logar com a sua conta do Google. 
+
+![image](https://user-images.githubusercontent.com/276077/143514219-3e5ae815-edfb-4ca4-8a33-9a8e4ea0e5bc.png)
 
 
+## Execução do Projeto
+
+Para executar projeto django utilize os comandos abaixo na pasta principal do projeto. 
+
+Se for a primeira vez que esteja executando 
+```
+$ python manage.py makemigrations
+```
+
+e em seguida inicie a aplicação usando o seguinte comando:
+```
+python manage.py runserver_plus --cert-file cert.crt
+```
