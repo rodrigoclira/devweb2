@@ -23,7 +23,7 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-Executar o projeto na porta 80
+Executar o projeto na porta 8080
 ```
-python manage.py runserver 0.0.0.0:80
+python manage.py runserver 0.0.0.0:8080
 ```
