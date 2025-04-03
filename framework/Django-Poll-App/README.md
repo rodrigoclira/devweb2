@@ -31,5 +31,5 @@ python manage.py runserver 0.0.0.0:8080
 
 Como criar um super usuário (admin)?
 ```
-python manager.py createsuperuser
+python manage.py createsuperuser
 ```
