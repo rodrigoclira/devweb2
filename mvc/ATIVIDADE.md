@@ -1,9 +1,11 @@
 # Atividade: Criando um Novo Aplicativo "Eventos"
 
+> Tutorial desenvolvido por [Eduardo](https://github.com/Eduardo-J-S) como atividade da monitoria do semestre de 2024.2
+
 Este tutorial mostra, passo a passo, como criar um novo aplicativo no Django para gerenciar eventos associados a projetos. Vamos desenvolver o aplicativo "eventos", entender as alterações no código e aprender boas práticas de organização em projetos Django.
 
 ## 1. Criar o Aplicativo
-Primeiro, criamos o aplicativo com o comando:
+Primeiro, criamos o aplicativo (app) com o comando:
 ```cmd
 python manage.py startapp eventos
 ```
