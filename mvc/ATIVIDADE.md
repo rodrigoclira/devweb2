@@ -1,6 +1,8 @@
 # Atividade: Criando um Novo Aplicativo "Eventos"
 
-> Tutorial desenvolvido por [Eduardo](https://github.com/Eduardo-J-S) como atividade da monitoria do semestre de 2024.2
+> Tutorial desenvolvido por [Eduardo](https://github.com/Eduardo-J-S) como atividade da monitoria do semestre de 2024.2.
+
+> Vesão atualiza com as sugestões dos alunos Karen e Arthur (DevWeb II em 2025.1)
 
 Este tutorial mostra, passo a passo, como criar um novo aplicativo no Django para gerenciar eventos associados a projetos. Vamos desenvolver o aplicativo "eventos", entender as alterações no código e aprender boas práticas de organização em projetos Django.
 
@@ -211,7 +213,7 @@ Ao registrar o modelo `Evento`, podemos criar, editar e excluir eventos diretame
 
 Em eventos/admin.py, adicionar: 
 
-```
+```python
 @admin.register(Evento)
 class EventoAdmin(admin.ModelAdmin):
     list_display = ["titulo", "descricao", "data", "projeto"]
