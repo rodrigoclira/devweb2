@@ -221,7 +221,8 @@ class EventoAdmin(admin.ModelAdmin):
 ```
 
 ## 8. Testar e Melhorar
-- Execute o servidor local:
+
+Execute o servidor local:
 ```cmd
 pip install -r requirements.txt
 ```
