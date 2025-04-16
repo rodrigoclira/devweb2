@@ -36,20 +36,30 @@ sudo docker ps --format '{{.Names}}'
 Se tudo estiver ocorrido da forma esperada, o resultado será algo assim: 
 ![image](https://user-images.githubusercontent.com/276077/116919942-6817ed80-ac28-11eb-8fc5-b9ee7b335b2c.png)
 
+### Visualizando os logs dos _containers_
+
 Ainda é possível analisar cada um dos logs gerados pelas aplicações no container usando o comando "docker logs". 
 
 ```
 sudo docker logs nginx -f
+```
+ou visualizar todos os logs de uma única vez com: 
+
+```
+sudo docker-compose logs -f
 ```
 
 Nesse caso analisando o serviço (container) nginx. 
 
 ![image](https://user-images.githubusercontent.com/276077/116920240-c2b14980-ac28-11eb-9150-b20f653ccb70.png)
 
+### Utilizando o Postman ou Insomnia
+
 Agora é só usar o postman para fazer as requisições. Exemplo de requisição para a funcionalidade de soma
 
 ![image](https://user-images.githubusercontent.com/276077/116920423-fdb37d00-ac28-11eb-8ad3-1517aaedeb52.png)
 
+### Desligando os _containers_
 Por fim, o comando 'docker-compose down' derruba todos os serviços. 
 
 ```
