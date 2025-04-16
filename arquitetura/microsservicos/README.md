@@ -68,6 +68,24 @@ sudo docker-compose down
 
 ![image](https://user-images.githubusercontent.com/276077/116920668-4f5c0780-ac29-11eb-8905-dadc80b5fe62.png)
 
+## Troubleshooting
+
+### Erro ao iniciar o container do nginx (porta já utilizada)
+
+Modifique no docker-compose.yml a porta que será exposta pelo nginx. Utilize a porta 8080. 
+
+```
+ports:
+- 8080:80
+```
+
+### Problema no acesso "VFS connection does not exist"
+Se você estiver rodando o projeto no Cloud9, o acesso a url de _preview_ fica disponível apenas no mesmo navegador, impossibilitando o teste usando o postman ou insomnia.
+https://docs.aws.amazon.com/cloud9/latest/user-guide/app-preview.html#app-preview-preview-app
+
+Caso precise acessar essas aplicações para testar o a aplicação, altere o `Segurity Group` do EC2 utilizado pelo seu ambiente Cloud9. Nessa alteração você deve permitir o acesso a porta utilizada no `docker-compose`. Em seguida, para fazer o teste de acesso é necessário utilizar o dns público da máquina EC2. 
+
+
 ## Atividade
 
 Adicione um novo microsserviço a arquitetura atual do exemplo. Ele será responsável pelo novo *endpoint* da api que realiza uma multiplicação (**/mult**). Ele receberá dois valores, **op1**, **op2** e retornará o resultado da multiplicação. Você precisa criar umaa nova aplicação coma uma outra framework (não utilizar flask).
