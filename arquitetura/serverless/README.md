@@ -37,13 +37,19 @@ Novo código
 ## Criando o Gateway (API-Gateway)
 
 1. No serviço `API Gateway` da AWS, escolha o HTTP API, clicando em `Build`.
+2. 
 ![image](https://github.com/user-attachments/assets/f7f63e56-6c75-4606-b04d-d561401c2aaf)
 
-2. Clique em `Add Integration` e escolha o função lambda. Indique o nome da API baseado na função lambda escolhida.
-Depois clique em `Próximo`. 
+3. Dê um nome para a API e em seguida clique em `Add Integration` e adicione as funções lambdas `calc`, `soma` e `sub`. 
+Depois clique em `Próximo`.
+
+![image](https://github.com/user-attachments/assets/27d29bee-f2e3-48f1-898f-67d82b7b7c18)
+
 ![image](https://github.com/user-attachments/assets/e9c5f03f-d586-4e5f-89d9-ab49a6da4206)
 
-3. Configure a rota, usando apenas o método `GET`
+5. Configure a rota, usando apenas o método `GET`
+
+![image](https://github.com/user-attachments/assets/f307b1f5-d31c-4b6d-9880-7dc272cc836e)
 
 ![image](https://github.com/user-attachments/assets/cf09e4ab-725d-4da0-b6ba-8424180cb3c9)
 
