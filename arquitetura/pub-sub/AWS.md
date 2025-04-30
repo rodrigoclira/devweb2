@@ -1,4 +1,45 @@
-## Executar na AWS
+## Executar na AWS (Cloud9)
+
+![image](https://user-images.githubusercontent.com/276077/162766448-13e0ebe8-8325-4e32-a8d7-5deff7744c10.png)
+
+* Crie um ambiente no Cloud9 utilizando a instância `m5.large (8 GiB RAM + 2 vCPU)`.
+
+1. Copie o projeto pub-sub para o cloud9.
+
+2. Modifique a porta no qual a aplicação vai rodar. No docker-compose, mude a seguinte parte: 
+
+**antigo**
+```
+  upload:
+    build: upload-app
+    container_name: upload
+    ports:
+      - 5000:5000
+```
+
+**novo** 
+```
+  upload:
+    build: upload-app
+    container_name: upload
+    ports:
+      - 8080:5000
+```
+
+> Por que essa mudança foi necessária?
+
+
+4. Inicialize a composição com o comando abaixo:
+
+```
+sudo docker compose up --build
+```
+
+3. Acesse a página da aplicação através do botão de `Preview` do Cloud9
+
+
+
+## Executar na AWS (EC2)
 
 * Utilize a instância do tipo `t2.medium`
 
