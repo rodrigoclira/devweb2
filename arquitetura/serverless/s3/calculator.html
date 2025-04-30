@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Calculator using serverless</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        
+        .calculator {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+        }
+        
+        .display {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: right;
+            font-size: 24px;
+            height: 40px;
+            overflow: hidden;
+        }
+        
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        
+        button {
+            background-color: #f0f0f0;
+            border: none;
+            border-radius: 5px;
+            padding: 15px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #e0e0e0;
+        }
+        
+        .operator {
+            background-color: #f8a51d;
+            color: white;
+        }
+        
+        .operator:hover {
+            background-color: #e09016;
+        }
+        
+        .equals {
+            background-color: #4CAF50;
+            color: white;
+            grid-row: span 2;
+        }
+        
+        .equals:hover {
+            background-color: #3e8e41;
+        }
+        
+        .clear {
+            background-color: #f44336;
+            color: white;
+        }
+        
+        .clear:hover {
+            background-color: #d32f2f;
+        }
+        
+        .status {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #666;
+            text-align: center;
+            height: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button onclick="backspace()">⌫</button>
+            <button class="operator" onclick="setOperator('/')">/</button>
+            <button class="operator" onclick="setOperator('*')">×</button>
+            
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button class="operator" onclick="setOperator('-')">-</button>
+            
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button class="operator" onclick="setOperator('+')">+</button>
+            
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button class="equals" onclick="calculate()">=</button>
+            
+            <button onclick="appendToDisplay('0')" style="grid-column: span 2;">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+        </div>
+        <div class="status" id="status"></div>
+    </div>
+    
+    <script>
+        let firstValue = '0';
+        let operator = null;
+        let secondValue = '';
+        let isSecondValue = false;
+        let resultDisplayed = false;
+        
+        const display = document.getElementById('display');
+        const status = document.getElementById('status');
+        
+        function updateDisplay() {
+            if (operator !== null && isSecondValue) {
+                display.textContent = secondValue || '0';
+            } else {
+                display.textContent = firstValue;
+            }
+        }
+        
+        function appendToDisplay(value) {
+            if (resultDisplayed) {
+                // If a result was just displayed, start a new calculation
+                firstValue = value;
+                operator = null;
+                secondValue = '';
+                isSecondValue = false;
+                resultDisplayed = false;
+            } else if (!isSecondValue) {
+                // Working with first value
+                if (firstValue === '0' && value !== '.') {
+                    firstValue = value;
+                } else if (!(value === '.' && firstValue.includes('.'))) {
+                    firstValue += value;
+                }
+            } else {
+                // Working with second value
+                if (secondValue === '' && value !== '.') {
+                    secondValue = value;
+                } else if (!(value === '.' && secondValue.includes('.'))) {
+                    secondValue += value;
+                }
+            }
+            updateDisplay();
+        }
+        
+        function setOperator(op) {
+            if (operator !== null && secondValue !== '') {
+                // If we already have an operator and second value, calculate first
+                calculate();
+            }
+            
+            operator = op;
+            isSecondValue = true;
+            resultDisplayed = false;
+            status.textContent = '';
+        }
+        
+        function clearDisplay() {
+            firstValue = '0';
+            operator = null;
+            secondValue = '';
+            isSecondValue = false;
+            resultDisplayed = false;
+            updateDisplay();
+            status.textContent = '';
+        }
+        
+        function backspace() {
+            if (isSecondValue && secondValue !== '') {
+                secondValue = secondValue.slice(0, -1);
+            } else if (firstValue.length > 1) {
+                firstValue = firstValue.slice(0, -1);
+            } else {
+                firstValue = '0';
+            }
+            updateDisplay();
+        }
+        
+        function calculate() {
+          
+            if (operator === null || (isSecondValue && secondValue === '')) {
+                return;
+            }
+            
+            status.textContent = 'Calculating...';
+            
+            // API endpoint (replace with your actual API endpoint)
+            const apiUrl = 'https://API-GATEWAY';
+
+            if (operator === "+"){
+              method = "soma";
+            }else if (operator === "-"){
+              method = "subtracao";
+            }
+            
+            // Make the API call
+            fetch(apiUrl + method + "?" + + new URLSearchParams({
+                op1: firstValue,
+                op2: secondValue,
+            }).toString(), {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Update the display with the result from the API
+                firstValue = data.result.toString();
+                operator = null;
+                secondValue = '';
+                isSecondValue = false;
+                resultDisplayed = true;
+                updateDisplay();
+                status.textContent = 'Calculation completed';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                status.textContent = 'Error: ' + error.message;
+                
+                // Fallback to local calculation if API fails
+                try {
+                    let result;
+                    switch(operator) {
+                        case '+':
+                            result = parseFloat(firstValue) + parseFloat(secondValue);
+                            break;
+                        case '-':
+                            result = parseFloat(firstValue) - parseFloat(secondValue);
+                            break;
+                        case '*':
+                            result = parseFloat(firstValue) * parseFloat(secondValue);
+                            break;
+                        case '/':
+                            result = parseFloat(firstValue) / parseFloat(secondValue);
+                            break;
+                    }
+                    
+                    firstValue = result.toString();
+                    operator = null;
+                    secondValue = '';
+                    isSecondValue = false;
+                    resultDisplayed = true;
+                    updateDisplay();
+                    status.textContent = 'Used local calculation (API failed)';
+                } catch (e) {
+                    status.textContent = 'Invalid expression';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
