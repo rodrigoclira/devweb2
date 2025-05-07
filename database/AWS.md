@@ -1,16 +1,18 @@
 # Passos para instalação na AWS com o Cloud9
 
-1. Crie um ambiente com o Cloud9
+1. Crie um ambiente com o Cloud9 (use a instância `t3.small`)
 
-3. Abra o Cloud9 e copie os arquivos para a pasta principal, através da opção "File" -> "Upload Local File". 
+2. Abra o Cloud9 e copie os arquivos para a pasta principal, através da opção "File" -> "Upload Local File". 
 
 ![image](https://github.com/user-attachments/assets/d461d27f-fbb7-4b7b-be1a-8bbba5965e38)
 
-4. Instale a biblioteca `libpq-dev` e o [MongoDB](MONGO.md)
+3. Instale a biblioteca `libpq-dev` 
 
 ```
 sudo apt install libpq-dev -y
 ```
+
+4. Instale o [MongoDB](MONGO.md)
 
 5. Em seguida, crie um ambiente virtual e ative-o:
 
