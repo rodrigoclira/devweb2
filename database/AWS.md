@@ -39,7 +39,6 @@ pip install -r requirements.txt
 python manage.py runserver 0.0.0.0:8080
 ```
 
-
 8. Clique em `Preview` e escolha `Preview Running Application` e em seguida `Pop out into new Window`.
 
 ![image](https://github.com/user-attachments/assets/9e8781a7-918f-4df6-9171-995700fd241c)
@@ -51,3 +50,21 @@ python manage.py runserver 0.0.0.0:8080
 `https://URL-DO-CLOUD9/projeto`
 
 ![image](https://github.com/user-attachments/assets/4379f9a3-50a3-47b0-bb5a-ae484786f62e)
+
+
+## Banco de dados na AWS
+
+Pesquise e em seguida, altere o projeto para utilizar os serviços de banco de dados gerenciados da AWS.
+
+> Confirmar se todos os serviços estão disponíveis no Learner Lab. 
+
+1. RDS (Banco de Dados Relacional)
+
+2. DocumentDB (MongoDB)
+
+Mais informações sobre os banco de dados da AWS: https://aws.amazon.com/products/databases/
+
+![image](https://github.com/user-attachments/assets/badca81c-ca9b-406b-8037-e97cc63fb693)
+
+
+
