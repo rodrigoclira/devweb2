@@ -1,0 +1,207 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard - Django OTP Example{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h1 class="fw-bold mb-2">Welcome, {{ user.username }}!</h1>
+                    <p class="text-muted mb-0">Manage your account security settings</p>
+                </div>
+                <div class="text-end">
+                    <small class="text-muted">Last login: {{ user.last_login|date:"M d, Y H:i" }}</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row g-4">
+        <!-- Account Information -->
+        <div class="col-lg-6">
+            <div class="card h-100 fade-in-up">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="feature-icon me-3" style="width: 50px; height: 50px; font-size: 20px;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold mb-1">Account Information</h4>
+                            <p class="text-muted mb-0">Your profile details</p>
+                        </div>
+                    </div>
+                    
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <label class="form-label fw-semibold text-muted small">USERNAME</label>
+                            <p class="fw-semibold">{{ user.username }}</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="form-label fw-semibold text-muted small">EMAIL</label>
+                            <p class="fw-semibold">{{ user.email|default:"Not provided" }}</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="form-label fw-semibold text-muted small">PHONE</label>
+                            <p class="fw-semibold">{{ profile.phone_number|default:"Not provided" }}</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="form-label fw-semibold text-muted small">MEMBER SINCE</label>
+                            <p class="fw-semibold">{{ user.date_joined|date:"M d, Y" }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- OTP Security Status -->
+        <div class="col-lg-6">
+            <div class="card h-100 fade-in-up" style="animation-delay: 0.2s;">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="feature-icon me-3" style="width: 50px; height: 50px; font-size: 20px;">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold mb-1">Security Status</h4>
+                            <p class="text-muted mb-0">Two-factor authentication</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div>
+                            <p class="fw-semibold mb-1">OTP Authentication</p>
+                            <p class="text-muted small mb-0">Time-based one-time passwords</p>
+                        </div>
+                        <div>
+                            {% if profile.is_otp_enabled %}
+                                <span class="status-badge status-enabled">
+                                    <i class="fas fa-check-circle me-1"></i>Enabled
+                                </span>
+                            {% else %}
+                                <span class="status-badge status-disabled">
+                                    <i class="fas fa-times-circle me-1"></i>Disabled
+                                </span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    {% if profile.is_otp_enabled %}
+                        <div class="alert alert-success">
+                            <i class="fas fa-check-circle me-2"></i>
+                            Your account is protected with two-factor authentication.
+                        </div>
+                        <form method="post" action="{% url 'disable_otp' %}" class="d-inline">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-outline-danger" 
+                                    onclick="return confirm('Are you sure you want to disable OTP? This will make your account less secure.')">
+                                <i class="fas fa-times me-2"></i>Disable OTP
+                            </button>
+                        </form>
+                    {% else %}
+                        <div class="alert alert-warning">
+                            <i class="fas fa-exclamation-triangle me-2"></i>
+                            Enable OTP for enhanced account security.
+                        </div>
+                        <a href="{% url 'otp_setup' %}" class="btn btn-primary">
+                            <i class="fas fa-plus me-2"></i>Enable OTP
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Quick Actions -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card fade-in-up" style="animation-delay: 0.4s;">
+                <div class="card-body p-4">
+                    <h4 class="fw-bold mb-3">
+                        <i class="fas fa-bolt me-2"></i>Quick Actions
+                    </h4>
+                    
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <a href="{% url 'secure_view' %}" class="btn btn-outline-primary w-100 p-3">
+                                <i class="fas fa-lock d-block mb-2" style="font-size: 1.5rem;"></i>
+                                <div class="fw-semibold">Access Secure Area</div>
+                                <small class="text-muted">Test OTP-protected content</small>
+                            </a>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            {% if not profile.is_otp_enabled %}
+                                <a href="{% url 'otp_setup' %}" class="btn btn-outline-success w-100 p-3">
+                                    <i class="fas fa-shield-alt d-block mb-2" style="font-size: 1.5rem;"></i>
+                                    <div class="fw-semibold">Setup OTP</div>
+                                    <small class="text-muted">Enable two-factor auth</small>
+                                </a>
+                            {% else %}
+                                <div class="btn btn-outline-secondary w-100 p-3 disabled">
+                                    <i class="fas fa-check-circle d-block mb-2" style="font-size: 1.5rem;"></i>
+                                    <div class="fw-semibold">OTP Enabled</div>
+                                    <small class="text-muted">Security is active</small>
+                                </div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <a href="{% url 'logout' %}" class="btn btn-outline-danger w-100 p-3">
+                                <i class="fas fa-sign-out-alt d-block mb-2" style="font-size: 1.5rem;"></i>
+                                <div class="fw-semibold">Sign Out</div>
+                                <small class="text-muted">Logout securely</small>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Security Tips -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card fade-in-up" style="animation-delay: 0.6s;">
+                <div class="card-body p-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-lightbulb me-2"></i>Security Tips
+                    </h5>
+                    
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="d-flex">
+                                <div class="feature-icon me-3" style="width: 40px; height: 40px; font-size: 16px; background: linear-gradient(135deg, #10b981, #059669);">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-semibold mb-1">Use Authenticator Apps</h6>
+                                    <p class="text-muted small mb-0">
+                                        Install Google Authenticator, Authy, or Microsoft Authenticator for secure OTP generation.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="d-flex">
+                                <div class="feature-icon me-3" style="width: 40px; height: 40px; font-size: 16px; background: linear-gradient(135deg, #3b82f6, #2563eb);">
+                                    <i class="fas fa-key"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-semibold mb-1">Backup Your Codes</h6>
+                                    <p class="text-muted small mb-0">
+                                        Save your secret key in a secure location in case you lose access to your device.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

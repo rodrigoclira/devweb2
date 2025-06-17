@@ -1,0 +1,6 @@
+Django==5.2.3
+django-otp==1.6.0
+qrcode[pil]==8.2
+pyotp==2.9.0
+Pillow>=9.1.0
+

@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Django OTP Example{% endblock %}
+
+{% block content %}
+<div class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-4 fade-in-up">
+                    Secure Authentication with OTP
+                </h1>
+                <p class="lead mb-4 fade-in-up" style="animation-delay: 0.2s;">
+                    Experience enterprise-grade security with Time-based One-Time Passwords (TOTP). 
+                    Protect your accounts with an additional layer of authentication.
+                </p>
+                <div class="fade-in-up" style="animation-delay: 0.4s;">
+                    {% if not user.is_authenticated %}
+                        <a href="{% url 'register' %}" class="btn btn-light btn-lg me-3">
+                            <i class="fas fa-user-plus me-2"></i>Get Started
+                        </a>
+                        <a href="{% url 'login' %}" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-sign-in-alt me-2"></i>Sign In
+                        </a>
+                    {% else %}
+                        <a href="{% url 'dashboard' %}" class="btn btn-light btn-lg">
+                            <i class="fas fa-tachometer-alt me-2"></i>Go to Dashboard
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <div class="fade-in-up" style="animation-delay: 0.6s;">
+                    <i class="fas fa-mobile-alt" style="font-size: 8rem; opacity: 0.3;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-12 text-center mb-5">
+            <h2 class="fw-bold mb-3">Why Choose OTP Authentication?</h2>
+            <p class="text-muted">Enhanced security features that protect your digital identity</p>
+        </div>
+    </div>
+    
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 text-center p-4 fade-in-up">
+                <div class="feature-icon mx-auto">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h4 class="fw-bold mb-3">Enhanced Security</h4>
+                <p class="text-muted">
+                    Two-factor authentication adds an extra layer of protection beyond just passwords, 
+                    making your accounts significantly more secure.
+                </p>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card h-100 text-center p-4 fade-in-up" style="animation-delay: 0.2s;">
+                <div class="feature-icon mx-auto">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h4 class="fw-bold mb-3">Time-Based Codes</h4>
+                <p class="text-muted">
+                    TOTP generates unique 6-digit codes that change every 30 seconds, 
+                    ensuring maximum security with time-sensitive authentication.
+                </p>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card h-100 text-center p-4 fade-in-up" style="animation-delay: 0.4s;">
+                <div class="feature-icon mx-auto">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h4 class="fw-bold mb-3">Mobile Compatible</h4>
+                <p class="text-muted">
+                    Works with popular authenticator apps like Google Authenticator, 
+                    Authy, and Microsoft Authenticator on any smartphone.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mt-5">
+        <div class="col-12 text-center">
+            <h3 class="fw-bold mb-4">How It Works</h3>
+        </div>
+    </div>
+    
+    <div class="row g-4">
+        <div class="col-md-3 text-center">
+            <div class="card p-4 h-100 fade-in-up">
+                <div class="feature-icon mx-auto bg-success">
+                    <span class="fw-bold">1</span>
+                </div>
+                <h5 class="fw-bold">Register Account</h5>
+                <p class="text-muted small">Create your account with email and password</p>
+            </div>
+        </div>
+        
+        <div class="col-md-3 text-center">
+            <div class="card p-4 h-100 fade-in-up" style="animation-delay: 0.1s;">
+                <div class="feature-icon mx-auto bg-info">
+                    <span class="fw-bold">2</span>
+                </div>
+                <h5 class="fw-bold">Setup OTP</h5>
+                <p class="text-muted small">Scan QR code with your authenticator app</p>
+            </div>
+        </div>
+        
+        <div class="col-md-3 text-center">
+            <div class="card p-4 h-100 fade-in-up" style="animation-delay: 0.2s;">
+                <div class="feature-icon mx-auto bg-warning">
+                    <span class="fw-bold">3</span>
+                </div>
+                <h5 class="fw-bold">Verify Code</h5>
+                <p class="text-muted small">Enter the 6-digit code to confirm setup</p>
+            </div>
+        </div>
+        
+        <div class="col-md-3 text-center">
+            <div class="card p-4 h-100 fade-in-up" style="animation-delay: 0.3s;">
+                <div class="feature-icon mx-auto bg-primary">
+                    <span class="fw-bold">4</span>
+                </div>
+                <h5 class="fw-bold">Secure Login</h5>
+                <p class="text-muted small">Use OTP codes for secure authentication</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

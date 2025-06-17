@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Bem-vindo!{% endblock %}
+
+{% block content %}
+    <h1>Bem-Vindo {{ new_user.first_name }} </h1>
+    <p>Sua conta foi criada com suceso. Agora você pode <a href="{% url 'login' %}">logar</a>.</p>
+
+
+
+{% endblock %}

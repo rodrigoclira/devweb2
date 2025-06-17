@@ -1,0 +1,187 @@
+{% extends 'base.html' %}
+
+{% block title %}OTP Verification - Django OTP Example{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            <div class="card fade-in-up">
+                <div class="card-body p-5">
+                    <div class="text-center mb-4">
+                        <div class="feature-icon mx-auto mb-3">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h2 class="fw-bold">Two-Factor Authentication</h2>
+                        <p class="text-muted">Enter the code from your authenticator app</p>
+                    </div>
+                    
+                    <div class="alert alert-info mb-4">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-user-circle me-3" style="font-size: 1.5rem;"></i>
+                            <div>
+                                <strong>{{ username }}</strong>
+                                <br>
+                                <small class="text-muted">Completing login process</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form method="post" novalidate>
+                        {% csrf_token %}
+                        
+                        <div class="mb-4">
+                            <label for="{{ form.otp_token.id_for_label }}" class="form-label fw-semibold text-center d-block">
+                                <i class="fas fa-key me-2"></i>Authentication Code
+                            </label>
+                            <input type="text" 
+                                   name="{{ form.otp_token.name }}" 
+                                   id="{{ form.otp_token.id_for_label }}"
+                                   class="form-control otp-input"
+                                   placeholder="000000"
+                                   maxlength="6"
+                                   autocomplete="off"
+                                   required>
+                            {% if form.otp_token.errors %}
+                                <div class="text-danger small mt-1">
+                                    {% for error in form.otp_token.errors %}
+                                        <div><i class="fas fa-exclamation-circle me-1"></i>{{ error }}</div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                            <div class="form-text text-center">
+                                <i class="fas fa-clock me-1"></i>
+                                Code refreshes every 30 seconds
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary w-100 mb-3">
+                            <i class="fas fa-sign-in-alt me-2"></i>Complete Login
+                        </button>
+                    </form>
+                    
+                    <div class="text-center">
+                        <a href="{% url 'login' %}" class="text-decoration-none text-muted">
+                            <i class="fas fa-arrow-left me-1"></i>Back to Login
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Help Section -->
+            <div class="card mt-4 fade-in-up" style="animation-delay: 0.2s;">
+                <div class="card-body p-4">
+                    <h6 class="fw-bold mb-3">
+                        <i class="fas fa-question-circle me-2"></i>Need Help?
+                    </h6>
+                    
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <div class="d-flex">
+                                <i class="fas fa-mobile-alt text-primary me-3 mt-1"></i>
+                                <div>
+                                    <p class="small mb-1"><strong>Can't find your code?</strong></p>
+                                    <p class="small text-muted mb-0">
+                                        Open your authenticator app and look for the 6-digit code for this account.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12">
+                            <div class="d-flex">
+                                <i class="fas fa-sync-alt text-warning me-3 mt-1"></i>
+                                <div>
+                                    <p class="small mb-1"><strong>Code not working?</strong></p>
+                                    <p class="small text-muted mb-0">
+                                        Wait for the code to refresh (every 30 seconds) and try the new code.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12">
+                            <div class="d-flex">
+                                <i class="fas fa-clock text-info me-3 mt-1"></i>
+                                <div>
+                                    <p class="small mb-1"><strong>Time sync issues?</strong></p>
+                                    <p class="small text-muted mb-0">
+                                        Make sure your device's time is synchronized correctly.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const otpInput = document.querySelector('.otp-input');
+        
+        if (otpInput) {
+            // Auto-focus the OTP input
+            otpInput.focus();
+            
+            // Only allow numeric input
+            otpInput.addEventListener('input', function(e) {
+                this.value = this.value.replace(/[^0-9]/g, '');
+                
+                // Auto-submit when 6 digits are entered
+                if (this.value.length === 6) {
+                    // Add a small delay for better UX
+                    setTimeout(() => {
+                        this.form.submit();
+                    }, 500);
+                }
+            });
+            
+            // Handle paste events
+            otpInput.addEventListener('paste', function(e) {
+                e.preventDefault();
+                const paste = (e.clipboardData || window.clipboardData).getData('text');
+                const numericPaste = paste.replace(/[^0-9]/g, '').substring(0, 6);
+                this.value = numericPaste;
+                
+                if (numericPaste.length === 6) {
+                    setTimeout(() => {
+                        this.form.submit();
+                    }, 500);
+                }
+            });
+            
+            // Add visual feedback
+            otpInput.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'scale(1.02)';
+                this.parentElement.style.transition = 'transform 0.2s ease';
+            });
+            
+            otpInput.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'scale(1)';
+            });
+        }
+        
+        // Add a countdown timer for code refresh (visual feedback)
+        function updateCountdown() {
+            const now = new Date();
+            const seconds = now.getSeconds();
+            const remaining = 30 - (seconds % 30);
+            
+            const countdownElement = document.querySelector('.countdown');
+            if (countdownElement) {
+                countdownElement.textContent = remaining;
+            }
+        }
+        
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+    });
+</script>
+{% endblock %}
+
