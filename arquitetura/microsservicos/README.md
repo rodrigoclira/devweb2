@@ -36,20 +36,30 @@ sudo docker ps --format '{{.Names}}'
 Se tudo estiver ocorrido da forma esperada, o resultado será algo assim: 
 ![image](https://user-images.githubusercontent.com/276077/116919942-6817ed80-ac28-11eb-8fc5-b9ee7b335b2c.png)
 
+### Visualizando os logs dos _containers_
+
 Ainda é possível analisar cada um dos logs gerados pelas aplicações no container usando o comando "docker logs". 
 
 ```
 sudo docker logs nginx -f
+```
+ou visualizar todos os logs de uma única vez com: 
+
+```
+sudo docker-compose logs -f
 ```
 
 Nesse caso analisando o serviço (container) nginx. 
 
 ![image](https://user-images.githubusercontent.com/276077/116920240-c2b14980-ac28-11eb-9150-b20f653ccb70.png)
 
+### Utilizando o Postman ou Insomnia
+
 Agora é só usar o postman para fazer as requisições. Exemplo de requisição para a funcionalidade de soma
 
 ![image](https://user-images.githubusercontent.com/276077/116920423-fdb37d00-ac28-11eb-8ad3-1517aaedeb52.png)
 
+### Desligando os _containers_
 Por fim, o comando 'docker-compose down' derruba todos os serviços. 
 
 ```
@@ -57,6 +67,24 @@ sudo docker-compose down
 ```
 
 ![image](https://user-images.githubusercontent.com/276077/116920668-4f5c0780-ac29-11eb-8905-dadc80b5fe62.png)
+
+## Troubleshooting
+
+### Erro ao iniciar o container do nginx (porta já utilizada)
+
+Modifique no docker-compose.yml a porta que será exposta pelo nginx. Utilize a porta 8080. 
+
+```
+ports:
+- 8080:80
+```
+
+### Problema no acesso "VFS connection does not exist"
+Se você estiver rodando o projeto no Cloud9, o acesso a url de _preview_ fica disponível apenas no mesmo navegador, impossibilitando o teste usando o postman ou insomnia.
+https://docs.aws.amazon.com/cloud9/latest/user-guide/app-preview.html#app-preview-preview-app
+
+Caso precise acessar essas aplicações para testar o a aplicação, altere o `Segurity Group` do EC2 utilizado pelo seu ambiente Cloud9. Nessa alteração você deve permitir o acesso a porta utilizada no `docker-compose`. Em seguida, para fazer o teste de acesso é necessário utilizar o dns público da máquina EC2. 
+
 
 ## Atividade
 

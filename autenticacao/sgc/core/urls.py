@@ -7,6 +7,7 @@ from . import views
 app_name = 'core'
 
 urlpatterns = [ 
+    path('', views.redirecionar, name='redirecionar'),
     path('registrar/', views.registrar, name='registrar'),
 ]
 

@@ -1,9 +1,13 @@
 # Atividade: Criando um Novo Aplicativo "Eventos"
 
+> Tutorial desenvolvido por [Eduardo](https://github.com/Eduardo-J-S) como atividade da monitoria do semestre de 2024.2.
+
+> Vesão atualiza com as sugestões dos alunos Karen e Arthur (DevWeb II em 2025.1)
+
 Este tutorial mostra, passo a passo, como criar um novo aplicativo no Django para gerenciar eventos associados a projetos. Vamos desenvolver o aplicativo "eventos", entender as alterações no código e aprender boas práticas de organização em projetos Django.
 
 ## 1. Criar o Aplicativo
-Primeiro, criamos o aplicativo com o comando:
+Primeiro, criamos o aplicativo (app) com o comando:
 ```cmd
 python manage.py startapp eventos
 ```
@@ -100,8 +104,8 @@ from django.urls import path
 from . import views 
 
 urlpatterns = [
-    path('<int:projeto_id>/', views.listar_eventos, name='listar_eventos'),
-    path('novo/', views.criar_evento, name='criar_evento'),
+    path('exibir/<int:projeto_id>/eventos', views.listar_eventos, name='listar_eventos'),
+    path('evento/novo/', views.criar_evento, name='criar_evento'),
 ]
 ```
 `<int:projeto_id>/`: Exibe uma lista com todos os eventos associados a um projeto específico. 
@@ -113,13 +117,17 @@ urlpatterns = [
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('projeto/', include('projeto.urls')),  
-    path('eventos/', include('eventos.urls')), 
+    path('projeto/', include('eventos.urls')), 
 ]
 ```
 
 ## 4. Criar os Templates
 
-**Template para Listar Eventos**
+Na pasta `templates` do projeto insira os arquivos abaixo:
+
+
+**4.1 Template para Listar Eventos**
+
 O template `eventos/list.html` exibe os eventos de um projeto:
 
 ```html
@@ -140,7 +148,8 @@ O template `eventos/list.html` exibe os eventos de um projeto:
 {% endblock %}
 ```
 
-**Template para Criar Evento**
+**4.2 Template para Criar Evento**
+
 O formulário `eventos/form.html` permite adicionar novos eventos:
 
 ```html
@@ -200,15 +209,31 @@ admin.site.register(Evento)
 
 Ao registrar o modelo `Evento`, podemos criar, editar e excluir eventos diretamente no painel administrativo, o que é útil durante o desenvolvimento.
 
+## Adicionar o novo modelo no painel de admin
+
+Em eventos/admin.py, adicionar: 
+
+```python
+@admin.register(Evento)
+class EventoAdmin(admin.ModelAdmin):
+    list_display = ["titulo", "descricao", "data", "projeto"]
+    search_fields = ["titulo", "projeto"]
+    list_filter = ["data"]
+    date_hierarchy = "data"
+```
+
 ## 8. Testar e Melhorar
-- Execute o servidor local:
+
+Execute o servidor local:
 ```cmd
 pip install -r requirements.txt
 ```
 
-Acesse as rotas para testar a funcionalidade.O servidor será iniciado no endereço http://127.0.0.1:8000/:
-- http://127.0.0.1:8000/eventos/<projeto_id>/: Lista os eventos de um projeto. 
-- http://127.0.0.1:8000/eventos/novo/: Adiciona um novo evento.
+Acesse as rotas para testar a funcionalidade. O servidor será iniciado no endereço http://127.0.0.1:8000/:
+- `http://127.0.0.1:8000/projeto/<projeto_id>/eventos`: Lista os eventos de um projeto. 
+- `http://127.0.0.1:8000/projeto/novo/evento`: Adiciona um novo evento.
+
+> Se você estiver executando o projeto na AWS, utilize o DNS público da máquina para acessar o projeto. 
 
 **Desafios Extras**
 1. Adicionar páginas para editar e excluir eventos.

@@ -22,7 +22,7 @@ Assunto| Projeto | Atividade
 4 | [Híbrida (Serverless + Microsserviços)](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/hibrida) | 
 5 | [Publish/Subscribe](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/pub-sub) | [Microsserviço '_Notificador_' usando pub/sub](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/pub-sub#atividade)
 **Model-View-Controller**|
-1 | [Django MVC](https://github.com/rodrigoclira/devweb2/tree/main/mvc) | [Criação de Funcionalidade Evento](https://github.com/Eduardo-J-S/devweb2/blob/main/mvc/ATIVIDADE.md)
+1 | [Django MVC](https://github.com/rodrigoclira/devweb2/tree/main/mvc) | [Criação de Funcionalidade Evento](https://github.com/rodrigoclira/devweb2/blob/main/mvc/ATIVIDADE.md)
 **Banco de Dados**|
 1 | [Django + MogoDB + ORM](https://github.com/rodrigoclira/devweb2/tree/main/database) |  [Criação de modelos usando ORM](https://github.com/rodrigoclira/devweb2/tree/main/database#atividade)
 **Mapeamento URL**|

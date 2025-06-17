@@ -10,6 +10,12 @@ class UserRegistrationForm(forms.ModelForm):
         model = User
         fields = ("username", 'first_name', 'email')
 
+        labels = {
+            "username": "Usuário",
+            "first_name": "Nome",
+            "email": "E-mail",
+        }
+
     # 'clean_nomedocampo' pode ser usado para limpar ou validar o formulário.
     # ele é automaticamente chamado pelo método 'clean' do ModelForm
     def clean_password2(self):

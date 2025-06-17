@@ -1,9 +1,9 @@
-# Exemplo de projeto usando OAUTH2 (django-social)
+# Exemplo de projeto usando Django Rest Framework
 
 Para rodar o prorgama: 
 
 ```
-python manage.py runserver_plus --cert-file cert.crt
+python manage.py runserver
 ```
 
 

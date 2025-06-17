@@ -5,17 +5,19 @@
 Pré-requisitos:
 - Ter acesso a uma conta da AWS com os serviços: Lambda e API Gateway
 
-
 Objetivo: 
 Neste projeto será criado uma API que realiza operações matemáticas simples (calculadora) utilizando o conceito de serverless com a utilização da AWS Lambda e API Gateway.
 
 Passos para execução:
 
 ## Criando as funções lambdas
+
 1. Acesse ao serviço Lambda da AWS e crie uma função lambda usando a opção "Usar um esquema". Pesquise e selecione o esquema: "hello world function". Dê um nome a função baseando-se nos exemplos disponíveis na pasta "lambdas" do repositório. Exemplo: soma 
+
 ![image](https://github.com/user-attachments/assets/4ff4e945-c79d-4502-9146-c7892caaa147)
 
-4. Na tela de exibição da função criada, abra a aba "código" e substitua-o pelo código da função lambda do repositório. Se na etapa anterior foi criada a função "subtracacao", copie o conteúdo do arquivo "lambdas/subtracacao.py" .
+2. Na tela de exibição da função criada, abra a aba "código" e substitua-o pelo código da função lambda do repositório. Se na etapa anterior foi criada a função "subtracacao", copie o conteúdo do arquivo "lambdas/subtracacao.py" .
+
 ![image](https://github.com/user-attachments/assets/2b24fd8f-3222-46d4-9057-6ca826e84578)
 
 Novo código
@@ -26,56 +28,79 @@ Novo código
    
 4. Repita os passos 1-2 para adicionar as outras funções lambdas. Os nomes delas serão: soma e calc.
 
+5. No final, todas as três funções estarão criadas.
+
+   ![image](https://github.com/user-attachments/assets/04380005-94d8-43fc-95b6-d71c51790cca)
+
+
+
+
 -----------------------------------------------------
+
+
+
 ## Criando o Gateway (API-Gateway)
 
-1. No serviço `API Gateway` da AWS, escolha o HTTP API, clicando em `Build`.
+1. No serviço `API Gateway` da AWS, escolha o `HTTP API`, clicando em `Build`.
+   
 ![image](https://github.com/user-attachments/assets/f7f63e56-6c75-4606-b04d-d561401c2aaf)
 
-2. Clique em `Add Integration` e escolha o função lambda. Indique o nome da API baseado na função lambda escolhida.
-Depois clique em `Próximo`. 
-![image](https://github.com/user-attachments/assets/e9c5f03f-d586-4e5f-89d9-ab49a6da4206)
+2. Dê um nome para a API e em seguida clique em `Add Integration` e adicione as funções lambdas `calc`, `soma` e `sub`. 
+Depois clique em `Próximo`.
 
-3. Configure a rota, usando apenas o método `GET`
+![image](https://github.com/user-attachments/assets/27d29bee-f2e3-48f1-898f-67d82b7b7c18)
 
-![image](https://github.com/user-attachments/assets/cf09e4ab-725d-4da0-b6ba-8424180cb3c9)
+3. Configure a rota, usando apenas o método `GET`, como na figura abaixo
 
-4. Não modifique o estágio. Deixe o valor $default e auto-deploy. 
+![image](https://github.com/user-attachments/assets/e5f8149a-d02a-43ef-ac29-a83cd653b085)
+
+4. Não modifique o estágio. Deixe o valor $default e auto-deploy.
+   
 ![image](https://github.com/user-attachments/assets/e3c12454-6307-42f2-80e7-99edf0475fab)
 
 5. Clique em criar.
-![image](https://github.com/user-attachments/assets/cf3c72c5-98e9-47de-ab36-c005c3a84fb1)
+
+![image](https://github.com/user-attachments/assets/452b7791-a5ef-4769-9e24-bca79cad63d0)
 
 6. Em seguida clique em `Deploy`
-![image](https://github.com/user-attachments/assets/c4e2791e-eedd-40b4-8ef9-30bcbf8e204a)
+
+![image](https://github.com/user-attachments/assets/5ca59bc9-63cb-4a88-8d49-60daed2d81e3)
 
 7. Adicione um estágio de implantação.
+   
 ![image](https://github.com/user-attachments/assets/fcc555cd-02e7-4ab1-9cee-5ff8ada7eb68)
 
-Agora que tudo foi criado, você já pode usar o seu projeto criado na arquitetura serverless. 
+8. Agora que tudo foi criado, você já pode usar o seu projeto criado na arquitetura serverless. 
 
-Pegue a url do gateway* e coloque a rota que desejas acessar. Por exemplo: 
+Copie a url do *gateway* e adicione a rota que desejas acessar. Por exemplo: 
 
-https://URL_GATEWAY/stage/calc
+`https://URL_GATEWAY/{nome-do-stage}/calc`
 
-## Usando o POSTMAN para testar a API
+`https://URL_GATEWAY/calc`
+
+## Usando o POSTMAN ou INSOMNIA para testar a API 
 
 - calc
 
 ![image](https://user-images.githubusercontent.com/276077/115634822-c071f580-a2e0-11eb-94a6-c7a8bc7bf58b.png)
+
+![image](https://github.com/user-attachments/assets/ac762b7e-0f17-4449-b316-f02899df72c3)
 
 
 - soma
 
 ![image](https://user-images.githubusercontent.com/276077/115634892-e4353b80-a2e0-11eb-84bc-0683f80b8eea.png)
 
+![image](https://github.com/user-attachments/assets/01e5fa8d-3beb-4d16-8f10-c4efd4c1e285)
+
 
 - subtracao
 
 ![image](https://user-images.githubusercontent.com/276077/115634940-0038dd00-a2e1-11eb-92b5-dc04ce523baf.png)
 
+![image](https://github.com/user-attachments/assets/d0581be3-cdef-4c71-b592-968d2de7cb79)
 
 
-![image](https://github.com/user-attachments/assets/4ff4e945-c79d-4502-9146-c7892caaa147)
+## Que tal usar o S3 para criar um site estático? 
 
-![image](https://github.com/user-attachments/assets/2b24fd8f-3222-46d4-9057-6ca826e84578)
+Use o tutorial [https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/HostingWebsiteOnS3Setup.html](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/HostingWebsiteOnS3Setup.html)

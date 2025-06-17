@@ -53,6 +53,15 @@ Você pode iniciar o processo mongod executando o seguinte comando:
 sudo systemctl start mongod
 ```
 
+2. Se não tiver certeza, execute o comando abaixo para confirmar que o mongodb está rodando corretamente: 
+
+```
+sudo systemctl status mongod
+```
+
+![image](https://github.com/user-attachments/assets/5d8cfe89-bc1a-4a6f-b27b-4d9cb1e1323b)
+
+
 ## Acessando o Mongo
 
 1. Inicie o mongosh
