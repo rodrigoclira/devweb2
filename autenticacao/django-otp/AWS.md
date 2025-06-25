@@ -42,3 +42,6 @@ python manage.py runserver 0.0.0.0:8080
 `https://URL-DO-CLOUD9/projeto`
 
 ![image](https://github.com/user-attachments/assets/4379f9a3-50a3-47b0-bb5a-ae484786f62e)
+
+
+> Lembrar de configurar o CSRF_TRUSTED_ORIGINS com a URL do preview do Cloud9. 
