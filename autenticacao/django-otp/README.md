@@ -31,7 +31,7 @@ Uma aplicação Django abrangente demonstrando autenticação por Senha Única B
 
 1. **Clone e navegue até o projeto**:
    ```bash
-   cd django_otp_example
+   cd django_otp
    ```
 
 2. **Instale as dependências**:
