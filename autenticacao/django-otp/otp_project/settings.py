@@ -129,7 +129,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CSRF Configuration
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-ie42wqigkvl1ux6cwwws1-3eac4bf0.manus.computer',
-    'https://*.manus.computer',
 ]
 
