@@ -47,6 +47,6 @@ Assunto| Projeto | Atividade
 Sugestões de leitura:
 
 | [Criando ambientes virtuais para projetos Python com Virtualenv](https://www.treinaweb.com.br/blog/criando-ambientes-virtuais-para-projetos-python-com-o-virtualenv/)
-
+| [Instalação do nginx na AWS](https://comtechies.com/how-to-install-and-configure-nginx-on-amazon-ec2-rhel-and-ubuntu-instances/)
 | [Utilizando o pyenv para gerenciar versões do interpretador de Python](https://blog.accurate.com.br/tutorial-pyenv/)
 
