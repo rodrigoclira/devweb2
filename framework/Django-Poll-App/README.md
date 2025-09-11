@@ -23,7 +23,7 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-Executar o projeto na porta 8080
+Executar o projeto na porta 8080 (EC2 ou Cloud9)
 ```
 python manage.py runserver 0.0.0.0:8080
 ```
