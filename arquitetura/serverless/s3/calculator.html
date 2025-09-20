@@ -146,6 +146,37 @@
     </div>
     
     <script>
+        /*
+        INSTRUÇÕES PARA RESOLVER ERRO DE CORS:
+        
+        1. No AWS API Gateway:
+           - Vá para sua API
+           - Selecione o método (GET) do endpoint
+           - Clique em "Actions" > "Enable CORS"
+           - Configure:
+             * Access-Control-Allow-Origin: * (ou seu domínio específico)
+             * Access-Control-Allow-Headers: Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token
+             * Access-Control-Allow-Methods: GET,POST,OPTIONS
+           - Clique "Enable CORS and replace existing CORS headers"
+           - Clique "Actions" > "Deploy API"
+        
+        2. No AWS Lambda (se aplicável):
+           - Adicione headers CORS na resposta:
+           return {
+               statusCode: 200,
+               headers: {
+                   "Access-Control-Allow-Origin": "*",
+                   "Access-Control-Allow-Headers": "Content-Type",
+                   "Access-Control-Allow-Methods": "GET, POST, OPTIONS"
+               },
+               body: JSON.stringify(result)
+           };
+        
+        3. Teste alternativo (desenvolvimento):
+           - Use extensão de navegador para desabilitar CORS temporariamente
+           - Ou rode um proxy local
+        */
+        
         let firstValue = '0';
         let operator = null;
         let secondValue = '';
@@ -301,7 +332,7 @@
             
             // Determina o método da API baseado no operador
             let method = '';
-            let apiUrl = 'https://API-GATEWAY/';
+            let apiUrl = 'https://c2te4057g7.execute-api.us-east-1.amazonaws.com/';
             
             switch(operator) {
                 case '+':
@@ -335,8 +366,9 @@
             // Faz a chamada para a API
             fetch(fullUrl, {
                 method: 'GET',
+                mode: 'cors',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Accept': 'application/json'
                 }
             })
             .then(response => {
@@ -368,10 +400,16 @@
             .catch(error => {
                 console.log('=== API Error ===');
                 console.error('Error details:', error);
-                console.log('Falling back to local calculation');
-                console.log('================');
                 
-                status.textContent = 'API Error - Using local calculation';
+                // Verifica se é erro de CORS
+                if (error.message.includes('CORS') || error.message.includes('Failed to fetch')) {
+                    console.log('CORS error detected - API needs CORS configuration');
+                    status.textContent = 'CORS Error - Check API configuration';
+                } else {
+                    console.log('Falling back to local calculation');
+                    status.textContent = 'API Error - Using local calculation';
+                }
+                console.log('================');
                 
                 // Fallback para cálculo local se a API falhar
                 try {
