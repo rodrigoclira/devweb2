@@ -381,11 +381,11 @@
             .then(data => {
                 console.log('=== API Success ===');
                 console.log('Response data:', data);
-                console.log('Result:', data.result);
+                console.log('Result:', data.resultado);
                 console.log('==================');
                 
                 // Atualiza o display com o resultado da API
-                const result = data.result.toString();
+                const result = data.resultado.toString();
                 operationDisplay.textContent = `${operation} =`;
                 firstValue = result;
                 operator = null;
