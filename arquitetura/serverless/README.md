@@ -108,3 +108,6 @@ Copie a url do *gateway* e adicione a rota que desejas acessar. Por exemplo:
 O AWS S3 é um serviço de armazenamento de objetos que permite, dentre outras funcionalidades, implantar um site estático (html, css e javascript). Você pode seguir o tutorial do link a seguir pra implantar um site simples na sua conta do AWS Academy, [https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/HostingWebsiteOnS3Setup.html](https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/HostingWebsiteOnS3Setup.html). 
 
 Em seguida, utilize o arquivo disponibilizado na pasta [s3](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/serverless/s3), como exemplo para implantar uma aplicação funcional utilizando apenas tecnologias serverless. Conecte as operações da calculadora desse arquivo na API desenvolvida no início da aula.
+
+<img width="612" height="491" alt="serverless" src="https://github.com/user-attachments/assets/5c4c8409-6560-46d9-ab02-6e23ae4f8667" />
+
