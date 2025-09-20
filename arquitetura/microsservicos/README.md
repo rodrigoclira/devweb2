@@ -1,4 +1,4 @@
-# Projeto usando a arquitetura Microsserviços (Flask + Docker)
+# Projeto usando a arquitetura Microserviços (Flask + Docker)
 
 ![image](https://user-images.githubusercontent.com/276077/116923013-77009f00-ac2c-11eb-859b-735835360d09.png)
 
@@ -15,7 +15,7 @@ O passo a passo segue o que é apresentado tutorial apresentado em: [Building a 
 Algumas alterações foram realizadas para que o projeto ficasse com as mesmas funcionalidades das apresentadas nos projetos de arquitetura serverless e monolítica (API de soma, sub e calc). Para fins de discussão sobre a funcionalidade de *Load Balancing*, o projeto "ping" apresentado no tutorial foi mantido.
 
 
-Para executá-lo, basta baixar a pasta do projeto (microservicos) e executar o comando "docker-compose up" na pasta principal. 
+Para executá-lo, basta baixar a pasta do projeto (microserviços) e executar o comando "docker-compose up" na pasta principal. 
 
 ```
 sudo docker-compose up --build -d --scale ping=2
@@ -88,9 +88,9 @@ Caso precise acessar essas aplicações para testar a aplicação, altere o `Seg
 
 ## Atividade
 
-Adicione um novo microsserviço a arquitetura atual do exemplo. Ele será responsável pelo novo *endpoint* da api que realiza uma multiplicação (**/mult**). Ele receberá dois valores, **op1**, **op2** e retornará o resultado da multiplicação. Você precisa criar uma nova aplicação com uma outra framework (não utilizar flask).
+Adicione um novo microserviço à arquitetura atual do exemplo. Ele será responsável pelo novo *endpoint* da api que realiza uma multiplicação (**/mult**). Ele receberá dois valores, **op1**, **op2** e retornará o resultado da multiplicação. Você precisa criar uma nova aplicação com um outro framework (não utilizar Flask).
 
-Devido a sua alta demanda de acesso, o microsserviço precisa ser replicado em 3 contêineres. A distribuição será feita através da política de balanceamento de carga *Round Robin* com diferentes pesos e funções. Um contêiner deve ser configurado como **backup** e os outros dois com o peso 3 e 1, respectivamente. Para mais informações sobre distribuição de peso, acesse: https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/ (*Seção Server Weights*).
+Devido a sua alta demanda de acesso, o microserviço precisa ser replicado em 3 contêineres. A distribuição será feita através da política de balanceamento de carga *Round Robin* com diferentes pesos e funções. Um contêiner deve ser configurado como **backup** e os outros dois com o peso 3 e 1, respectivamente. Para mais informações sobre distribuição de peso, acesse: https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/ (*Seção Server Weights*).
 
 Reponda as seguintes perguntas abaixo após desenvolver as modificações necessárias para que esses novos requisitos sejam alcançados. 
 
