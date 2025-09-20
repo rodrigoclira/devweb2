@@ -23,16 +23,36 @@
             width: 300px;
         }
         
+        .display-container {
+            margin-bottom: 10px;
+        }
+        
+        .operation-display {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 5px 5px 0 0;
+            padding: 5px 10px;
+            text-align: right;
+            font-size: 14px;
+            height: 20px;
+            color: #666;
+            min-height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        
         .display {
             background-color: #f0f0f0;
             border: 1px solid #ddd;
-            border-radius: 5px;
+            border-radius: 0 0 5px 5px;
+            border-top: none;
             padding: 10px;
-            margin-bottom: 10px;
             text-align: right;
             font-size: 24px;
             height: 40px;
             overflow: hidden;
+            font-weight: bold;
         }
         
         .buttons {
@@ -94,7 +114,10 @@
 </head>
 <body>
     <div class="calculator">
-        <div class="display" id="display">0</div>
+        <div class="display-container">
+            <div class="operation-display" id="operationDisplay"></div>
+            <div class="display" id="display">0</div>
+        </div>
         <div class="buttons">
             <button class="clear" onclick="clearDisplay()">C</button>
             <button onclick="backspace()">⌫</button>
@@ -130,7 +153,21 @@
         let resultDisplayed = false;
         
         const display = document.getElementById('display');
+        const operationDisplay = document.getElementById('operationDisplay');
         const status = document.getElementById('status');
+        
+        // Função para logs detalhados
+        function logState(action) {
+            console.log('=== Calculator Action: ' + action + ' ===');
+            console.log('First Value:', firstValue);
+            console.log('Operator:', operator);
+            console.log('Second Value:', secondValue);
+            console.log('Is Second Value:', isSecondValue);
+            console.log('Result Displayed:', resultDisplayed);
+            console.log('Current Display:', display.textContent);
+            console.log('Operation Display:', operationDisplay.textContent);
+            console.log('========================');
+        }
         
         function updateDisplay() {
             if (operator !== null && isSecondValue) {
@@ -138,47 +175,89 @@
             } else {
                 display.textContent = firstValue;
             }
+            updateOperationDisplay();
+        }
+        
+        function updateOperationDisplay() {
+            let operationText = '';
+            
+            if (firstValue !== '0' || operator !== null) {
+                operationText = firstValue;
+                
+                if (operator !== null) {
+                    operationText += ' ' + operator;
+                    
+                    if (secondValue !== '') {
+                        operationText += ' ' + secondValue;
+                    }
+                }
+            }
+            
+            operationDisplay.textContent = operationText;
+            console.log('Operation Display Updated:', operationText);
         }
         
         function appendToDisplay(value) {
+            console.log('Number pressed: ' + value);
+            
             if (resultDisplayed) {
-                // If a result was just displayed, start a new calculation
+                // Se um resultado foi exibido, inicia novo cálculo
+                console.log('Starting new calculation after result');
                 firstValue = value;
                 operator = null;
                 secondValue = '';
                 isSecondValue = false;
                 resultDisplayed = false;
             } else if (!isSecondValue) {
-                // Working with first value
+                // Trabalhando com o primeiro valor
                 if (firstValue === '0' && value !== '.') {
                     firstValue = value;
+                    console.log('Replaced initial zero with:', value);
                 } else if (!(value === '.' && firstValue.includes('.'))) {
                     firstValue += value;
+                    console.log('Added to first value:', firstValue);
+                } else {
+                    console.log('Decimal point already exists in first value');
                 }
             } else {
-                // Working with second value
+                // Trabalhando com o segundo valor
                 if (secondValue === '' && value !== '.') {
                     secondValue = value;
+                    console.log('Started second value:', value);
                 } else if (!(value === '.' && secondValue.includes('.'))) {
                     secondValue += value;
+                    console.log('Added to second value:', secondValue);
+                } else {
+                    console.log('Decimal point already exists in second value');
                 }
             }
+            
             updateDisplay();
+            logState('Number Input');
         }
         
         function setOperator(op) {
+            console.log('Operator pressed: ' + op);
+            
             if (operator !== null && secondValue !== '') {
-                // If we already have an operator and second value, calculate first
+                // Se já temos um operador e segundo valor, calcula primeiro
+                console.log('Auto-calculating before setting new operator');
                 calculate();
+                operator = op;
+                isSecondValue = true;
+            } else {
+                operator = op;
+                isSecondValue = true;
             }
             
-            operator = op;
-            isSecondValue = true;
             resultDisplayed = false;
             status.textContent = '';
+            updateDisplay();
+            logState('Operator Set');
         }
         
         function clearDisplay() {
+            console.log('Clear pressed - Resetting calculator');
             firstValue = '0';
             operator = null;
             secondValue = '';
@@ -186,97 +265,165 @@
             resultDisplayed = false;
             updateDisplay();
             status.textContent = '';
+            logState('Clear');
         }
         
         function backspace() {
+            console.log('Backspace pressed');
+            
             if (isSecondValue && secondValue !== '') {
                 secondValue = secondValue.slice(0, -1);
+                console.log('Removed from second value:', secondValue);
             } else if (firstValue.length > 1) {
                 firstValue = firstValue.slice(0, -1);
+                console.log('Removed from first value:', firstValue);
             } else {
                 firstValue = '0';
+                console.log('Reset first value to 0');
             }
+            
             updateDisplay();
+            logState('Backspace');
         }
         
         function calculate() {
-          
+            console.log('Calculate button pressed');
+            
             if (operator === null || (isSecondValue && secondValue === '')) {
+                console.log('Cannot calculate: missing operator or second value');
                 return;
             }
             
+            const operation = `${firstValue} ${operator} ${secondValue}`;
+            console.log('Performing calculation:', operation);
+            
             status.textContent = 'Calculating...';
             
-            // API endpoint (replace with your actual API endpoint)
-            const apiUrl = 'https://API-GATEWAY';
-
-            if (operator === "+"){
-              method = "soma";
-            }else if (operator === "-"){
-              method = "subtracao";
+            // Determina o método da API baseado no operador
+            let method = '';
+            let apiUrl = 'https://API-GATEWAY/';
+            
+            switch(operator) {
+                case '+':
+                    method = 'soma';
+                    break;
+                case '-':
+                    method = 'subtracao';
+                    break;
+                case '*':
+                    method = 'multiplicacao';
+                    break;
+                case '/':
+                    method = 'divisao';
+                    break;
+                default:
+                    console.error('Unknown operator:', operator);
+                    return;
             }
             
-            // Make the API call
-            fetch(apiUrl + method + "?" + + new URLSearchParams({
+            const fullUrl = apiUrl + method + '?' + new URLSearchParams({
                 op1: firstValue,
                 op2: secondValue,
-            }).toString(), {
+            }).toString();
+            
+            console.log('=== API Request Details ===');
+            console.log('Method:', method);
+            console.log('Full URL:', fullUrl);
+            console.log('Parameters:', { op1: firstValue, op2: secondValue });
+            console.log('==========================');
+            
+            // Faz a chamada para a API
+            fetch(fullUrl, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
+                }
             })
             .then(response => {
+                console.log('API Response received:', response.status);
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
                 }
                 return response.json();
             })
             .then(data => {
-                // Update the display with the result from the API
-                firstValue = data.result.toString();
+                console.log('=== API Success ===');
+                console.log('Response data:', data);
+                console.log('Result:', data.result);
+                console.log('==================');
+                
+                // Atualiza o display com o resultado da API
+                const result = data.result.toString();
+                operationDisplay.textContent = `${operation} =`;
+                firstValue = result;
                 operator = null;
                 secondValue = '';
                 isSecondValue = false;
                 resultDisplayed = true;
                 updateDisplay();
-                status.textContent = 'Calculation completed';
+                status.textContent = 'Calculation completed via API';
+                
+                logState('API Calculation Complete');
             })
             .catch(error => {
-                console.error('Error:', error);
-                status.textContent = 'Error: ' + error.message;
+                console.log('=== API Error ===');
+                console.error('Error details:', error);
+                console.log('Falling back to local calculation');
+                console.log('================');
                 
-                // Fallback to local calculation if API fails
+                status.textContent = 'API Error - Using local calculation';
+                
+                // Fallback para cálculo local se a API falhar
                 try {
                     let result;
+                    const num1 = parseFloat(firstValue);
+                    const num2 = parseFloat(secondValue);
+                    
+                    console.log('Local calculation inputs:', { num1, num2, operator });
+                    
                     switch(operator) {
                         case '+':
-                            result = parseFloat(firstValue) + parseFloat(secondValue);
+                            result = num1 + num2;
                             break;
                         case '-':
-                            result = parseFloat(firstValue) - parseFloat(secondValue);
+                            result = num1 - num2;
                             break;
                         case '*':
-                            result = parseFloat(firstValue) * parseFloat(secondValue);
+                            result = num1 * num2;
                             break;
                         case '/':
-                            result = parseFloat(firstValue) / parseFloat(secondValue);
+                            if (num2 === 0) {
+                                throw new Error('Division by zero');
+                            }
+                            result = num1 / num2;
                             break;
+                        default:
+                            throw new Error('Unknown operator');
                     }
                     
+                    console.log('Local calculation result:', result);
+                    
+                    operationDisplay.textContent = `${operation} =`;
                     firstValue = result.toString();
                     operator = null;
                     secondValue = '';
                     isSecondValue = false;
                     resultDisplayed = true;
                     updateDisplay();
-                    status.textContent = 'Used local calculation (API failed)';
+                    status.textContent = 'Local calculation completed (API unavailable)';
+                    
+                    logState('Local Calculation Complete');
                 } catch (e) {
-                    status.textContent = 'Invalid expression';
+                    console.error('Local calculation error:', e);
+                    status.textContent = 'Calculation error: ' + e.message;
+                    operationDisplay.textContent = `${operation} = Error`;
                 }
             });
         }
+        
+        // Log inicial
+        console.log('Calculator initialized');
+        logState('Initial State');
     </script>
 </body>
 </html>
