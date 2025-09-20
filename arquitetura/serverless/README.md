@@ -12,9 +12,11 @@ Passos para execução:
 
 ## Criando as funções lambdas
 
-1. Acesse ao serviço Lambda da AWS e crie uma função lambda usando a opção "Usar um esquema". Pesquise e selecione o esquema: "hello world function". Dê um nome a função baseando-se nos exemplos disponíveis na pasta "lambdas" do repositório. Exemplo: soma 
+1. Acesse o serviço Lambda da AWS e crie uma função lambda usando a opção "Usar um esquema". Pesquise e selecione o esquema: "hello world function". Dê um nome à função baseando-se nos exemplos disponíveis na pasta "lambdas" do repositório. Na imagem abaixo são indicadas as principais modificações (tipo de criação de função, nome do modelo e role)
 
-![image](https://github.com/user-attachments/assets/4ff4e945-c79d-4502-9146-c7892caaa147)
+Exemplo: soma 
+
+<img width="804" height="856" alt="382172282-4ff4e945-c79d-4502-9146-c7892caaa147" src="https://github.com/user-attachments/assets/16f6eaae-0cf9-48cd-ac3e-9ed8cb1f3720" />
 
 2. Na tela de exibição da função criada, abra a aba "código" e substitua-o pelo código da função lambda do repositório. Se na etapa anterior foi criada a função "subtracacao", copie o conteúdo do arquivo "lambdas/subtracacao.py" .
 
