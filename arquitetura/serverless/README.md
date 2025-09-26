@@ -111,3 +111,11 @@ Em seguida, utilize o arquivo disponibilizado na pasta [s3](https://github.com/r
 
 <img width="612" height="491" alt="serverless" src="https://github.com/user-attachments/assets/5c4c8409-6560-46d9-ab02-6e23ae4f8667" />
 
+### Erro de acesso devido a CORS (Cross-Origin Resource Sharing)
+
+Um "erro CORS" (_Cross-Origin Resource Sharing_) acontece quando um navegador bloqueia um pedido HTTP entre origens diferentes, porque o servidor não enviou os cabeçalhos HTTP necessários para indicar que essa solicitação é permitida. Para corrigir o erro, o servidor deve incluir o cabeçalho Access-Control-Allow-Origin nas respostas, permitindo o acesso de origens específicas ou de todas (*).
+
+No caso da API Gateway é possível liberar o acesso para diferentes origens, permitindo que o S3 faça a requisição ao API Gateway desenvolvido. 
+Para fazer isso, adicione _*_ no Access-Control-Allow-Origin da api desenvolvida. Você também pode indicar explicitamente quais os métodos HTTP estarão disponíveis na API. 
+
+<img width="1537" height="658" alt="image" src="https://github.com/user-attachments/assets/7a8bc0d3-6330-455a-8321-05297a0e1c8c" />
