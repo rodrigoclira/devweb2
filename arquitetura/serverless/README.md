@@ -68,7 +68,7 @@ Depois clique em `Próximo`.
 
 ![image](https://github.com/user-attachments/assets/5ca59bc9-63cb-4a88-8d49-60daed2d81e3)
 
-7. Adicione um estágio de implantação.
+7. Se for necessário, adicione um estágio de implantação. Caso tenha escolhido 'auto-deploy', a implantação é feita de forma automática.
    
 ![image](https://github.com/user-attachments/assets/fcc555cd-02e7-4ab1-9cee-5ff8ada7eb68)
 
