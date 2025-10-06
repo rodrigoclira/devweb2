@@ -10,18 +10,8 @@ NEW = '_text'
 IN_FOLDER = "/appdata/static/uploads/"
 
 def create_text(path_file):
-    pathname, filename = os.path.split(path_file)
-    output_folder = pathname + OUT_FOLDER
-
-    if not os.path.exists(output_folder):
-        os.makedirs(output_folder)
-
-    original_image = Image.open(path_file)
-    draw = ImageDraw.Draw(original_image)    
-    name, ext = os.path.splitext(filename)
-    draw.text((0, 0),f"{name}", fill='white', font_size=35)
-    original_image.save(output_folder + name + NEW + ext)
-
+    pass
+    
 #sleep(30)
 ### Consumer
 c = Consumer({
