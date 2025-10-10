@@ -9,6 +9,7 @@
 3. Instale a biblioteca `libpq-dev` 
 
 ```
+sudo apt-get update
 sudo apt install libpq-dev -y
 ```
 
