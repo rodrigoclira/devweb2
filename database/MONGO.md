@@ -42,7 +42,6 @@ Para instalar a última versão estável, execute o seguinte comando:
 sudo apt-get install -y mongodb-org
 ```
 
-Para ajuda com a solução de problemas encontrados durante a instalação do MongoDB no Ubuntu, consulte nosso guia de solução de problemas.
 
 ## Executar MongoDB Community Edition
 
