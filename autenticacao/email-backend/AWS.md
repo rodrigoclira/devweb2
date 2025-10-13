@@ -28,6 +28,7 @@ pip install -r requirements.txt
 ![image](https://github.com/user-attachments/assets/6a694ec1-3e17-46ae-ab9d-be7786f9ddde)
 
 ```
+cd sgc
 python manage.py runserver 0.0.0.0:8080
 ```
 
