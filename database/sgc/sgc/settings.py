@@ -1,5 +1,6 @@
 import os
 import mongoengine
+import requests 
 
 """
 Django settings for sgc project.
@@ -29,8 +30,20 @@ SECRET_KEY = 'django-insecure-f7o3wfiz*7co-h$ci2c8-+g(%e^t_zm+5c5^tqxljb^!qmvq^&
 DEBUG = True
 PROD_ENV = False
 COMMENTS = True
-
 ALLOWED_HOSTS = ["*"]
+
+
+if PROD_ENV:
+    EC2_PRIVATE_IP = None
+    try:
+        EC2_PRIVATE_IP = requests.get(
+            'http://169.254.169.254/latest/meta-data/public-hostname',
+            timeout=0.01).text
+    except requests.exceptions.RequestException:
+        pass
+
+    if EC2_PRIVATE_IP:
+        ALLOWED_HOSTS.append(EC2_PRIVATE_IP)
 
 
 # Application definition
