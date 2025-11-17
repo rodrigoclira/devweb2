@@ -30,6 +30,10 @@ curl \
 ```
 <img width="1093" height="935" alt="image" src="https://github.com/user-attachments/assets/9d57ae22-c003-425b-9ab8-879bf5c8ec6d" />
 
+Não esqueça de configurar o header `Content-Type: application/json`, como na imagem abaixo. 
+
+<img width="1098" height="176" alt="image" src="https://github.com/user-attachments/assets/d06a42be-1aed-49fd-97f2-b7fc47f8b1de" />
+
 ## Obtendo os detalhes de um projeto
 ```
 curl \
