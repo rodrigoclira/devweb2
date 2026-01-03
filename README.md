@@ -9,15 +9,15 @@ Exemplos de projetos usando os conceitos apresentados na disciplina de **Desenvo
 
 ## Tabela de Conteúdo
 
-Assunto| Projeto | Atividade
----:|:---:|:---:
+Assunto| Projeto | Atividade | Repositório
+---:|:---:|:---:|:---:
 **Introdução** | | 
-1 | Conceitos de Nuvem: Amazon Webservices (AWS) |  Utilizando o Cloud9 | 
+1 | Conceitos de Nuvem: Amazon Webservices (AWS) |  Utilizando o Cloud9 | [Cloud](https://github.com/rodrigoclira/cloud-concepts)
 **Framework**|   |
-1 | [Django Poll App](https://github.com/rodrigoclira/devweb2/tree/main/framework) |  
+1 | [Django Poll App](https://github.com/rodrigoclira/devweb2/tree/main/framework) | | [Django](https://github.com/rodrigoclira/django-concepts)
 **Arquitetura**|   |
-1 | [Monolítico](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/monolitico) | 
-2 | [Microsserviços](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/microsservicos) | [Criação do microsserviço '*mult*' e configuração do nginx](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/microsservicos#atividade)
+1 | [Monolítico](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/monolitico) | | [Calculadora em arquitetura monolítica](https://github.com/rodrigoclira/monolithic-calc)
+2 | [Microsserviços](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/microsservicos) | [Criação do microsserviço '*mult*' e configuração do nginx](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/microsservicos#atividade) | [Calculadora em arquitetura microserviço](https://github.com/rodrigoclira/microservice-calc)
 3 | [Serverless](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/serverless) | Criação da função lambda *div* 
 4 | [Híbrida (Serverless + Microsserviços)](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/hibrida) | 
 5 | [Publish/Subscribe](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/pub-sub) | [Microsserviço '_Notificador_' usando pub/sub](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/pub-sub#atividade)
