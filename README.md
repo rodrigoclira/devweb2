@@ -12,7 +12,7 @@ Exemplos de projetos usando os conceitos apresentados na disciplina de **Desenvo
 Assunto| Projeto | Atividade | Repositório
 ---:|:---:|:---:|:---:
 **Introdução** | | 
-1 | Conceitos de Nuvem: Amazon Webservices (AWS) |  Utilizando o Cloud9 | [Cloud](https://github.com/rodrigoclira/cloud-concepts)
+1 | Conceitos de Nuvem: Amazon Webservices (AWS) |  | [Cloud](https://github.com/rodrigoclira/cloud-concepts)
 **Framework**|   |
 1 | [Django Poll App](https://github.com/rodrigoclira/devweb2/tree/main/framework) | | [Django](https://github.com/rodrigoclira/django-concepts)
 **Arquitetura**|   |
