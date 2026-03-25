@@ -9,18 +9,18 @@ Exemplos de projetos usando os conceitos apresentados na disciplina de **Desenvo
 
 ## Tabela de Conteúdo
 
-Assunto| Projeto | Atividade | Repositório
+Assunto| Projeto | Atividade |
 ---:|:---:|:---:|:---:
 **Introdução** | | 
-1 | Conceitos de Nuvem: Amazon Webservices (AWS) |  | [Cloud](https://github.com/rodrigoclira/cloud-concepts)
+1 | [Conceitos de Nuvem: Amazon Webservices (AWS)]](https://github.com/rodrigoclira/cloud-concepts) |  | 
 **Framework**|   |
-1 | [Django Poll App](https://github.com/rodrigoclira/devweb2/tree/main/framework) | | [Django](https://github.com/rodrigoclira/django-concepts)
+1 | [Django](https://github.com/rodrigoclira/django-concepts)) | | 
 **Arquitetura**|   |
-1 | [Monolítico](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/monolitico) | | [Calculadora em arquitetura monolítica](https://github.com/rodrigoclira/monolithic-calc)
-2 | [Microsserviços](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/microsservicos) | [Criação do microsserviço '*mult*' e configuração do nginx](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/microsservicos#atividade) | [Calculadora em arquitetura microsserviço](https://github.com/rodrigoclira/microservice-calc)
-3 | [Serverless](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/serverless) | Criação da função lambda *div* | [Calculadora em arquitetura serverless](https://github.com/rodrigoclira/serverless-calc)
-4 | [Híbrida (Serverless + Microsserviços)](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/hibrida) | | https://github.com/rodrigoclira/serverless-microservice-calc
-5 | [Publish/Subscribe](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/pub-sub) | [Microsserviço '_Notificador_' usando pub/sub](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/pub-sub#atividade) | https://github.com/rodrigoclira/pub-sub
+1 | [Monolítico](https://github.com/rodrigoclira/monolithic-calc) | | 
+2 | [Microsserviços](https://github.com/rodrigoclira/microservice-calc) | [Criação do microsserviço '*mult*' e configuração do nginx](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/microsservicos#atividade) | 
+3 | [Serverless](https://github.com/rodrigoclira/serverless-calc) | Criação da função lambda *div* | 
+4 | [Híbrida (Serverless + Microsserviços)](https://github.com/rodrigoclira/serverless-microservice-calc) | | 
+5 | [Publish/Subscribe](https://github.com/rodrigoclira/pub-sub) | [Microsserviço '_Notificador_' usando pub/sub](https://github.com/rodrigoclira/pub-sub#atividade) | 
 **Model-View-Controller**|
 1 | [Django MVC](https://github.com/rodrigoclira/devweb2/tree/main/mvc) | [Criação de Funcionalidade Evento](https://github.com/rodrigoclira/devweb2/blob/main/mvc/ATIVIDADE.md)
 **Banco de Dados**|
