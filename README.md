@@ -10,11 +10,11 @@ Exemplos de projetos usando os conceitos apresentados na disciplina de **Desenvo
 ## Tabela de Conteúdo
 
 Assunto| Projeto | Atividade |
----:|:---:|:---:|:---:
+---:|:---:|:---:|
 **Introdução** | | 
-1 | [Conceitos de Nuvem: Amazon Webservices (AWS)]](https://github.com/rodrigoclira/cloud-concepts) |  | 
+1 | [Conceitos de Nuvem: Amazon Webservices (AWS)](https://github.com/rodrigoclira/cloud-concepts) |  | 
 **Framework**|   |
-1 | [Django](https://github.com/rodrigoclira/django-concepts)) | | 
+1 | [Primeiro contato com Django](https://github.com/rodrigoclira/django-concepts) | | 
 **Arquitetura**|   |
 1 | [Monolítico](https://github.com/rodrigoclira/monolithic-calc) | | 
 2 | [Microsserviços](https://github.com/rodrigoclira/microservice-calc) | [Criação do microsserviço '*mult*' e configuração do nginx](https://github.com/rodrigoclira/devweb2/tree/main/arquitetura/microsservicos#atividade) | 
