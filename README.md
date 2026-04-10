@@ -20,7 +20,7 @@ Assunto| Projeto | Atividade |
 2 | [Microsserviços](https://github.com/rodrigoclira/microservice-calc) | [Criação do microsserviço '*mult*' e configuração do nginx](https://github.com/rodrigoclira/microservice-calc#atividade) | 
 3 | [Serverless](https://github.com/rodrigoclira/serverless-calc) | [Desenvolvimento de uma aplicação com S3, API Gateway e Lambda](https://github.com/rodrigoclira/serverless-calc#criando-o-gateway-api-gateway) | 
 4 | [Híbrida (Serverless + Microsserviços)](https://github.com/rodrigoclira/serverless-microservice-calc) | | 
-5 | [Publish/Subscribe](https://github.com/rodrigoclira/pub-sub) | [Microsserviço '_Notificador_' usando pub/sub](https://github.com/rodrigoclira/pub-sub#atividade) | 
+5 | [Publish/Subscribe](https://github.com/rodrigoclira/pub-sub-kafka) | [Microsserviço '_Notificador_' usando pub/sub](https://github.com/rodrigoclira/pub-sub-kafka#atividade) | 
 **Model-View-Controller**|
 1 | [Django MVC](https://github.com/rodrigoclira/devweb2/tree/main/mvc) | [Criação de Funcionalidade Evento](https://github.com/rodrigoclira/devweb2/blob/main/mvc/ATIVIDADE.md)
 **Banco de Dados**|
