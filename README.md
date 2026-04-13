@@ -21,7 +21,7 @@ Assunto| Projeto | Atividade |
 2 | [Microsserviços](https://github.com/rodrigoclira/microservice-calc) | [Criação do microsserviço '*mult*' e configuração do nginx](https://github.com/rodrigoclira/microservice-calc#atividade) | 
 3 | [Serverless](https://github.com/rodrigoclira/serverless-calc) | [Desenvolvimento de uma aplicação com S3, API Gateway e Lambda](https://github.com/rodrigoclira/serverless-calc#criando-o-gateway-api-gateway) | 
 4 | [Híbrida (Serverless + Microsserviços)](https://github.com/rodrigoclira/serverless-microservice-calc) | | 
-5 | Publish/Subscribe com ([KAFKA](https://github.com/rodrigoclira/pub-sub-kafka)) e ([RabbitMQ](https://github.com/rodrigoclira/pub-sub-rabbitmq))| [Microsserviço '_Notificador_' usando pub/sub com RabbitMQ](https://github.com/rodrigoclira/pub-sub-rabbitmq#atividade) | 
+5 | Publish/Subscribe com ([KAFKA](https://github.com/rodrigoclira/pub-sub-kafka)) e ([RabbitMQ](https://github.com/rodrigoclira/pub-sub-rabbitmq))| Microsserviço '_Notificador_' usando pub/sub com [Kafka](https://github.com/rodrigoclira/pub-sub-kafka#atividade) ou [RabbitMQ](https://github.com/rodrigoclira/pub-sub-rabbitmq#atividade) | 
 **Banco de Dados**|
 1 | [Django + MogoDB + ORM](https://github.com/rodrigoclira/devweb2/tree/main/database) |  [Criação de modelos usando ORM](https://github.com/rodrigoclira/devweb2/tree/main/database#atividade)
 **Mapeamento URL**|
