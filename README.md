@@ -23,7 +23,7 @@ Assunto| Projeto | Atividade |
 4 | [Híbrida (Serverless + Microsserviços)](https://github.com/rodrigoclira/serverless-microservice-calc) | | 
 5 | Publish/Subscribe com ([KAFKA](https://github.com/rodrigoclira/pub-sub-kafka)) e ([RabbitMQ](https://github.com/rodrigoclira/pub-sub-rabbitmq))| Microsserviço '_Notificador_' usando pub/sub com [Kafka](https://github.com/rodrigoclira/pub-sub-kafka#atividade) ou [RabbitMQ](https://github.com/rodrigoclira/pub-sub-rabbitmq#atividade) | 
 **Banco de Dados**|
-1 | [Django + MogoDB + ORM](https://github.com/rodrigoclira/devweb2/tree/main/database) |  [Criação de modelos usando ORM](https://github.com/rodrigoclira/devweb2/tree/main/database#atividade)
+1 | [Django + MogoDB + ORM](https://github.com/rodrigoclira/relational-and-nosql) |  [Criação de modelos usando ORM](https://github.com/rodrigoclira/relational-and-nosql#atividade)
 **Mapeamento URL**|
 1 | [Django URLS](https://github.com/rodrigoclira/devweb2/tree/main/mapeamento-url) |
 **Autenticação**|
