@@ -31,7 +31,7 @@ Assunto| Projeto | Atividade | Conteúdo complementar
 2 | [Autenticação usando oauth2](https://github.com/rodrigoclira/devweb2/tree/main/autenticacao-social) | [Adicionando autenticação com Google e Facebook](https://github.com/rodrigoclira/crud-biblioteca/blob/main/README.md#atividade) |
 **API**| |
 1 | *Employee Manager* usando [NodeJS](https://github.com/rodrigoclira/employee-manager-app-node-v1) e [DRF](https://github.com/rodrigoclira/employee-manager-app-v1) | |
-2 | [DRF](https://github.com/rodrigoclira/devweb2/tree/main/api) | [Do Zero a Implantação](https://github.com/rodrigoclira/devweb2/blob/main/api/Atividade.md)|
+2 | [DRF](https://github.com/rodrigoclira/django-drf) | [Do Zero a Implantação](https://github.com/rodrigoclira/django-drf/blob/main/Atividade.md)|
 **Caching**| |
 1 | [Caching com Memcached](https://github.com/rodrigoclira/devweb2/tree/main/caching) | [Estratégia de cache usando Redis](https://github.com/rodrigoclira/redis-mongo-cache) |
 **Implantação**| |
