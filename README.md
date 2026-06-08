@@ -35,8 +35,7 @@ Assunto| Projeto | Atividade | Conteúdo complementar
 **Caching**| |
 1 | [Caching com Memcached](https://github.com/rodrigoclira/django-cache) | [Estratégia de cache usando Redis](https://github.com/rodrigoclira/redis-mongo-cache) |
 **Implantação**| |
-1 | [CI e CD](https://github.com/rodrigoclira/devweb2/tree/main/ci-cd) | [Employee Manager App V2](https://github.com/rodrigoclira/employee-manager-app-v2) |
-2 | [Demo CI](https://github.com/rodrigoclira/demo-ci) ||
+1 | [CI e CD](https://github.com/rodrigoclira/employee-manager-app-v2) | [Demonstração CI](https://github.com/rodrigoclira/demo-ci) |
 
 <!-- **Arquiteturas Modernas**| -->
 <!-- 1 | [Arquiteturas Modernas]() -->
