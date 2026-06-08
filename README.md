@@ -2,6 +2,7 @@
 
 Exemplos de projetos usando os conceitos apresentados na disciplina de **Desenvolvimento de Sistemas Web 2** do curso de Análise e Desenvolvimento de Sisteams do IFPE _Campus_ Paulista.
 
+Roteiro baseado no [roadmap.sh - backend](https://roadmap.sh/backend).
 
 > **Aviso**: Este repositório está em evolução. 
 > Os códigos podem mudar ou desaparecer sem nenhum aviso
