@@ -45,7 +45,8 @@ echo "Installing code server..."
 sudo apt update
 curl -fsSL https://code-server.dev/install.sh | sh
 sudo apt-get -y install python3-pip
-sudo apt-get -y install python3.14-venv 
+sudo apt-get -y install python3.14-venv
+sudo apt-get -y install unzip docker-compose-v2
 
 echo "Configuring code server..."
 sudo systemctl enable --now code-server@$USER
