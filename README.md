@@ -16,7 +16,9 @@ Assunto| Projeto | Atividade | Conteúdo complementar
 1 | [Conceitos de Nuvem: Amazon Webservices (AWS)](https://github.com/rodrigoclira/cloud-concepts) |  | |
 **Framework Django / MVT**|   | |
 1 | [Primeiro contato com Django](https://github.com/rodrigoclira/django-concepts) | | |
-2 | [Django MVT](https://github.com/rodrigoclira/devweb2/tree/main/mvc) | [Criação de Funcionalidade Evento](https://github.com/rodrigoclira/devweb2/blob/main/mvc/ATIVIDADE.md) |
+2 | [Django MVT](https://github.com/rodrigoclira/django-mvt) | [Criação de Funcionalidade Evento](https://github.com/rodrigoclira/django-mvt/ATIVIDADE.md) |
+**Mapeamento URL**| |
+1 | [Django URLS](https://github.com/rodrigoclira/devweb2/tree/main/mapeamento-url) | |
 **Arquitetura**|   | |
 1 | [Monolítico](https://github.com/rodrigoclira/monolithic-calc) | | |
 2 | [Microsserviços](https://github.com/rodrigoclira/microservice-calc) | [Criação do microsserviço '*mult*' e configuração do nginx](https://github.com/rodrigoclira/microservice-calc#atividade) | |
@@ -25,8 +27,6 @@ Assunto| Projeto | Atividade | Conteúdo complementar
 5 | Pub/Sub com [KAFKA](https://github.com/rodrigoclira/pub-sub-kafka) e [RabbitMQ](https://github.com/rodrigoclira/pub-sub-rabbitmq)| Microsserviço '_Notificador_' usando pub/sub com [Kafka](https://github.com/rodrigoclira/pub-sub-kafka#atividade) ou [RabbitMQ](https://github.com/rodrigoclira/pub-sub-rabbitmq#atividade) | [Leitura de variáveis de ambientes](https://github.com/rodrigoclira/reading-enviroment-file)|
 **Banco de Dados**| |
 1 | [Django + MogoDB + ORM](https://github.com/rodrigoclira/relational-and-nosql) |  [Criação de modelos usando ORM](https://github.com/rodrigoclira/relational-and-nosql#atividade) |
-**Mapeamento URL**| |
-1 | [Django URLS](https://github.com/rodrigoclira/devweb2/tree/main/mapeamento-url) | |
 **Autenticação**| |
 1 | [Django Simple Authentication](https://github.com/rodrigoclira/django-auth) | | [Django One Time Passoword](https://github.com/rodrigoclira/django-otp) 
 2 | [Autenticação usando oauth2](https://github.com/rodrigoclira/devweb2/tree/main/autenticacao-social) | [Adicionando autenticação com Google e Facebook](https://github.com/rodrigoclira/crud-biblioteca/blob/main/README.md#atividade) |
