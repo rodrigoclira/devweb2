@@ -17,8 +17,6 @@ Assunto| Projeto | Atividade | Conteúdo complementar
 **Framework Django / MVT**|   | |
 1 | [Primeiro contato com Django](https://github.com/rodrigoclira/django-concepts) | | |
 2 | [Django MVT](https://github.com/rodrigoclira/django-mvt) | [Criação de Funcionalidade Evento](https://github.com/rodrigoclira/django-mvt/ATIVIDADE.md) |
-**Mapeamento URL**| |
-1 | [Django URLS](https://github.com/rodrigoclira/devweb2/tree/main/mapeamento-url) | |
 **Arquitetura**|   | |
 1 | [Monolítico](https://github.com/rodrigoclira/monolithic-calc) | | |
 2 | [Microsserviços](https://github.com/rodrigoclira/microservice-calc) | [Criação do microsserviço '*mult*' e configuração do nginx](https://github.com/rodrigoclira/microservice-calc#atividade) | |
